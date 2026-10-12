@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voluma · O volume do seu treino, semana a semana</title>
+  <meta name="description" content="Registre cada série em um toque, veja sua evolução em números e compare a frequência com seus amigos. Em breve na App Store e no Google Play.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Voluma">
+  <meta property="og:description" content="O volume do seu treino, semana a semana.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon.png">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Sprite de icones: Phosphor Icons (peso light), MIT -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-apple" viewBox="0 0 256 256"><path d="M219.4,167.84C201.71,155.69,198,135.12,198,120c0-18.42,13.86-34.29,22.12-42.12a6,6,0,0,0,0-8.71C208,57.7,187.07,50,168,50a70.23,70.23,0,0,0-40,12.55,69.6,69.6,0,0,0-89.31,8.08A72.63,72.63,0,0,0,18,123.35a125.11,125.11,0,0,0,39.53,88.33A37.85,37.85,0,0,0,83.6,222h87.7A37.83,37.83,0,0,0,199,210.07a122.6,122.6,0,0,0,17.54-24.2c6.55-12,5.77-13.75,5-15.48A6.07,6.07,0,0,0,219.4,167.84Zm-29.23,34A25.82,25.82,0,0,1,171.3,210H83.6A25.85,25.85,0,0,1,65.78,203,113.21,113.21,0,0,1,30,123a60.55,60.55,0,0,1,17.21-44A56.82,56.82,0,0,1,88,62h.81a57.35,57.35,0,0,1,35.44,12.71,6,6,0,0,0,7.5,0A57.39,57.39,0,0,1,168,62c13.89,0,28.81,4.68,39.11,12-9.44,10.14-21.1,26.59-21.1,46,0,23.78,7.81,42.6,22.66,54.77A107.33,107.33,0,0,1,190.17,201.89Zm-60-171.39A38,38,0,0,1,167,2h1a6,6,0,0,1,0,12h-1a26,26,0,0,0-25.18,19.5,6,6,0,1,1-11.62-3Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 256 256"><path d="M238.84,115.93,71,19.89a14,14,0,0,0-14.12,0A13.68,13.68,0,0,0,50,31.87V224.13a13.68,13.68,0,0,0,6.92,11.94,14,14,0,0,0,14.12,0l167.8-96a13.75,13.75,0,0,0,0-24.14ZM62,217.5V38.5L151.51,128Zm98-81,22.19,22.19L78.4,218.07ZM78.4,37.93l103.79,59.4L160,119.52ZM233,129.58l-.1.06L193,152.49,168.49,128,193,103.51l39.94,22.85.1.06a1.76,1.76,0,0,1,0,3.16Z"/></symbol>
+    <symbol id="i-wifi-slash" viewBox="0 0 256 256"><path d="M138,204a10,10,0,1,1-10-10A10,10,0,0,1,138,204ZM52.44,36A6,6,0,0,0,43.56,44L61.33,63.58a169.41,169.41,0,0,0-41.14,25,6,6,0,1,0,7.62,9.27A157.58,157.58,0,0,1,69.91,73l26.48,29.13a122.21,122.21,0,0,0-44.12,22.19,6,6,0,0,0,7.46,9.41,110,110,0,0,1,45.87-21.47l31.13,34.25A74.4,74.4,0,0,0,128,146a73.44,73.44,0,0,0-43.53,14.15A6,6,0,0,0,88,171a5.93,5.93,0,0,0,3.53-1.15,62,62,0,0,1,59.76-7.31L203.56,220a6,6,0,0,0,8.88-8.08ZM235.81,88.55A170.32,170.32,0,0,0,128,50a173.45,173.45,0,0,0-21.76,1.38,6,6,0,1,0,1.52,11.9A160.58,160.58,0,0,1,128,62,158.26,158.26,0,0,1,228.19,97.82a6,6,0,1,0,7.62-9.27Zm-39.54,45.2A6,6,0,0,0,200,135a6,6,0,0,0,3.73-10.7,122.26,122.26,0,0,0-50.9-23.81,6,6,0,1,0-2.43,11.75A110,110,0,0,1,196.27,133.75Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 256 256"><path d="M208,82H174V56a46,46,0,0,0-92,0V82H48A14,14,0,0,0,34,96V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V96A14,14,0,0,0,208,82ZM94,56a34,34,0,0,1,68,0V82H94ZM210,208a2,2,0,0,1-2,2H48a2,2,0,0,1-2-2V96a2,2,0,0,1,2-2H208a2,2,0,0,1,2,2Z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 256 256"><path d="M188.24,164.24a6,6,0,0,1-8.48,0L158,142.49V208a6,6,0,0,1-12,0V142.49l-21.76,21.75a6,6,0,0,1-8.48-8.48l32-32a6,6,0,0,1,8.48,0l32,32A6,6,0,0,1,188.24,164.24ZM160,42A86.1,86.1,0,0,0,82.43,90.88,62,62,0,1,0,72,214h40a6,6,0,0,0,0-12H72a50,50,0,0,1,0-100,50.68,50.68,0,0,1,5.91.36A85.54,85.54,0,0,0,74,128a6,6,0,0,0,12,0,74,74,0,1,1,103.6,67.85,6,6,0,0,0,4.8,11A86,86,0,0,0,160,42Z"/></symbol>
+    <symbol id="i-eye-slash" viewBox="0 0 256 256"><path d="M52.44,36A6,6,0,0,0,43.56,44L64.44,67c-37.28,21.9-53.23,57-53.92,58.57a6,6,0,0,0,0,4.88c.34.77,8.66,19.22,27.24,37.8C55,185.47,84.62,206,128,206a124.91,124.91,0,0,0,52.57-11.25l23,25.29a6,6,0,0,0,8.88-8.08Zm48.62,71.32,45,49.52a34,34,0,0,1-45-49.52ZM128,194c-31.38,0-58.78-11.42-81.45-33.93A134.57,134.57,0,0,1,22.69,128c4.29-8.2,20.1-35.18,50-51.91L92.89,98.3a46,46,0,0,0,61.35,67.48l17.81,19.6A113.47,113.47,0,0,1,128,194Zm6.4-99.4a6,6,0,0,1,2.25-11.79,46.17,46.17,0,0,1,37.15,40.87,6,6,0,0,1-5.42,6.53l-.56,0a6,6,0,0,1-6-5.45A34.1,34.1,0,0,0,134.4,94.6Zm111.08,35.85c-.41.92-10.37,23-32.86,43.12a6,6,0,1,1-8-8.94A134.07,134.07,0,0,0,233.31,128a134.67,134.67,0,0,0-23.86-32.07C186.78,73.42,159.38,62,128,62a120.19,120.19,0,0,0-19.69,1.6,6,6,0,1,1-2-11.83A131.12,131.12,0,0,1,128,50c43.38,0,73,20.54,90.24,37.76,18.58,18.58,26.9,37,27.24,37.81A6,6,0,0,1,245.48,130.45Z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 256 256"><path d="M254,136a6,6,0,0,1-6,6H230v18a6,6,0,0,1-12,0V142H200a6,6,0,0,1,0-12h18V112a6,6,0,0,1,12,0v18h18A6,6,0,0,1,254,136Zm-57.41,60.14a6,6,0,1,1-9.18,7.72C166.9,179.45,138.69,166,108,166s-58.89,13.45-79.41,37.86a6,6,0,0,1-9.18-7.72C35.14,177.41,55,164.48,77,158.25a66,66,0,1,1,62,0C161,164.48,180.86,177.41,196.59,196.14ZM108,154a54,54,0,1,0-54-54A54.06,54.06,0,0,0,108,154Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path d="M228.24,76.24l-128,128a6,6,0,0,1-8.48,0l-56-56a6,6,0,0,1,8.48-8.48L96,191.51,219.76,67.76a6,6,0,0,1,8.48,8.48Z"/></symbol>
+    <symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M164.24,203.76a6,6,0,1,1-8.48,8.48l-80-80a6,6,0,0,1,0-8.48l80-80a6,6,0,0,1,8.48,8.48L88.49,128Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H134v82a6,6,0,0,1-12,0V134H40a6,6,0,0,1,0-12h82V40a6,6,0,0,1,12,0v82h82A6,6,0,0,1,222,128Z"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M198,64V168a6,6,0,0,1-12,0V78.48L68.24,196.24a6,6,0,0,1-8.48-8.48L177.52,70H88a6,6,0,0,1,0-12H192A6,6,0,0,1,198,64Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 256 256"><path d="M217.9,110.1l-80-80a14,14,0,0,0-19.8,0l-80,80A13.92,13.92,0,0,0,34,120v96a6,6,0,0,0,6,6H216a6,6,0,0,0,6-6V120A13.92,13.92,0,0,0,217.9,110.1ZM210,210H46V120a2,2,0,0,1,.58-1.42l80-80a2,2,0,0,1,2.84,0l80,80A2,2,0,0,1,210,120Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 256 256"><path d="M230,208a6,6,0,0,1-6,6H32a6,6,0,0,1-6-6V48a6,6,0,0,1,12,0v98.78l54.05-47.3a6,6,0,0,1,7.55-.28l60.11,45.08,60.34-52.8a6,6,0,0,1,7.9,9l-64,56a6,6,0,0,1-7.55.28L96.29,111.72,38,162.72V202H224A6,6,0,0,1,230,208Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 256 256"><path d="M229.19,213c-15.81-27.32-40.63-46.49-69.47-54.62a70,70,0,1,0-63.44,0C67.44,166.5,42.62,185.67,26.81,213a6,6,0,1,0,10.38,6C56.4,185.81,90.34,166,128,166s71.6,19.81,90.81,53a6,6,0,1,0,10.38-6ZM70,96a58,58,0,1,1,58,58A58.07,58.07,0,0,1,70,96Z"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#topo" aria-label="Voluma, início">
+        <img src="assets/icon.png" alt="" width="32" height="32">
+        <span translate="no">voluma</span>
+      </a>
+      <nav aria-label="Seções">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#numeros">Números</a>
+        <a href="#amigos">Amigos</a>
+        <a href="#academias">Academias</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 class="display reveal">O volume do seu treino, semana a semana.</h1>
+          <p class="lead reveal" style="--d:1">Registre cada série em um toque, veja a evolução em números e compare a frequência com seus amigos.</p>
+          <div class="stores reveal" style="--d:2">
+            <span class="store">
+              <svg aria-hidden="true"><use href="#i-apple"/></svg>
+              <span><small>Em breve na</small>App Store</span>
+            </span>
+            <span class="store">
+              <svg aria-hidden="true"><use href="#i-play"/></svg>
+              <span><small>Em breve no</small>Google Play</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="hero__phone reveal" style="--d:1">
+          <div class="phone-wrap">
+            <div class="phone" role="img" aria-label="Tela Hoje do Voluma: treino Push com 13 séries, botão Começar treino e progresso da semana">
+              <div class="screen" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head">
+                  <div class="app-title">Hoje</div>
+                  <div class="app-sub">Segunda · 12 out</div>
+                </div>
+                <div class="app-body">
+                  <div class="card">
+                    <div class="today-head">
+                      <div>
+                        <div class="lbl">SEGUNDA</div>
+                        <div class="sec">Push</div>
+                        <div class="meta">13 séries para hoje</div>
+                      </div>
+                      <div class="ring" style="--p:0">
+                        <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="ring__arc" cx="22" cy="22" r="19"/></svg>
+                        <span>13</span>
+                      </div>
+                    </div>
+                    <div class="ex-row"><span>Supino reto</span><span class="mono-sm">4 × 8 · 80 kg</span></div>
+                    <div class="ex-row"><span>Desenvolvimento</span><span class="mono-sm">3 × 10 · 45 kg</span></div>
+                    <div class="ex-row"><span>Elevação lateral</span><span class="mono-sm">3 × 12 · 12 kg</span></div>
+                    <div class="ex-row"><span>Flexão de braço</span><span class="mono-sm">3 × 15</span></div>
+                  </div>
+                  <div class="btn-accent">Começar treino · 13 séries</div>
+                  <div class="lbl lbl--section">PROGRESSO</div>
+                  <div class="card">
+                    <div class="stats">
+                      <div><b>78,4<i>kg</i></b><span>Peso</span></div>
+                      <div><b>9.870<i>kg</i></b><span>7 dias</span></div>
+                      <div><b>4</b><span>dias seguidos</span></div>
+                    </div>
+                    <div class="matrix" data-matrix="26" data-seed="7"></div>
+                  </div>
+                </div>
+                <div class="tabbar">
+                  <svg class="on"><use href="#i-home"/></svg>
+                  <svg><use href="#i-calendar"/></svg>
+                  <svg><use href="#i-chart"/></svg>
+                  <svg><use href="#i-user"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA: texto rola, celular fica preso e troca de tela -->
+    <section class="how" id="como-funciona" aria-labelledby="how-title">
+      <div class="container">
+        <h2 class="h2" id="how-title">Plano, treino, resultado.</h2>
+      </div>
+      <div class="container how__grid">
+        <div class="how__steps">
+          <article class="step is-active" data-step="0">
+            <h3>Monte a semana.</h3>
+            <p>Cada dia com os seus exercícios, séries e cargas. Comece pelo modelo Push, Pull, Legs nos dias que você treina, ou monte do zero.</p>
+          </article>
+          <article class="step" data-step="1">
+            <h3>Marque a série.</h3>
+            <p>Fez a série, toca na caixa. Embaixo de cada uma fica o que você levantou da última vez, e um toque copia.</p>
+          </article>
+          <article class="step" data-step="2">
+            <h3>Veja o resultado.</h3>
+            <p>Ao finalizar, o volume do dia aparece comparado com o mesmo dia da semana passada. Volume é sempre repetições vezes carga, das séries feitas.</p>
+          </article>
+        </div>
+
+        <div class="how__stage">
+          <div class="phone-wrap">
+            <div class="phone" role="img" aria-label="Telas do Voluma: Plano da semana, registro de séries e resultado do treino">
+              <!-- Plano -->
+              <div class="screen" data-screen="0" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head"><div class="app-title">Plano</div></div>
+                <div class="app-body">
+                  <div class="lbl lbl--section">SUA SEMANA</div>
+                  <div class="card card--list">
+                    <div class="day"><div><b>Segunda</b><span>Push · 4 exercícios</span></div><em>HOJE</em></div>
+                    <div class="day"><div><b>Terça</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Quarta</b><span>Descanso</span></div></div>
+                    <div class="day"><div><b>Quinta</b><span>Legs · 6 exercícios</span></div></div>
+                    <div class="day"><div><b>Sexta</b><span>Push · 4 exercícios</span></div></div>
+                    <div class="day"><div><b>Sábado</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
+                  </div>
+                  <div class="lbl lbl--section">MOVIMENTOS</div>
+                  <div class="card card--row">
+                    <img src="assets/movements/lat-pulldown.svg" alt="" width="44" height="44" loading="lazy">
+                    <div><b>Catálogo</b><span class="meta">adicionar, apagar e organizar por grupo</span></div>
+                  </div>
+                </div>
+                <div class="tabbar">
+                  <svg><use href="#i-home"/></svg>
+                  <svg class="on"><use href="#i-calendar"/></svg>
+                  <svg><use href="#i-chart"/></svg>
+                  <svg><use href="#i-user"/></svg>
+                </div>
+              </div>
+
+              <!-- Treino -->
+              <div class="screen" data-screen="1" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head app-head--back">
+                  <span class="back"><svg><use href="#i-caret-left"/></svg></span>
+                  <div class="app-title app-title--sm">Treino</div>
+                </div>
+                <div class="app-body">
+                  <div class="card">
+                    <div class="ex-head">
+                      <img src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy">
+                      <div><div class="sec sec--sm">Supino reto</div><div class="meta">4 séries · 80 kg</div></div>
+                    </div>
+                    <div class="set is-done">
+                      <div class="set__line"><span class="lbl">SÉRIE 1</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 8 × 77,5 kg</div>
+                    </div>
+                    <div class="set is-done">
+                      <div class="set__line"><span class="lbl">SÉRIE 2</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 8 × 77,5 kg</div>
+                    </div>
+                    <div class="set is-next" data-demo-set>
+                      <div class="set__line"><span class="lbl">SÉRIE 3</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 7 × 77,5 kg</div>
+                      <div class="steppers">
+                        <div class="stepper"><span class="lbl">REPS</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>8</b><svg><use href="#i-plus"/></svg></span></div>
+                        <div class="stepper"><span class="lbl">PESO</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>80 kg</b><svg><use href="#i-plus"/></svg></span></div>
+                      </div>
+                    </div>
+                    <div class="set">
+                      <div class="set__line"><span class="lbl">SÉRIE 4</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="finish">Finalizar treino · <span data-demo-count>2</span> de 13</div>
+              </div>
+
+              <!-- Resultado -->
+              <div class="screen" data-screen="2" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head app-head--back">
+                  <span class="back"><svg><use href="#i-caret-left"/></svg></span>
+                  <div>
+                    <div class="app-title app-title--sm">Resultado</div>
+                    <div class="app-sub">Segunda · 12 out</div>
+                  </div>
+                </div>
+                <div class="app-body">
+                  <div class="result-hero">
+                    <b>4.342<i>kg</i></b>
+                    <div class="lbl">VOLUME LEVANTADO</div>
+                    <p>+7% vs. segunda passada</p>
+                  </div>
+                  <div class="card card--rows">
+                    <div class="row"><span>Exercícios</span><span class="meta">4 de 4</span></div>
+                    <div class="row"><span>Duração</span><span class="meta">48 min</span></div>
+                  </div>
+                  <div class="card card--rows">
+                    <div class="lbl">POR EXERCÍCIO</div>
+                    <div class="row"><span>Supino reto</span><span class="meta">2.560 kg</span></div>
+                    <div class="row"><span>Desenvolvimento</span><span class="meta">1.350 kg</span></div>
+                    <div class="row"><span>Elevação lateral</span><span class="meta">432 kg</span></div>
+                  </div>
+                  <div class="btn-inline">Fechar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMEROS: bento -->
+    <section class="numbers" id="numeros" aria-labelledby="num-title">
+      <div class="container">
+        <h2 class="h2 reveal" id="num-title">Seus números, sem planilha.</h2>
+        <div class="bento">
+          <article class="tile tile--volume reveal">
+            <header><h3>Volume por semana</h3><p>Cada barra é uma semana. A de agora fica em laranja.</p></header>
+            <div class="chart" data-chart="bars" role="img" aria-label="Gráfico de barras do volume nas últimas 12 semanas, subindo de 6,2 mil para 10,4 mil quilos"></div>
+          </article>
+
+          <article class="tile tile--streak reveal" style="--d:1">
+            <header><h3>Sequência</h3></header>
+            <p class="big">23<span>dias seguidos</span></p>
+            <div class="matrix matrix--wide" data-matrix="22" data-seed="3" role="img" aria-label="Grade de pontos dos dias treinados nos últimos meses"></div>
+          </article>
+
+          <article class="tile tile--weight reveal" style="--d:1">
+            <header><h3>Peso corporal</h3></header>
+            <p class="big">78,4<span>kg</span></p>
+            <div class="chart" data-chart="line" role="img" aria-label="Gráfico de linha do peso corporal descendo de 80,6 para 78,4 quilos"></div>
+          </article>
+
+          <article class="tile tile--records reveal">
+            <header><h3>Recordes por movimento</h3></header>
+            <div class="records">
+              <div class="record"><img src="assets/movements/squat.svg" alt="" width="56" height="56" loading="lazy"><span>Agachamento livre</span><b>110<i>kg</i></b></div>
+              <div class="record"><img src="assets/movements/deadlift.svg" alt="" width="56" height="56" loading="lazy"><span>Levantamento terra</span><b>140<i>kg</i></b></div>
+              <div class="record"><img src="assets/movements/bench-press.svg" alt="" width="56" height="56" loading="lazy"><span>Supino reto</span><b>85<i>kg</i></b></div>
+            </div>
+          </article>
+
+          <article class="tile tile--run reveal" style="--d:2">
+            <img class="tile__figure" src="assets/movements/running.svg" alt="" width="140" height="140" loading="lazy">
+            <div>
+              <header><h3>Corrida também conta</h3></header>
+              <p class="big">21,6<span>km no mês</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMIGOS -->
+    <section class="friends" id="amigos" aria-labelledby="friends-title">
+      <div class="container friends__grid">
+        <div class="ranking reveal" role="img" aria-label="Ranking da semana entre amigos: Bruna 5 dias, você 4 dias, Caio 3 dias, Tainá 2 dias">
+          <div class="lbl">ESTA SEMANA</div>
+          <div class="rank" style="--c:#29B6FF"><span class="avatar">BF</span><div><b>Bruna</b><span>@brunaferraz</span></div><span class="days" data-days="5"></span><em>5 dias</em></div>
+          <div class="rank rank--me" style="--c:#FF5C00"><span class="avatar">VC</span><div><b>Você</b><span>@seu.arroba</span></div><span class="days" data-days="4"></span><em>4 dias</em></div>
+          <div class="rank" style="--c:#FF4FC0"><span class="avatar">CM</span><div><b>Caio</b><span>@caiomendes</span></div><span class="days" data-days="3"></span><em>3 dias</em></div>
+          <div class="rank" style="--c:#C6F53D"><span class="avatar">TS</span><div><b>Tainá</b><span>@taina.s</span></div><span class="days" data-days="2"></span><em>2 dias</em></div>
+        </div>
+        <div class="friends__copy">
+          <h2 class="h2 reveal" id="friends-title">Treine junto, mesmo em horários diferentes.</h2>
+          <p class="body reveal">O ranking compara dias treinados na semana, não carga. Assim quem começou agora e quem treina há dez anos disputam no mesmo campo.</p>
+          <ul class="facts">
+            <li class="reveal"><svg aria-hidden="true"><use href="#i-user-plus"/></svg><span>Amigos entram pelo @, nunca pelo e-mail, e só depois de aceitar o pedido.</span></li>
+            <li class="reveal"><svg aria-hidden="true"><use href="#i-eye-slash"/></svg><span>Seus números ficam ocultos até você ligar o compartilhamento.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVIMENTOS: marquee unico da pagina -->
+    <section class="moves" aria-labelledby="moves-title">
+      <div class="container">
+        <h2 class="h2 reveal" id="moves-title">60 movimentos, cada um com a execução animada.</h2>
+        <p class="body reveal">Nomes em português e organizados por grupo muscular. Não achou o seu? Crie o movimento no catálogo.</p>
+      </div>
+      <div class="marquee">
+        <button type="button" class="marquee__toggle" aria-pressed="false" data-marquee-toggle>Pausar</button>
+        <ul class="marquee__track" aria-label="Exemplos de movimentos do catálogo">
+          <li><img src="assets/movements/squat.svg" alt="" loading="lazy" width="120" height="120"><span>Agachamento livre</span></li>
+          <li><img src="assets/movements/pull-up.svg" alt="" loading="lazy" width="120" height="120"><span>Barra fixa</span></li>
+          <li><img src="assets/movements/overhead-press.svg" alt="" loading="lazy" width="120" height="120"><span>Desenvolvimento</span></li>
+          <li><img src="assets/movements/hip-thrust.svg" alt="" loading="lazy" width="120" height="120"><span>Elevação pélvica</span></li>
+          <li><img src="assets/movements/barbell-row.svg" alt="" loading="lazy" width="120" height="120"><span>Remada curvada</span></li>
+          <li><img src="assets/movements/leg-press.svg" alt="" loading="lazy" width="120" height="120"><span>Leg press</span></li>
+          <li><img src="assets/movements/bicep-curl.svg" alt="" loading="lazy" width="120" height="120"><span>Rosca alternada</span></li>
+          <li><img src="assets/movements/lateral-raise.svg" alt="" loading="lazy" width="120" height="120"><span>Elevação lateral</span></li>
+          <li><img src="assets/movements/push-up.svg" alt="" loading="lazy" width="120" height="120"><span>Flexão de braço</span></li>
+          <li><img src="assets/movements/plank.svg" alt="" loading="lazy" width="120" height="120"><span>Prancha</span></li>
+          <li><img src="assets/movements/lat-pulldown.svg" alt="" loading="lazy" width="120" height="120"><span>Puxada alta</span></li>
+          <li><img src="assets/movements/deadlift.svg" alt="" loading="lazy" width="120" height="120"><span>Levantamento terra</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRINCIPIOS -->
+    <section class="principles" aria-labelledby="pr-title">
+      <div class="container principles__grid">
+        <h2 class="h2 reveal" id="pr-title">Feito para usar dentro da academia.</h2>
+        <div class="principles__list">
+          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-wifi-slash"/></svg><div><h3>Funciona sem sinal.</h3><p>Tudo é gravado no celular primeiro. Quando a internet volta, sincroniza sozinho.</p></div></div>
+          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Entra com o Google.</h3><p>Nenhuma senha nova para guardar. E sem conta, o app funciona inteiro no aparelho.</p></div></div>
+          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-cloud"/></svg><div><h3>Troque de celular sem perder nada.</h3><p>Com login, o histórico fica guardado na nuvem e volta no aparelho novo.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIAS: white-label -->
+    <section class="gyms" id="academias" aria-labelledby="gyms-title">
+      <div class="container">
+      <div class="gyms__panel reveal">
+        <div class="gyms__copy">
+          <p class="eyebrow">Para academias</p>
+          <h2 class="h2" id="gyms-title">O app com o nome e a cor da sua academia.</h2>
+          <p class="body">Cada academia ganha o próprio app na loja, com a identidade dela e treinos combinados com o instrutor. Amigos e ranking ficam só entre os alunos de lá.</p>
+          <div class="swatches" role="group" aria-label="Experimente uma cor de academia">
+            <button type="button" class="swatch" style="--c:#FF5C00" aria-pressed="true" data-name="Voluma">Voluma</button>
+            <button type="button" class="swatch" style="--c:#29B6FF" aria-pressed="false" data-name="Atlas CT">Atlas CT</button>
+            <button type="button" class="swatch" style="--c:#C6F53D" aria-pressed="false" data-name="Forja">Forja</button>
+            <button type="button" class="swatch" style="--c:#FF4FC0" aria-pressed="false" data-name="Studio Norte">Studio Norte</button>
+          </div>
+        </div>
+        <div class="gyms__demo" data-gym-demo style="--gym:#FF5C00">
+          <div class="homescreen" aria-hidden="true">
+            <div class="app-icon"><span></span><span></span><span></span><span></span><span></span><span></span><span class="hi"></span></div>
+            <span class="app-name" data-gym-name>Voluma</span>
+          </div>
+          <div class="mini" aria-hidden="true">
+            <div class="lbl">SEGUNDA</div>
+            <div class="sec">Push</div>
+            <div class="meta">13 séries para hoje</div>
+            <div class="btn-accent">Começar treino · 13 séries</div>
+          </div>
+          <p class="sr-only" aria-live="polite" data-gym-live></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- BAIXAR -->
+    <section class="download" id="baixar" aria-labelledby="dl-title">
+      <div class="container download__inner">
+        <img class="download__icon reveal" src="assets/icon.png" alt="Ícone do Voluma" width="112" height="112" loading="lazy">
+        <h2 class="display display--md reveal" id="dl-title">Em breve no seu celular.</h2>
+        <p class="body reveal">O Voluma está chegando à App Store e ao Google Play.</p>
+        <div class="stores reveal">
+          <span class="store">
+            <svg aria-hidden="true"><use href="#i-apple"/></svg>
+            <span><small>Em breve na</small>App Store</span>
+          </span>
+          <span class="store">
+            <svg aria-hidden="true"><use href="#i-play"/></svg>
+            <span><small>Em breve no</small>Google Play</span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand" href="#topo" aria-label="Voluma, voltar ao topo">
+        <img src="assets/icon.png" alt="" width="28" height="28" loading="lazy">
+        <span translate="no">voluma</span>
+      </a>
+      <p>Ilustrações dos exercícios: <a href="https://github.com/bryllim/workout-guide">workout-guide</a> de Bryl Lim, derivadas de <a href="https://github.com/everkinetic/data">Everkinetic</a>, sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.</p>
+      <p>© 2026 Voluma</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
