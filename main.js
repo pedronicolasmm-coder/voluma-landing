@@ -32,11 +32,14 @@
   });
 
   // Dias treinados no ranking: quadrados acesos na cor da pessoa.
-  document.querySelectorAll('[data-days]').forEach((el) => {
+  // --i e --row escalonam o acender: dia a dia, pessoa a pessoa.
+  document.querySelectorAll('[data-days]').forEach((el, row) => {
     const n = Number(el.dataset.days);
     for (let i = 0; i < 7; i += 1) {
       const sq = document.createElement('i');
       if (i < n) sq.className = 'on';
+      sq.style.setProperty('--i', i);
+      sq.style.setProperty('--row', row);
       el.appendChild(sq);
     }
   });
@@ -106,8 +109,8 @@
     grad.appendChild(svgEl('stop', { offset: '1', 'stop-color': 'rgb(255,92,0)', 'stop-opacity': '0' }));
     defs.appendChild(grad);
     svg.appendChild(defs);
-    svg.appendChild(svgEl('path', { d: `${d} L${W - pad} ${H} L${pad} ${H} Z`, fill: 'url(#area)' }));
-    svg.appendChild(svgEl('path', { class: 'line', d, fill: 'none', stroke: '#FF5C00', 'stroke-width': 2, 'vector-effect': 'non-scaling-stroke', 'stroke-linejoin': 'round' }));
+    svg.appendChild(svgEl('path', { class: 'area', d: `${d} L${W - pad} ${H} L${pad} ${H} Z`, fill: 'url(#area)' }));
+    svg.appendChild(svgEl('path', { class: 'line', d, pathLength: 1, fill: 'none', stroke: '#FF5C00', 'stroke-width': 2, 'vector-effect': 'non-scaling-stroke', 'stroke-linejoin': 'round' }));
     el.appendChild(svg);
   };
 
@@ -121,41 +124,42 @@
   });
   document.querySelectorAll('[data-chart="line"]').forEach(drawLine);
 
-  // Entradas ao rolar.
-  const revealIO = new IntersectionObserver((entries) => {
+  // O dado se preenche quando entra na tela: barras sobem, a linha se
+  // desenha, os dias do ranking acendem. Uma vez so.
+  document.querySelectorAll('.chart, .ranking').forEach((el) => el.setAttribute('data-anim', ''));
+  const animIO = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
-      revealIO.unobserve(e.target);
+      animIO.unobserve(e.target);
     });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => revealIO.observe(el));
+  }, { threshold: 0.35 });
+  document.querySelectorAll('[data-anim]').forEach((el) => animIO.observe(el));
+
+  // Topo: o celular mostra o gesto central do app. A serie 3 e marcada, a 4
+  // vira a da vez e tambem e marcada. Duas batidas e para.
+  const demoSet = document.querySelector('[data-demo-set]');
+  const demoNext = document.querySelector('[data-demo-next]');
+  const demoCount = document.querySelector('[data-demo-count]');
+  const check = (set, count) => {
+    set.classList.add('is-done');
+    set.classList.remove('is-next');
+    demoCount.textContent = String(count);
+  };
+  if (!reduce && demoSet && demoNext) {
+    setTimeout(() => {
+      check(demoSet, 3);
+      demoNext.classList.add('is-next');
+    }, 1900);
+    setTimeout(() => check(demoNext, 4), 3500);
+  }
 
   // Como funciona: o passo no meio da tela escolhe a tela do celular.
   const steps = [...document.querySelectorAll('.step')];
   const screens = [...document.querySelectorAll('.how__stage [data-screen]')];
-  const demoSet = document.querySelector('[data-demo-set]');
-  const demoCount = document.querySelector('[data-demo-count]');
-  let demoTimer = 0;
-
-  const playSetDemo = () => {
-    // A serie da vez e marcada sozinha: e a interacao principal do app.
-    clearTimeout(demoTimer);
-    demoSet.classList.remove('is-done');
-    demoSet.classList.add('is-next');
-    demoCount.textContent = '2';
-    if (reduce) return;
-    demoTimer = setTimeout(() => {
-      demoSet.classList.add('is-done');
-      demoSet.classList.remove('is-next');
-      demoCount.textContent = '3';
-    }, 1400);
-  };
-
   const show = (index) => {
     steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
     screens.forEach((s, i) => s.classList.toggle('is-active', i === index));
-    if (index === 1) playSetDemo();
   };
   show(0);
 

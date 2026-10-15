@@ -51,6 +51,7 @@
         <a href="#numeros">Números</a>
         <a href="#amigos">Amigos</a>
         <a href="#academias">Academias</a>
+        <a href="#duvidas">Dúvidas</a>
       </nav>
     </div>
   </header>
@@ -61,9 +62,9 @@
     <section class="hero" id="topo">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <h1 class="display reveal">O volume do seu treino, semana a semana.</h1>
-          <p class="lead reveal" style="--d:1">Registre cada série em um toque, veja a evolução em números e compare a frequência com seus amigos.</p>
-          <div class="stores reveal" style="--d:2">
+          <h1 class="display">O volume do seu treino, semana a semana.</h1>
+          <p class="lead">Registre cada série em um toque, veja a evolução em números e compare a frequência com seus amigos.</p>
+          <div class="stores">
             <span class="store">
               <svg aria-hidden="true"><use href="#i-apple"/></svg>
               <span><small>Em breve na</small>App Store</span>
@@ -75,10 +76,109 @@
           </div>
         </div>
 
-        <div class="hero__phone reveal" style="--d:1">
+        <div class="hero__phone">
           <div class="phone-wrap">
-            <div class="phone" role="img" aria-label="Tela Hoje do Voluma: treino Push com 13 séries, botão Começar treino e progresso da semana">
+            <div class="phone" role="img" aria-label="Tela de treino do Voluma: supino reto, 4 séries de 8 repetições com 80 kg, as séries sendo marcadas uma a uma">
               <div class="screen" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head app-head--back">
+                  <span class="back"><svg><use href="#i-caret-left"/></svg></span>
+                  <div class="app-title app-title--sm">Treino</div>
+                </div>
+                <div class="app-body">
+                  <div class="card">
+                    <div class="ex-head">
+                      <img src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy">
+                      <div><div class="sec sec--sm">Supino reto</div><div class="meta">4 séries · 80 kg</div></div>
+                    </div>
+                    <div class="set is-done">
+                      <div class="set__line"><span class="lbl">SÉRIE 1</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 8 × 77,5 kg</div>
+                    </div>
+                    <div class="set is-done">
+                      <div class="set__line"><span class="lbl">SÉRIE 2</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 8 × 77,5 kg</div>
+                    </div>
+                    <div class="set is-next" data-demo-set>
+                      <div class="set__line"><span class="lbl">SÉRIE 3</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="meta">última vez · 7 × 77,5 kg</div>
+                      <div class="steppers">
+                        <div class="stepper"><span class="lbl">REPS</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>8</b><svg><use href="#i-plus"/></svg></span></div>
+                        <div class="stepper"><span class="lbl">PESO</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>80 kg</b><svg><use href="#i-plus"/></svg></span></div>
+                      </div>
+                    </div>
+                    <div class="set" data-demo-next>
+                      <div class="set__line"><span class="lbl">SÉRIE 4</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                    </div>
+                  </div>
+                  <div class="card card--row card--next">
+                    <img src="assets/movements/overhead-press.svg" alt="" width="44" height="44" loading="lazy">
+                    <div><b>Desenvolvimento</b><span class="meta">3 × 10 · 45 kg</span></div>
+                  </div>
+                </div>
+                <div class="finish">Finalizar treino · <span data-demo-count>2</span> de 13</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA: texto rola, celular fica preso e troca de tela -->
+    <section class="how" id="como-funciona" aria-labelledby="how-title">
+      <div class="container">
+        <h2 class="h2" id="how-title">Plano, treino, resultado.</h2>
+      </div>
+      <div class="container how__grid">
+        <div class="how__steps">
+          <article class="step is-active" data-step="0">
+            <h3>Monte a semana.</h3>
+            <p>Cada dia com os seus exercícios, séries e cargas. Comece pelo modelo Push, Pull, Legs nos dias que você treina, ou monte do zero.</p>
+          </article>
+          <article class="step" data-step="1">
+            <h3>Abra o treino do dia.</h3>
+            <p>A tela Hoje mostra o treino, as séries e um botão só. Dentro do treino, cada série vira uma caixa para marcar, com a carga da última vez embaixo.</p>
+          </article>
+          <article class="step" data-step="2">
+            <h3>Veja o resultado.</h3>
+            <p>Ao finalizar, o volume do dia aparece comparado com o mesmo dia da semana passada. Volume é sempre repetições vezes carga, das séries feitas.</p>
+          </article>
+        </div>
+
+        <div class="how__stage">
+          <div class="phone-wrap">
+            <div class="phone" role="img" aria-label="Telas do Voluma: Plano da semana, treino de hoje e resultado do treino">
+              <!-- Plano -->
+              <div class="screen" data-screen="0" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head"><div class="app-title">Plano</div></div>
+                <div class="app-body">
+                  <div class="lbl lbl--section">SUA SEMANA</div>
+                  <div class="card card--list">
+                    <div class="day"><div><b>Segunda</b><span>Push · 4 exercícios</span></div><em>HOJE</em></div>
+                    <div class="day"><div><b>Terça</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Quarta</b><span>Descanso</span></div></div>
+                    <div class="day"><div><b>Quinta</b><span>Legs · 6 exercícios</span></div></div>
+                    <div class="day"><div><b>Sexta</b><span>Push · 4 exercícios</span></div></div>
+                    <div class="day"><div><b>Sábado</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
+                  </div>
+                  <div class="lbl lbl--section">MOVIMENTOS</div>
+                  <div class="card card--row">
+                    <img src="assets/movements/lat-pulldown.svg" alt="" width="44" height="44" loading="lazy">
+                    <div><b>Catálogo</b><span class="meta">adicionar, apagar e organizar por grupo</span></div>
+                  </div>
+                </div>
+                <div class="tabbar">
+                  <svg><use href="#i-home"/></svg>
+                  <svg class="on"><use href="#i-calendar"/></svg>
+                  <svg><use href="#i-chart"/></svg>
+                  <svg><use href="#i-user"/></svg>
+                </div>
+              </div>
+
+              <!-- Hoje -->
+              <div class="screen" data-screen="1" aria-hidden="true">
                 <div class="status">9:41</div>
                 <div class="app-head">
                   <div class="app-title">Hoje</div>
@@ -120,101 +220,6 @@
                   <svg><use href="#i-user"/></svg>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA: texto rola, celular fica preso e troca de tela -->
-    <section class="how" id="como-funciona" aria-labelledby="how-title">
-      <div class="container">
-        <h2 class="h2" id="how-title">Plano, treino, resultado.</h2>
-      </div>
-      <div class="container how__grid">
-        <div class="how__steps">
-          <article class="step is-active" data-step="0">
-            <h3>Monte a semana.</h3>
-            <p>Cada dia com os seus exercícios, séries e cargas. Comece pelo modelo Push, Pull, Legs nos dias que você treina, ou monte do zero.</p>
-          </article>
-          <article class="step" data-step="1">
-            <h3>Marque a série.</h3>
-            <p>Fez a série, toca na caixa. Embaixo de cada uma fica o que você levantou da última vez, e um toque copia.</p>
-          </article>
-          <article class="step" data-step="2">
-            <h3>Veja o resultado.</h3>
-            <p>Ao finalizar, o volume do dia aparece comparado com o mesmo dia da semana passada. Volume é sempre repetições vezes carga, das séries feitas.</p>
-          </article>
-        </div>
-
-        <div class="how__stage">
-          <div class="phone-wrap">
-            <div class="phone" role="img" aria-label="Telas do Voluma: Plano da semana, registro de séries e resultado do treino">
-              <!-- Plano -->
-              <div class="screen" data-screen="0" aria-hidden="true">
-                <div class="status">9:41</div>
-                <div class="app-head"><div class="app-title">Plano</div></div>
-                <div class="app-body">
-                  <div class="lbl lbl--section">SUA SEMANA</div>
-                  <div class="card card--list">
-                    <div class="day"><div><b>Segunda</b><span>Push · 4 exercícios</span></div><em>HOJE</em></div>
-                    <div class="day"><div><b>Terça</b><span>Pull · 5 exercícios</span></div></div>
-                    <div class="day day--rest"><div><b>Quarta</b><span>Descanso</span></div></div>
-                    <div class="day"><div><b>Quinta</b><span>Legs · 6 exercícios</span></div></div>
-                    <div class="day"><div><b>Sexta</b><span>Push · 4 exercícios</span></div></div>
-                    <div class="day"><div><b>Sábado</b><span>Pull · 5 exercícios</span></div></div>
-                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
-                  </div>
-                  <div class="lbl lbl--section">MOVIMENTOS</div>
-                  <div class="card card--row">
-                    <img src="assets/movements/lat-pulldown.svg" alt="" width="44" height="44" loading="lazy">
-                    <div><b>Catálogo</b><span class="meta">adicionar, apagar e organizar por grupo</span></div>
-                  </div>
-                </div>
-                <div class="tabbar">
-                  <svg><use href="#i-home"/></svg>
-                  <svg class="on"><use href="#i-calendar"/></svg>
-                  <svg><use href="#i-chart"/></svg>
-                  <svg><use href="#i-user"/></svg>
-                </div>
-              </div>
-
-              <!-- Treino -->
-              <div class="screen" data-screen="1" aria-hidden="true">
-                <div class="status">9:41</div>
-                <div class="app-head app-head--back">
-                  <span class="back"><svg><use href="#i-caret-left"/></svg></span>
-                  <div class="app-title app-title--sm">Treino</div>
-                </div>
-                <div class="app-body">
-                  <div class="card">
-                    <div class="ex-head">
-                      <img src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy">
-                      <div><div class="sec sec--sm">Supino reto</div><div class="meta">4 séries · 80 kg</div></div>
-                    </div>
-                    <div class="set is-done">
-                      <div class="set__line"><span class="lbl">SÉRIE 1</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
-                      <div class="meta">última vez · 8 × 77,5 kg</div>
-                    </div>
-                    <div class="set is-done">
-                      <div class="set__line"><span class="lbl">SÉRIE 2</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
-                      <div class="meta">última vez · 8 × 77,5 kg</div>
-                    </div>
-                    <div class="set is-next" data-demo-set>
-                      <div class="set__line"><span class="lbl">SÉRIE 3</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
-                      <div class="meta">última vez · 7 × 77,5 kg</div>
-                      <div class="steppers">
-                        <div class="stepper"><span class="lbl">REPS</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>8</b><svg><use href="#i-plus"/></svg></span></div>
-                        <div class="stepper"><span class="lbl">PESO</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>80 kg</b><svg><use href="#i-plus"/></svg></span></div>
-                      </div>
-                    </div>
-                    <div class="set">
-                      <div class="set__line"><span class="lbl">SÉRIE 4</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="finish">Finalizar treino · <span data-demo-count>2</span> de 13</div>
-              </div>
 
               <!-- Resultado -->
               <div class="screen" data-screen="2" aria-hidden="true">
@@ -254,26 +259,26 @@
     <!-- NUMEROS: bento -->
     <section class="numbers" id="numeros" aria-labelledby="num-title">
       <div class="container">
-        <h2 class="h2 reveal" id="num-title">Seus números, sem planilha.</h2>
+        <h2 class="h2" id="num-title">Seus números, sem planilha.</h2>
         <div class="bento">
-          <article class="tile tile--volume reveal">
+          <article class="tile tile--volume">
             <header><h3>Volume por semana</h3><p>Cada barra é uma semana. A de agora fica em laranja.</p></header>
             <div class="chart" data-chart="bars" role="img" aria-label="Gráfico de barras do volume nas últimas 12 semanas, subindo de 6,2 mil para 10,4 mil quilos"></div>
           </article>
 
-          <article class="tile tile--streak reveal" style="--d:1">
+          <article class="tile tile--streak">
             <header><h3>Sequência</h3></header>
             <p class="big">23<span>dias seguidos</span></p>
             <div class="matrix matrix--wide" data-matrix="22" data-seed="3" role="img" aria-label="Grade de pontos dos dias treinados nos últimos meses"></div>
           </article>
 
-          <article class="tile tile--weight reveal" style="--d:1">
+          <article class="tile tile--weight">
             <header><h3>Peso corporal</h3></header>
             <p class="big">78,4<span>kg</span></p>
             <div class="chart" data-chart="line" role="img" aria-label="Gráfico de linha do peso corporal descendo de 80,6 para 78,4 quilos"></div>
           </article>
 
-          <article class="tile tile--records reveal">
+          <article class="tile tile--records">
             <header><h3>Recordes por movimento</h3></header>
             <div class="records">
               <div class="record"><img src="assets/movements/squat.svg" alt="" width="56" height="56" loading="lazy"><span>Agachamento livre</span><b>110<i>kg</i></b></div>
@@ -282,7 +287,7 @@
             </div>
           </article>
 
-          <article class="tile tile--run reveal" style="--d:2">
+          <article class="tile tile--run">
             <img class="tile__figure" src="assets/movements/running.svg" alt="" width="140" height="140" loading="lazy">
             <div>
               <header><h3>Corrida também conta</h3></header>
@@ -296,7 +301,7 @@
     <!-- AMIGOS -->
     <section class="friends" id="amigos" aria-labelledby="friends-title">
       <div class="container friends__grid">
-        <div class="ranking reveal" role="img" aria-label="Ranking da semana entre amigos: Bruna 5 dias, você 4 dias, Caio 3 dias, Tainá 2 dias">
+        <div class="ranking" role="img" aria-label="Ranking da semana entre amigos: Bruna 5 dias, você 4 dias, Caio 3 dias, Tainá 2 dias">
           <div class="lbl">ESTA SEMANA</div>
           <div class="rank" style="--c:#29B6FF"><span class="avatar">BF</span><div><b>Bruna</b><span>@brunaferraz</span></div><span class="days" data-days="5"></span><em>5 dias</em></div>
           <div class="rank rank--me" style="--c:#FF5C00"><span class="avatar">VC</span><div><b>Você</b><span>@seu.arroba</span></div><span class="days" data-days="4"></span><em>4 dias</em></div>
@@ -304,11 +309,11 @@
           <div class="rank" style="--c:#C6F53D"><span class="avatar">TS</span><div><b>Tainá</b><span>@taina.s</span></div><span class="days" data-days="2"></span><em>2 dias</em></div>
         </div>
         <div class="friends__copy">
-          <h2 class="h2 reveal" id="friends-title">Treine junto, mesmo em horários diferentes.</h2>
-          <p class="body reveal">O ranking compara dias treinados na semana, não carga. Assim quem começou agora e quem treina há dez anos disputam no mesmo campo.</p>
+          <h2 class="h2" id="friends-title">Treine junto, mesmo em horários diferentes.</h2>
+          <p class="body">O ranking compara dias treinados na semana, não carga. Assim quem começou agora e quem treina há dez anos disputam no mesmo campo.</p>
           <ul class="facts">
-            <li class="reveal"><svg aria-hidden="true"><use href="#i-user-plus"/></svg><span>Amigos entram pelo @, nunca pelo e-mail, e só depois de aceitar o pedido.</span></li>
-            <li class="reveal"><svg aria-hidden="true"><use href="#i-eye-slash"/></svg><span>Seus números ficam ocultos até você ligar o compartilhamento.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-user-plus"/></svg><span>Amigos entram pelo @, nunca pelo e-mail, e só depois de aceitar o pedido.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-eye-slash"/></svg><span>Seus números ficam ocultos até você ligar o compartilhamento.</span></li>
           </ul>
         </div>
       </div>
@@ -317,8 +322,8 @@
     <!-- MOVIMENTOS: marquee unico da pagina -->
     <section class="moves" aria-labelledby="moves-title">
       <div class="container">
-        <h2 class="h2 reveal" id="moves-title">60 movimentos, cada um com a execução animada.</h2>
-        <p class="body reveal">Nomes em português e organizados por grupo muscular. Não achou o seu? Crie o movimento no catálogo.</p>
+        <h2 class="h2" id="moves-title">60 movimentos, cada um com a execução animada.</h2>
+        <p class="body">Nomes em português e organizados por grupo muscular. Não achou o seu? Crie o movimento no catálogo.</p>
       </div>
       <div class="marquee">
         <button type="button" class="marquee__toggle" aria-pressed="false" data-marquee-toggle>Pausar</button>
@@ -342,11 +347,11 @@
     <!-- PRINCIPIOS -->
     <section class="principles" aria-labelledby="pr-title">
       <div class="container principles__grid">
-        <h2 class="h2 reveal" id="pr-title">Feito para usar dentro da academia.</h2>
+        <h2 class="h2" id="pr-title">Feito para usar dentro da academia.</h2>
         <div class="principles__list">
-          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-wifi-slash"/></svg><div><h3>Funciona sem sinal.</h3><p>Tudo é gravado no celular primeiro. Quando a internet volta, sincroniza sozinho.</p></div></div>
-          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Entra com o Google.</h3><p>Nenhuma senha nova para guardar. E sem conta, o app funciona inteiro no aparelho.</p></div></div>
-          <div class="pr reveal"><svg aria-hidden="true"><use href="#i-cloud"/></svg><div><h3>Troque de celular sem perder nada.</h3><p>Com login, o histórico fica guardado na nuvem e volta no aparelho novo.</p></div></div>
+          <div class="pr"><svg aria-hidden="true"><use href="#i-wifi-slash"/></svg><div><h3>Funciona sem sinal.</h3><p>Tudo é gravado no celular primeiro. Quando a internet volta, sincroniza sozinho.</p></div></div>
+          <div class="pr"><svg aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Entra com o Google.</h3><p>Nenhuma senha nova para guardar. E sem conta, o app funciona inteiro no aparelho.</p></div></div>
+          <div class="pr"><svg aria-hidden="true"><use href="#i-cloud"/></svg><div><h3>Troque de celular sem perder nada.</h3><p>Com login, o histórico fica guardado na nuvem e volta no aparelho novo.</p></div></div>
         </div>
       </div>
     </section>
@@ -354,9 +359,8 @@
     <!-- ACADEMIAS: white-label -->
     <section class="gyms" id="academias" aria-labelledby="gyms-title">
       <div class="container">
-      <div class="gyms__panel reveal">
+      <div class="gyms__panel">
         <div class="gyms__copy">
-          <p class="eyebrow">Para academias</p>
           <h2 class="h2" id="gyms-title">O app com o nome e a cor da sua academia.</h2>
           <p class="body">Cada academia ganha o próprio app na loja, com a identidade dela e treinos combinados com o instrutor. Amigos e ranking ficam só entre os alunos de lá.</p>
           <div class="swatches" role="group" aria-label="Experimente uma cor de academia">
@@ -383,13 +387,46 @@
       </div>
     </section>
 
+    <!-- DUVIDAS -->
+    <section class="faq" id="duvidas" aria-labelledby="faq-title">
+      <div class="container faq__inner">
+        <h2 class="h2" id="faq-title">Dúvidas frequentes.</h2>
+        <div class="faq__list">
+          <details>
+            <summary>Preciso criar conta?</summary>
+            <p>Não. Sem conta, o Voluma funciona inteiro no celular. O login com Google só entra se você quiser backup na nuvem e amigos.</p>
+          </details>
+          <details>
+            <summary>Funciona sem internet dentro da academia?</summary>
+            <p>Sim. Cada série é gravada no aparelho na hora. Quando a internet volta, o app sincroniza sozinho.</p>
+          </details>
+          <details>
+            <summary>Meus amigos conseguem ver meus treinos?</summary>
+            <p>Só se os dois aceitarem a amizade e você ligar o compartilhamento, que começa desligado. Mesmo assim, o ranking compara dias treinados, não a carga.</p>
+          </details>
+          <details>
+            <summary>Como o volume é calculado?</summary>
+            <p>Repetições vezes carga, somando só as séries que você marcou como feitas. O número nunca é digitado à mão.</p>
+          </details>
+          <details>
+            <summary>Vai ter para iPhone e Android?</summary>
+            <p>Sim. O Voluma está chegando às duas lojas, App Store e Google Play.</p>
+          </details>
+          <details>
+            <summary>Minha academia pode ter um app próprio?</summary>
+            <p>Pode. Cada academia ganha um app com o nome e a cor dela, e os treinos sugeridos são combinados antes com o instrutor.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- BAIXAR -->
     <section class="download" id="baixar" aria-labelledby="dl-title">
       <div class="container download__inner">
-        <img class="download__icon reveal" src="assets/icon.png" alt="Ícone do Voluma" width="112" height="112" loading="lazy">
-        <h2 class="display display--md reveal" id="dl-title">Em breve no seu celular.</h2>
-        <p class="body reveal">O Voluma está chegando à App Store e ao Google Play.</p>
-        <div class="stores reveal">
+        <img class="download__icon" src="assets/icon.png" alt="Ícone do Voluma" width="112" height="112" loading="lazy">
+        <h2 class="display display--md" id="dl-title">Em breve no seu celular.</h2>
+        <p class="body">O Voluma está chegando à App Store e ao Google Play.</p>
+        <div class="stores">
           <span class="store">
             <svg aria-hidden="true"><use href="#i-apple"/></svg>
             <span><small>Em breve na</small>App Store</span>
