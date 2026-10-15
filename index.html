@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Voluma · O volume do seu treino, semana a semana</title>
   <meta name="description" content="Registre cada série em um toque, veja sua evolução em números e compare a frequência com seus amigos. Em breve na App Store e no Google Play.">
-  <meta name="theme-color" content="#0A0A0A">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
   <meta property="og:title" content="Voluma">
   <meta property="og:description" content="O volume do seu treino, semana a semana.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/icon.png">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
-  <link rel="preload" href="assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,18 +38,20 @@
     <symbol id="i-calendar" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Z"/></symbol>
     <symbol id="i-chart" viewBox="0 0 256 256"><path d="M230,208a6,6,0,0,1-6,6H32a6,6,0,0,1-6-6V48a6,6,0,0,1,12,0v98.78l54.05-47.3a6,6,0,0,1,7.55-.28l60.11,45.08,60.34-52.8a6,6,0,0,1,7.9,9l-64,56a6,6,0,0,1-7.55.28L96.29,111.72,38,162.72V202H224A6,6,0,0,1,230,208Z"/></symbol>
     <symbol id="i-user" viewBox="0 0 256 256"><path d="M229.19,213c-15.81-27.32-40.63-46.49-69.47-54.62a70,70,0,1,0-63.44,0C67.44,166.5,42.62,185.67,26.81,213a6,6,0,1,0,10.38,6C56.4,185.81,90.34,166,128,166s71.6,19.81,90.81,53a6,6,0,1,0,10.38-6ZM70,96a58,58,0,1,1,58,58A58.07,58.07,0,0,1,70,96Z"/></symbol>
+    <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M212.24,100.24l-80,80a6,6,0,0,1-8.48,0l-80-80a6,6,0,0,1,8.48-8.48L128,167.51l75.760-75.750a6,6,0,0,1,8.480,8.480Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M220.24,132.24l-72,72a6,6,0,0,1-8.48-8.48L201.51,134H40a6,6,0,0,1,0-12H201.51L139.76,60.24a6,6,0,0,1,8.48-8.48l72,72A6,6,0,0,1,220.24,132.24Z"/></symbol>
   </svg>
 
   <header class="nav">
-    <div class="nav__inner">
+    <div class="container nav__inner">
       <a class="brand" href="#topo" aria-label="Voluma, início">
         <img src="assets/icon.png" alt="" width="32" height="32">
         <span translate="no">voluma</span>
       </a>
       <nav aria-label="Seções">
         <a href="#como-funciona">Como funciona</a>
+        <a href="#movimentos">Movimentos</a>
         <a href="#numeros">Números</a>
-        <a href="#amigos">Amigos</a>
         <a href="#academias">Academias</a>
         <a href="#duvidas">Dúvidas</a>
       </nav>
@@ -58,28 +60,25 @@
 
   <main id="conteudo">
 
-    <!-- HERO -->
+    <!-- HERO: titulo a esquerda, celular flutuando sobre o semicirculo -->
     <section class="hero" id="topo">
+      <div class="hero__disc" aria-hidden="true"><span translate="no">VOLUMA</span></div>
       <div class="container hero__grid">
         <div class="hero__copy">
           <h1 class="display">O volume do seu treino, semana a semana.</h1>
           <p class="lead">Registre cada série em um toque, veja a evolução em números e compare a frequência com seus amigos.</p>
-          <div class="stores">
-            <span class="store">
-              <svg aria-hidden="true"><use href="#i-apple"/></svg>
-              <span><small>Em breve na</small>App Store</span>
-            </span>
-            <span class="store">
-              <svg aria-hidden="true"><use href="#i-play"/></svg>
-              <span><small>Em breve no</small>Google Play</span>
-            </span>
-          </div>
+          <a class="btn" href="#como-funciona">Ver como funciona</a>
+          <a class="chevrons" href="#lojas" aria-label="Ir para a próxima seção">
+            <svg aria-hidden="true"><use href="#i-caret-down"/></svg>
+            <svg aria-hidden="true"><use href="#i-caret-down"/></svg>
+            <svg aria-hidden="true"><use href="#i-caret-down"/></svg>
+          </a>
         </div>
 
-        <div class="hero__phone">
-          <div class="phone-wrap">
-            <div class="phone" role="img" aria-label="Tela de treino do Voluma: supino reto, 4 séries de 8 repetições com 80 kg, as séries sendo marcadas uma a uma">
-              <div class="screen" aria-hidden="true">
+        <div class="hero__stage">
+          <div class="phone-wrap phone-wrap--tilt">
+            <div class="phone" role="img" aria-label="Tela do Voluma escolhida nas miniaturas abaixo" data-hero-phone>
+              <div class="screen is-active" data-screen="treino" aria-hidden="true">
                 <div class="status">9:41</div>
                 <div class="app-head app-head--back">
                   <span class="back"><svg><use href="#i-caret-left"/></svg></span>
@@ -118,67 +117,7 @@
                 </div>
                 <div class="finish">Finalizar treino · <span data-demo-count>2</span> de 13</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA: texto rola, celular fica preso e troca de tela -->
-    <section class="how" id="como-funciona" aria-labelledby="how-title">
-      <div class="container">
-        <h2 class="h2" id="how-title">Plano, treino, resultado.</h2>
-      </div>
-      <div class="container how__grid">
-        <div class="how__steps">
-          <article class="step is-active" data-step="0">
-            <h3>Monte a semana.</h3>
-            <p>Cada dia com os seus exercícios, séries e cargas. Comece pelo modelo Push, Pull, Legs nos dias que você treina, ou monte do zero.</p>
-          </article>
-          <article class="step" data-step="1">
-            <h3>Abra o treino do dia.</h3>
-            <p>A tela Hoje mostra o treino, as séries e um botão só. Dentro do treino, cada série vira uma caixa para marcar, com a carga da última vez embaixo.</p>
-          </article>
-          <article class="step" data-step="2">
-            <h3>Veja o resultado.</h3>
-            <p>Ao finalizar, o volume do dia aparece comparado com o mesmo dia da semana passada. Volume é sempre repetições vezes carga, das séries feitas.</p>
-          </article>
-        </div>
-
-        <div class="how__stage">
-          <div class="phone-wrap">
-            <div class="phone" role="img" aria-label="Telas do Voluma: Plano da semana, treino de hoje e resultado do treino">
-              <!-- Plano -->
-              <div class="screen" data-screen="0" aria-hidden="true">
-                <div class="status">9:41</div>
-                <div class="app-head"><div class="app-title">Plano</div></div>
-                <div class="app-body">
-                  <div class="lbl lbl--section">SUA SEMANA</div>
-                  <div class="card card--list">
-                    <div class="day"><div><b>Segunda</b><span>Push · 4 exercícios</span></div><em>HOJE</em></div>
-                    <div class="day"><div><b>Terça</b><span>Pull · 5 exercícios</span></div></div>
-                    <div class="day day--rest"><div><b>Quarta</b><span>Descanso</span></div></div>
-                    <div class="day"><div><b>Quinta</b><span>Legs · 6 exercícios</span></div></div>
-                    <div class="day"><div><b>Sexta</b><span>Push · 4 exercícios</span></div></div>
-                    <div class="day"><div><b>Sábado</b><span>Pull · 5 exercícios</span></div></div>
-                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
-                  </div>
-                  <div class="lbl lbl--section">MOVIMENTOS</div>
-                  <div class="card card--row">
-                    <img src="assets/movements/lat-pulldown.svg" alt="" width="44" height="44" loading="lazy">
-                    <div><b>Catálogo</b><span class="meta">adicionar, apagar e organizar por grupo</span></div>
-                  </div>
-                </div>
-                <div class="tabbar">
-                  <svg><use href="#i-home"/></svg>
-                  <svg class="on"><use href="#i-calendar"/></svg>
-                  <svg><use href="#i-chart"/></svg>
-                  <svg><use href="#i-user"/></svg>
-                </div>
-              </div>
-
-              <!-- Hoje -->
-              <div class="screen" data-screen="1" aria-hidden="true">
+              <div class="screen" data-screen="hoje" aria-hidden="true">
                 <div class="status">9:41</div>
                 <div class="app-head">
                   <div class="app-title">Hoje</div>
@@ -220,9 +159,34 @@
                   <svg><use href="#i-user"/></svg>
                 </div>
               </div>
-
-              <!-- Resultado -->
-              <div class="screen" data-screen="2" aria-hidden="true">
+              <div class="screen" data-screen="plano" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head"><div class="app-title">Plano</div></div>
+                <div class="app-body">
+                  <div class="lbl lbl--section">SUA SEMANA</div>
+                  <div class="card card--list">
+                    <div class="day"><div><b>Segunda</b><span>Push · 4 exercícios</span></div><em>HOJE</em></div>
+                    <div class="day"><div><b>Terça</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Quarta</b><span>Descanso</span></div></div>
+                    <div class="day"><div><b>Quinta</b><span>Legs · 6 exercícios</span></div></div>
+                    <div class="day"><div><b>Sexta</b><span>Push · 4 exercícios</span></div></div>
+                    <div class="day"><div><b>Sábado</b><span>Pull · 5 exercícios</span></div></div>
+                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
+                  </div>
+                  <div class="lbl lbl--section">MOVIMENTOS</div>
+                  <div class="card card--row">
+                    <img src="assets/movements/lat-pulldown.svg" alt="" width="44" height="44" loading="lazy">
+                    <div><b>Catálogo</b><span class="meta">adicionar, apagar e organizar por grupo</span></div>
+                  </div>
+                </div>
+                <div class="tabbar">
+                  <svg><use href="#i-home"/></svg>
+                  <svg class="on"><use href="#i-calendar"/></svg>
+                  <svg><use href="#i-chart"/></svg>
+                  <svg><use href="#i-user"/></svg>
+                </div>
+              </div>
+              <div class="screen" data-screen="resultado" aria-hidden="true">
                 <div class="status">9:41</div>
                 <div class="app-head app-head--back">
                   <span class="back"><svg><use href="#i-caret-left"/></svg></span>
@@ -252,200 +216,193 @@
               </div>
             </div>
           </div>
+          <div class="thumbs" role="group" aria-label="Escolha a tela do app">
+            <button type="button" class="thumb" data-show="treino" aria-pressed="true"><span class="thumb__screen" data-clone="treino"></span><span>Treino</span></button>
+            <button type="button" class="thumb" data-show="hoje" aria-pressed="false"><span class="thumb__screen" data-clone="hoje"></span><span>Hoje</span></button>
+            <button type="button" class="thumb" data-show="plano" aria-pressed="false"><span class="thumb__screen" data-clone="plano"></span><span>Plano</span></button>
+            <button type="button" class="thumb" data-show="resultado" aria-pressed="false"><span class="thumb__screen" data-clone="resultado"></span><span>Resultado</span></button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- NUMEROS: bento -->
-    <section class="numbers" id="numeros" aria-labelledby="num-title">
+    <!-- LOJAS: no lugar da fileira de marcas -->
+    <section class="brands" id="lojas" aria-labelledby="lojas-title">
+      <div class="container">
+        <h2 class="h3" id="lojas-title">Em breve nas lojas</h2>
+        <p class="small">iPhone e Android, com o mesmo app nos dois.</p>
+        <div class="brands__row">
+          <span class="brand-logo"><svg aria-hidden="true"><use href="#i-apple"/></svg><span>App Store</span></span>
+          <span class="brand-logo"><svg aria-hidden="true"><use href="#i-play"/></svg><span>Google Play</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO DIVIDIDO: painel escuro com figura, texto em painel cinza -->
+    <section class="split" aria-labelledby="split-title">
+      <div class="split__dark">
+        <img src="assets/movements/squat.svg" alt="Figura animada do agachamento livre" width="420" height="420" loading="lazy">
+      </div>
+      <div class="split__panel">
+        <h2 class="h2" id="split-title">Cada série conta.</h2>
+        <p class="body">O Voluma soma repetições vezes carga de cada série que você marca. Nada de planilha e nada de conta feita de cabeça: o volume aparece sozinho, semana a semana.</p>
+        <a class="btn" href="#numeros">Ver os números</a>
+      </div>
+      <div class="split__tile split__tile--grey"><img src="assets/movements/dark/hip-thrust.svg" alt="" width="200" height="200" loading="lazy"></div>
+      <div class="split__tile"><img src="assets/movements/dark/bicep-curl.svg" alt="" width="200" height="200" loading="lazy"></div>
+    </section>
+
+    <!-- FAIXA DA MARCA -->
+    <div class="strip" aria-hidden="true">
+      <span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span>
+    </div>
+
+    <!-- COMO FUNCIONA: lista numerada + card flutuante -->
+    <section class="offer" id="como-funciona" aria-labelledby="offer-title">
+      <div class="container offer__grid">
+        <div>
+          <h2 class="h2" id="offer-title">Como funciona:</h2>
+          <ol class="steps">
+            <li><span class="num">1</span><div><h3>Monte a semana</h3><p>Cada dia com os seus exercícios, séries e cargas. Comece pelo modelo Push, Pull, Legs ou monte do zero.</p></div></li>
+            <li><span class="num">2</span><div><h3>Marque a série</h3><p>Fez a série, toca na caixa. Embaixo de cada uma fica o que você levantou da última vez.</p></div></li>
+            <li><span class="num">3</span><div><h3>Veja o resultado</h3><p>Ao finalizar, o volume do dia aparece comparado com o mesmo dia da semana passada.</p></div></li>
+          </ol>
+        </div>
+        <div class="offer__visual">
+          <article class="pcard" aria-label="Exemplo de resultado de treino">
+            <div class="pcard__img">
+              <b>4.342<i>kg</i></b>
+              <span>VOLUME LEVANTADO</span>
+            </div>
+            <h3>Push · Segunda</h3>
+            <p class="pcard__meta"><span>4 exercícios</span><span>48 min</span></p>
+            <div class="pcard__days" aria-label="Dias treinados na semana: 4">
+              <i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i></i>
+            </div>
+            <p class="pcard__foot">+7% vs. segunda passada</p>
+          </article>
+          <article class="mini" aria-label="Exemplo do ranking de amigos">
+            <span class="avatar" style="--c:#29B6FF">BF</span>
+            <div>
+              <small>Esta semana</small>
+              <b>Bruna treinou 5 dias</b>
+              <span class="mini__days" style="--c:#29B6FF"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVIMENTOS: grade de cards + ver mais -->
+    <section class="collection" id="movimentos" aria-labelledby="mov-title">
+      <div class="container">
+        <h2 class="h2" id="mov-title">60 movimentos, com a execução animada.</h2>
+        <p class="body">Nomes em português, organizados por grupo muscular. Não achou o seu? Crie o movimento no catálogo.</p>
+        <ul class="cards" data-cards>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/bench-press.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Supino reto</h3><p><span>Peito</span><span>Barra</span></p></li>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/squat.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Agachamento livre</h3><p><span>Pernas</span><span>Barra</span></p></li>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/deadlift.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Levantamento terra</h3><p><span>Costas</span><span>Barra</span></p></li>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/pull-up.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Barra fixa</h3><p><span>Costas</span><span>Peso do corpo</span></p></li>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/overhead-press.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Desenvolvimento</h3><p><span>Ombros</span><span>Barra</span></p></li>
+          <li class="mcard"><div class="mcard__img"><img src="assets/movements/dark/hip-thrust.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Elevação pélvica</h3><p><span>Glúteos</span><span>Barra</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/lat-pulldown.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Puxada alta</h3><p><span>Costas</span><span>Polia</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/barbell-row.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Remada curvada</h3><p><span>Costas</span><span>Barra</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/leg-press.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Leg press</h3><p><span>Pernas</span><span>Máquina</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/bicep-curl.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Rosca alternada</h3><p><span>Bíceps</span><span>Halteres</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/lateral-raise.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Elevação lateral</h3><p><span>Ombros</span><span>Halteres</span></p></li>
+          <li class="mcard" data-more><div class="mcard__img"><img src="assets/movements/dark/push-up.svg" alt="" width="180" height="180" loading="lazy"></div><h3>Flexão de braço</h3><p><span>Peito</span><span>Peso do corpo</span></p></li>
+        </ul>
+        <div class="center">
+          <button type="button" class="btn" data-more-toggle aria-expanded="false">Ver mais</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMEROS: faixa escura com cards claros -->
+    <section class="band" id="numeros" aria-labelledby="num-title">
+      <img class="band__bg" src="assets/movements/deadlift.svg" alt="" width="900" height="900" loading="lazy" aria-hidden="true">
       <div class="container">
         <h2 class="h2" id="num-title">Seus números, sem planilha.</h2>
-        <div class="bento">
-          <article class="tile tile--volume">
-            <header><h3>Volume por semana</h3><p>Cada barra é uma semana. A de agora fica em laranja.</p></header>
+        <p class="body">Volume, sequência e peso, desenhados pelo próprio app a cada treino.</p>
+        <div class="band__cards">
+          <article class="dcard">
+            <h3>Volume por semana</h3>
             <div class="chart" data-chart="bars" role="img" aria-label="Gráfico de barras do volume nas últimas 12 semanas, subindo de 6,2 mil para 10,4 mil quilos"></div>
+            <p class="dcard__note">A barra da semana atual fica em laranja.</p>
           </article>
-
-          <article class="tile tile--streak">
-            <header><h3>Sequência</h3></header>
+          <article class="dcard">
+            <h3>Sequência</h3>
             <p class="big">23<span>dias seguidos</span></p>
-            <div class="matrix matrix--wide" data-matrix="22" data-seed="3" role="img" aria-label="Grade de pontos dos dias treinados nos últimos meses"></div>
+            <div class="matrix" data-matrix="18" data-seed="3" role="img" aria-label="Grade de pontos dos dias treinados nos últimos meses"></div>
           </article>
-
-          <article class="tile tile--weight">
-            <header><h3>Peso corporal</h3></header>
+          <article class="dcard">
+            <h3>Peso corporal</h3>
             <p class="big">78,4<span>kg</span></p>
-            <div class="chart" data-chart="line" role="img" aria-label="Gráfico de linha do peso corporal descendo de 80,6 para 78,4 quilos"></div>
-          </article>
-
-          <article class="tile tile--records">
-            <header><h3>Recordes por movimento</h3></header>
-            <div class="records">
-              <div class="record"><img src="assets/movements/squat.svg" alt="" width="56" height="56" loading="lazy"><span>Agachamento livre</span><b>110<i>kg</i></b></div>
-              <div class="record"><img src="assets/movements/deadlift.svg" alt="" width="56" height="56" loading="lazy"><span>Levantamento terra</span><b>140<i>kg</i></b></div>
-              <div class="record"><img src="assets/movements/bench-press.svg" alt="" width="56" height="56" loading="lazy"><span>Supino reto</span><b>85<i>kg</i></b></div>
-            </div>
-          </article>
-
-          <article class="tile tile--run">
-            <img class="tile__figure" src="assets/movements/running.svg" alt="" width="140" height="140" loading="lazy">
-            <div>
-              <header><h3>Corrida também conta</h3></header>
-              <p class="big">21,6<span>km no mês</span></p>
-            </div>
+            <div class="chart chart--line" data-chart="line" role="img" aria-label="Gráfico de linha do peso corporal descendo de 80,6 para 78,4 quilos"></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- AMIGOS -->
-    <section class="friends" id="amigos" aria-labelledby="friends-title">
-      <div class="container friends__grid">
-        <div class="ranking" role="img" aria-label="Ranking da semana entre amigos: Bruna 5 dias, você 4 dias, Caio 3 dias, Tainá 2 dias">
-          <div class="lbl">ESTA SEMANA</div>
-          <div class="rank" style="--c:#29B6FF"><span class="avatar">BF</span><div><b>Bruna</b><span>@brunaferraz</span></div><span class="days" data-days="5"></span><em>5 dias</em></div>
-          <div class="rank rank--me" style="--c:#FF5C00"><span class="avatar">VC</span><div><b>Você</b><span>@seu.arroba</span></div><span class="days" data-days="4"></span><em>4 dias</em></div>
-          <div class="rank" style="--c:#FF4FC0"><span class="avatar">CM</span><div><b>Caio</b><span>@caiomendes</span></div><span class="days" data-days="3"></span><em>3 dias</em></div>
-          <div class="rank" style="--c:#C6F53D"><span class="avatar">TS</span><div><b>Tainá</b><span>@taina.s</span></div><span class="days" data-days="2"></span><em>2 dias</em></div>
-        </div>
-        <div class="friends__copy">
-          <h2 class="h2" id="friends-title">Treine junto, mesmo em horários diferentes.</h2>
-          <p class="body">O ranking compara dias treinados na semana, não carga. Assim quem começou agora e quem treina há dez anos disputam no mesmo campo.</p>
-          <ul class="facts">
-            <li><svg aria-hidden="true"><use href="#i-user-plus"/></svg><span>Amigos entram pelo @, nunca pelo e-mail, e só depois de aceitar o pedido.</span></li>
-            <li><svg aria-hidden="true"><use href="#i-eye-slash"/></svg><span>Seus números ficam ocultos até você ligar o compartilhamento.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- MOVIMENTOS: marquee unico da pagina -->
-    <section class="moves" aria-labelledby="moves-title">
-      <div class="container">
-        <h2 class="h2" id="moves-title">60 movimentos, cada um com a execução animada.</h2>
-        <p class="body">Nomes em português e organizados por grupo muscular. Não achou o seu? Crie o movimento no catálogo.</p>
-      </div>
-      <div class="marquee">
-        <button type="button" class="marquee__toggle" aria-pressed="false" data-marquee-toggle>Pausar</button>
-        <ul class="marquee__track" aria-label="Exemplos de movimentos do catálogo">
-          <li><img src="assets/movements/squat.svg" alt="" loading="lazy" width="120" height="120"><span>Agachamento livre</span></li>
-          <li><img src="assets/movements/pull-up.svg" alt="" loading="lazy" width="120" height="120"><span>Barra fixa</span></li>
-          <li><img src="assets/movements/overhead-press.svg" alt="" loading="lazy" width="120" height="120"><span>Desenvolvimento</span></li>
-          <li><img src="assets/movements/hip-thrust.svg" alt="" loading="lazy" width="120" height="120"><span>Elevação pélvica</span></li>
-          <li><img src="assets/movements/barbell-row.svg" alt="" loading="lazy" width="120" height="120"><span>Remada curvada</span></li>
-          <li><img src="assets/movements/leg-press.svg" alt="" loading="lazy" width="120" height="120"><span>Leg press</span></li>
-          <li><img src="assets/movements/bicep-curl.svg" alt="" loading="lazy" width="120" height="120"><span>Rosca alternada</span></li>
-          <li><img src="assets/movements/lateral-raise.svg" alt="" loading="lazy" width="120" height="120"><span>Elevação lateral</span></li>
-          <li><img src="assets/movements/push-up.svg" alt="" loading="lazy" width="120" height="120"><span>Flexão de braço</span></li>
-          <li><img src="assets/movements/plank.svg" alt="" loading="lazy" width="120" height="120"><span>Prancha</span></li>
-          <li><img src="assets/movements/lat-pulldown.svg" alt="" loading="lazy" width="120" height="120"><span>Puxada alta</span></li>
-          <li><img src="assets/movements/deadlift.svg" alt="" loading="lazy" width="120" height="120"><span>Levantamento terra</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PRINCIPIOS -->
-    <section class="principles" aria-labelledby="pr-title">
-      <div class="container principles__grid">
-        <h2 class="h2" id="pr-title">Feito para usar dentro da academia.</h2>
-        <div class="principles__list">
-          <div class="pr"><svg aria-hidden="true"><use href="#i-wifi-slash"/></svg><div><h3>Funciona sem sinal.</h3><p>Tudo é gravado no celular primeiro. Quando a internet volta, sincroniza sozinho.</p></div></div>
-          <div class="pr"><svg aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Entra com o Google.</h3><p>Nenhuma senha nova para guardar. E sem conta, o app funciona inteiro no aparelho.</p></div></div>
-          <div class="pr"><svg aria-hidden="true"><use href="#i-cloud"/></svg><div><h3>Troque de celular sem perder nada.</h3><p>Com login, o histórico fica guardado na nuvem e volta no aparelho novo.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACADEMIAS: white-label -->
+    <!-- ACADEMIAS: card sobre painel cinza -->
     <section class="gyms" id="academias" aria-labelledby="gyms-title">
-      <div class="container">
-      <div class="gyms__panel">
-        <div class="gyms__copy">
+      <div class="container gyms__wrap">
+        <div class="gyms__card">
           <h2 class="h2" id="gyms-title">O app com o nome e a cor da sua academia.</h2>
           <p class="body">Cada academia ganha o próprio app na loja, com a identidade dela e treinos combinados com o instrutor. Amigos e ranking ficam só entre os alunos de lá.</p>
           <div class="swatches" role="group" aria-label="Experimente uma cor de academia">
             <button type="button" class="swatch" style="--c:#FF5C00" aria-pressed="true" data-name="Voluma">Voluma</button>
             <button type="button" class="swatch" style="--c:#29B6FF" aria-pressed="false" data-name="Atlas CT">Atlas CT</button>
-            <button type="button" class="swatch" style="--c:#C6F53D" aria-pressed="false" data-name="Forja">Forja</button>
+            <button type="button" class="swatch" style="--c:#7BC23A" aria-pressed="false" data-name="Forja">Forja</button>
             <button type="button" class="swatch" style="--c:#FF4FC0" aria-pressed="false" data-name="Studio Norte">Studio Norte</button>
-          </div>
-        </div>
-        <div class="gyms__demo" data-gym-demo style="--gym:#FF5C00">
-          <div class="homescreen" aria-hidden="true">
-            <div class="app-icon"><span></span><span></span><span></span><span></span><span></span><span></span><span class="hi"></span></div>
-            <span class="app-name" data-gym-name>Voluma</span>
-          </div>
-          <div class="mini" aria-hidden="true">
-            <div class="lbl">SEGUNDA</div>
-            <div class="sec">Push</div>
-            <div class="meta">13 séries para hoje</div>
-            <div class="btn-accent">Começar treino · 13 séries</div>
           </div>
           <p class="sr-only" aria-live="polite" data-gym-live></p>
         </div>
-      </div>
+        <div class="gyms__panel" data-gym-demo style="--gym:#FF5C00" aria-hidden="true">
+          <div class="app-icon"><span></span><span></span><span></span><span></span><span></span><span></span><span class="hi"></span></div>
+          <span class="app-name" data-gym-name>Voluma</span>
+          <div class="gyms__btn">Começar treino · 13 séries</div>
+        </div>
       </div>
     </section>
 
     <!-- DUVIDAS -->
     <section class="faq" id="duvidas" aria-labelledby="faq-title">
       <div class="container faq__inner">
-        <h2 class="h2" id="faq-title">Dúvidas frequentes.</h2>
+        <h2 class="h2" id="faq-title">Dúvidas frequentes</h2>
         <div class="faq__list">
-          <details>
-            <summary>Preciso criar conta?</summary>
-            <p>Não. Sem conta, o Voluma funciona inteiro no celular. O login com Google só entra se você quiser backup na nuvem e amigos.</p>
-          </details>
-          <details>
-            <summary>Funciona sem internet dentro da academia?</summary>
-            <p>Sim. Cada série é gravada no aparelho na hora. Quando a internet volta, o app sincroniza sozinho.</p>
-          </details>
-          <details>
-            <summary>Meus amigos conseguem ver meus treinos?</summary>
-            <p>Só se os dois aceitarem a amizade e você ligar o compartilhamento, que começa desligado. Mesmo assim, o ranking compara dias treinados, não a carga.</p>
-          </details>
-          <details>
-            <summary>Como o volume é calculado?</summary>
-            <p>Repetições vezes carga, somando só as séries que você marcou como feitas. O número nunca é digitado à mão.</p>
-          </details>
-          <details>
-            <summary>Vai ter para iPhone e Android?</summary>
-            <p>Sim. O Voluma está chegando às duas lojas, App Store e Google Play.</p>
-          </details>
-          <details>
-            <summary>Minha academia pode ter um app próprio?</summary>
-            <p>Pode. Cada academia ganha um app com o nome e a cor dela, e os treinos sugeridos são combinados antes com o instrutor.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- BAIXAR -->
-    <section class="download" id="baixar" aria-labelledby="dl-title">
-      <div class="container download__inner">
-        <img class="download__icon" src="assets/icon.png" alt="Ícone do Voluma" width="112" height="112" loading="lazy">
-        <h2 class="display display--md" id="dl-title">Em breve no seu celular.</h2>
-        <p class="body">O Voluma está chegando à App Store e ao Google Play.</p>
-        <div class="stores">
-          <span class="store">
-            <svg aria-hidden="true"><use href="#i-apple"/></svg>
-            <span><small>Em breve na</small>App Store</span>
-          </span>
-          <span class="store">
-            <svg aria-hidden="true"><use href="#i-play"/></svg>
-            <span><small>Em breve no</small>Google Play</span>
-          </span>
+          <details><summary>Preciso criar conta?</summary><p>Não. Sem conta, o Voluma funciona inteiro no celular. O login com Google só entra se você quiser backup na nuvem e amigos.</p></details>
+          <details><summary>Funciona sem internet dentro da academia?</summary><p>Sim. Cada série é gravada no aparelho na hora. Quando a internet volta, o app sincroniza sozinho.</p></details>
+          <details><summary>Meus amigos conseguem ver meus treinos?</summary><p>Só se os dois aceitarem a amizade e você ligar o compartilhamento, que começa desligado. Mesmo assim, o ranking compara dias treinados, não a carga.</p></details>
+          <details><summary>Como o volume é calculado?</summary><p>Repetições vezes carga, somando só as séries que você marcou como feitas. O número nunca é digitado à mão.</p></details>
+          <details><summary>Vai ter para iPhone e Android?</summary><p>Sim. O Voluma está chegando às duas lojas, App Store e Google Play.</p></details>
+          <details><summary>Minha academia pode ter um app próprio?</summary><p>Pode. Cada academia ganha um app com o nome e a cor dela, e os treinos sugeridos são combinados antes com o instrutor.</p></details>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <a class="brand" href="#topo" aria-label="Voluma, voltar ao topo">
-        <img src="assets/icon.png" alt="" width="28" height="28" loading="lazy">
-        <span translate="no">voluma</span>
-      </a>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo" translate="no">voluma</span>
+        <p>O volume do seu treino, semana a semana. Registro de séries, evolução em números e amigos no mesmo app.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#movimentos">Movimentos</a>
+        <a href="#numeros">Números</a>
+        <a href="#academias">Academias</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <div class="footer__stores">
+        <h2>Em breve</h2>
+        <span class="store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Em breve na</small>App Store</span></span>
+        <span class="store"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Em breve no</small>Google Play</span></span>
+      </div>
+    </div>
+    <div class="container footer__legal">
       <p>Ilustrações dos exercícios: <a href="https://github.com/bryllim/workout-guide">workout-guide</a> de Bryl Lim, derivadas de <a href="https://github.com/everkinetic/data">Everkinetic</a>, sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.</p>
       <p>© 2026 Voluma</p>
     </div>
