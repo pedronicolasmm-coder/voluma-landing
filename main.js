@@ -130,6 +130,22 @@
     slot.appendChild(copy);
   });
 
+  // O celular e as miniaturas precisam caber inteiros na altura da tela,
+  // inclusive em notebook de 1366x768. Escala entre 0,42 e 0,64.
+  const stage = document.querySelector('.hero__stage');
+  const fitHero = () => {
+    if (!stage) return;
+    if (innerWidth < 900) {
+      stage.style.removeProperty('--s');
+      return;
+    }
+    const thumbsBlock = innerHeight <= 780 ? 140 : 168;
+    const avail = innerHeight - 72 - 48 - thumbsBlock;
+    stage.style.setProperty('--s', Math.max(0.42, Math.min(0.64, avail / 860)).toFixed(3));
+  };
+  fitHero();
+  addEventListener('resize', fitHero);
+
   const thumbs = [...document.querySelectorAll('.thumb')];
   const showScreen = (name) => {
     screens.forEach((s) => s.classList.toggle('is-active', s.dataset.screen === name));
