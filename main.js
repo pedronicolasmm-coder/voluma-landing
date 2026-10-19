@@ -112,26 +112,13 @@
   }, { threshold: 0.35 });
   document.querySelectorAll('[data-anim]').forEach((el) => animIO.observe(el));
 
-  // HERO: as miniaturas sao copias das telas reais, como as cores do tenis na
-  // referencia. Tocar numa troca a tela do celular.
+  // HERO: os botoes em pilula trocam a tela do celular.
   const phone = document.querySelector('[data-hero-phone]');
   const screens = phone ? [...phone.querySelectorAll('[data-screen]')] : [];
   const names = { treino: 'Treino', hoje: 'Hoje', plano: 'Plano', resultado: 'Resultado' };
-  document.querySelectorAll('[data-clone]').forEach((slot) => {
-    const src = phone.querySelector(`[data-screen="${slot.dataset.clone}"]`);
-    if (!src) return;
-    const copy = src.cloneNode(true);
-    copy.removeAttribute('data-screen');
-    copy.querySelectorAll('[data-demo-set],[data-demo-next],[data-demo-count]').forEach((n) => {
-      n.removeAttribute('data-demo-set');
-      n.removeAttribute('data-demo-next');
-      n.removeAttribute('data-demo-count');
-    });
-    slot.appendChild(copy);
-  });
 
-  // O celular e as miniaturas precisam caber inteiros na altura da tela,
-  // inclusive em notebook de 1366x768. Escala entre 0,42 e 0,64.
+  // O celular precisa caber inteiro na altura da tela,
+  // inclusive em notebook de 1366x768. Escala entre 0,42 e 0,7.
   const stage = document.querySelector('.hero__stage');
   const fitHero = () => {
     if (!stage) return;
@@ -139,21 +126,72 @@
       stage.style.removeProperty('--s');
       return;
     }
-    // As miniaturas ficam ao lado do celular, entao ele usa a altura toda.
-    const avail = innerHeight - 72 - 56;
-    stage.style.setProperty('--s', Math.max(0.42, Math.min(0.64, avail / 860)).toFixed(3));
+    // Um celular so: ele usa a altura toda da tela.
+    const avail = innerHeight - 72 - 40;
+    stage.style.setProperty('--s', Math.max(0.42, Math.min(0.7, avail / 860)).toFixed(3));
   };
   fitHero();
   addEventListener('resize', fitHero);
 
-  const thumbs = [...document.querySelectorAll('.thumb')];
-  const showScreen = (name) => {
-    screens.forEach((s) => s.classList.toggle('is-active', s.dataset.screen === name));
-    thumbs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.show === name)));
-    phone.setAttribute('aria-label', `Tela ${names[name]} do Voluma`);
+  const switchBtns = [...document.querySelectorAll(".switch__btn")];
+  const phoneWrap = document.querySelector(".hero__stage .phone-wrap");
+  const showScreen = (name, { bump = true } = {}) => {
+    screens.forEach((s) => s.classList.toggle("is-active", s.dataset.screen === name));
+    switchBtns.forEach((t) => t.setAttribute("aria-pressed", String(t.dataset.show === name)));
+    phone.setAttribute("aria-label", `Tela ${names[name]} do Voluma`);
+    // O celular "pulsa" quando a tela troca: liga o botao ao que mudou.
+    if (bump && !reduce && phoneWrap?.animate) {
+      phoneWrap.animate([{ scale: 1 }, { scale: 0.965 }, { scale: 1 }], { duration: 360, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+    }
   };
-  thumbs.forEach((t) => t.addEventListener('click', () => showScreen(t.dataset.show)));
-  if (phone) showScreen('treino');
+
+  // Demonstracao: depois que o treino termina de se marcar, o site passa
+  // pelas telas sozinho UMA vez. O botao ativo enche (barrinha) e o celular
+  // troca quando ela completa. Qualquer toque no seletor para de vez.
+  const tour = ["hoje", "plano", "resultado", "treino"];
+  const STEP = 3200;
+  let tourTimer = 0;
+  let tourOn = false;
+  const clearTiming = () => switchBtns.forEach((t) => t.classList.remove("is-timing"));
+  const stopTour = () => {
+    tourOn = false;
+    clearTimeout(tourTimer);
+    clearTiming();
+  };
+  const runTour = (i) => {
+    if (!tourOn || i >= tour.length) return stopTour();
+    const current = switchBtns.find((t) => t.getAttribute("aria-pressed") === "true");
+    clearTiming();
+    if (current) {
+      current.style.setProperty("--dur", `${STEP}ms`);
+      void current.offsetWidth; // reinicia a animacao da barrinha
+      current.classList.add("is-timing");
+    }
+    tourTimer = setTimeout(() => {
+      if (!tourOn) return;
+      showScreen(tour[i]);
+      runTour(i + 1);
+    }, STEP);
+  };
+  switchBtns.forEach((t) => t.addEventListener("click", () => {
+    stopTour();
+    showScreen(t.dataset.show);
+  }));
+  document.querySelector(".switch")?.addEventListener("pointerenter", stopTour);
+  if (phone) showScreen("treino", { bump: false });
+  if (!reduce && phone) {
+    // So comeca se o topo ainda estiver na tela; para se a pessoa rolar.
+    let heroVisible = true;
+    new IntersectionObserver(([e]) => {
+      heroVisible = e.isIntersecting;
+      if (!heroVisible) stopTour();
+    }, { threshold: 0.3 }).observe(document.querySelector(".hero"));
+    setTimeout(() => {
+      if (!heroVisible) return;
+      tourOn = true;
+      runTour(0);
+    }, 4200);
+  }
 
   // Na tela Treino, a serie 3 e marcada, a 4 vira a da vez e e marcada.
   // Duas batidas e para: e o gesto central do app.

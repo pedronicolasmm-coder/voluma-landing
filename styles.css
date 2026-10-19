@@ -123,7 +123,7 @@ main { overflow-x: clip; }
   position: absolute;
   top: 50%;
   right: calc(-1 * clamp(260px, 22vw, 380px));
-  width: clamp(560px, 50vw, 820px);
+  width: min(clamp(560px, 50vw, 820px), calc(100svh - 96px));
   aspect-ratio: 1;
   translate: 0 -50%;
   border-radius: 50%;
@@ -136,38 +136,49 @@ main { overflow-x: clip; }
 }
 .hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(24px, 4vw, 64px); }
 .hero__copy { display: grid; justify-items: start; gap: 26px; }
-.chevrons { display: grid; justify-items: center; color: var(--ink); margin-left: 22px; }
-.chevrons svg { width: 26px; height: 26px; fill: currentColor; margin-top: -16px; }
-.chevrons svg:first-child { margin-top: 0; }
 /* O celular fica sempre a esquerda da palavra; o --s e ajustado pelo JS
    para o topo inteiro (celular + miniaturas) caber na altura da tela. */
-/* Celular grande a direita, miniaturas em grade 2x2 a esquerda dele: assim
-   as duas coisas ganham a altura toda da tela. O --s e ajustado pelo JS. */
-.hero__stage { display: grid; grid-template-columns: auto auto; align-items: center; gap: clamp(40px, 4vw, 64px); margin-right: calc(min(8.5vw, 12svh, 9rem) + clamp(28px, 4vw, 72px)); --s: 0.64; }
+/* Um celular so, grande, a direita. As telas trocam pelos botoes em pilula
+   embaixo do botao principal. O --s e ajustado pelo JS a altura da tela. */
+.hero__stage { display: grid; justify-items: center; margin-right: calc(min(8.5vw, 12svh, 9rem) + clamp(28px, 4vw, 72px)); --s: 0.64; }
 .phone-wrap--tilt { rotate: -7deg; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.28)); }
-.thumbs { order: -1; display: grid; grid-template-columns: repeat(2, auto); gap: 18px 14px; --tw: 72; }
-.thumb { display: grid; justify-items: center; gap: 8px; padding: 0; border: 0; background: none; cursor: pointer; font: 500 13px/1 var(--sans); color: var(--ink-2); }
-.thumb__screen {
+.switch-wrap { display: grid; justify-items: start; gap: 10px; margin-top: 8px; }
+.switch-label { display: inline-flex; align-items: center; gap: 8px; font: 500 14px/1.3 var(--sans); color: var(--ink); }
+.switch-label svg { width: 18px; height: 18px; fill: var(--accent); flex: none; }
+.switch { display: flex; flex-wrap: wrap; gap: 4px; padding: 5px; border-radius: 999px; background: var(--grey-2); }
+.switch__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 14px/1 var(--sans);
+  cursor: pointer;
+  transition: background-color 200ms var(--ease), color 200ms var(--ease), transform 160ms var(--ease);
   position: relative;
-  width: calc(var(--tw) * 1px);
-  height: calc(var(--tw) * 2.2337px);
-  border-radius: 14px;
   overflow: hidden;
-  background: #0A0A0A;
-  box-shadow: 0 0 0 1px var(--line), 0 10px 22px -12px rgba(0, 0, 0, 0.45);
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
-.thumb__screen > .screen { position: absolute; inset: auto; top: 0; left: 0; width: 368px; height: 822px; transform: scale(calc(var(--tw) / 368)); transform-origin: 0 0; border-radius: 0; opacity: 1 !important; }
-.thumb > span:last-child { background: #fff; border-radius: 999px; padding: 3px 8px; }
-.thumb[aria-pressed="true"] { color: var(--ink); }
-.thumb[aria-pressed="true"] .thumb__screen { box-shadow: 0 0 0 2px var(--ink), 0 10px 22px -12px rgba(0, 0, 0, 0.45); }
-@media (max-height: 560px) and (min-width: 900px) {
-  .thumbs { --tw: 60; gap: 12px 12px; }
-}
+/* Barrinha de progresso da demonstracao automatica: o botao enche e o
+   celular troca quando ela completa. linear porque e progresso. */
+.switch__btn::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 5px; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.7); transform: scaleX(0); transform-origin: left; }
+.switch__btn.is-timing::after { animation: fillBar var(--dur, 3500ms) linear forwards; }
+@keyframes fillBar { to { transform: scaleX(1); } }
+/* Troca de tela: a nova desliza um pouco para cima enquanto aparece. */
+.phone .screen { translate: 0 14px; }
+.phone .screen.is-active { translate: 0 0; }
+.switch__btn svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.switch__btn[aria-pressed="true"] { background: var(--ink); color: #fff; }
 @media (max-width: 899px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__stage { grid-template-columns: 1fr; justify-items: center; margin-right: 0; --s: 0.62; }
-  .thumbs { order: 0; display: flex; gap: 12px; --tw: 64; }
+  .hero__stage { margin-right: 0; --s: 0.62; }
+  .switch { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; border-radius: 22px; }
+  .switch__btn { flex-direction: column; gap: 6px; padding: 10px 4px 12px; font-size: 12px; }
+  .switch__btn::after { left: 18px; right: 18px; bottom: 4px; }
+  .switch-wrap { justify-items: stretch; }
+  .switch-label svg { rotate: 90deg; }
   .hero__disc { top: auto; bottom: -160px; right: -220px; translate: none; width: 560px; }
   .hero__word { display: none; }
   .hero { min-height: 0; }
@@ -351,7 +362,7 @@ main { overflow-x: clip; }
     #0A0A0A;
   font: 400 15px/1.35 var(--sans);
 }
-.phone .screen { opacity: 0; transition: opacity 0.35s var(--ease); }
+.phone .screen { opacity: 0; transition: opacity 0.35s var(--ease), translate 0.45s var(--ease); }
 .phone .screen.is-active { opacity: 1; }
 .screen .card { position: relative; background: rgba(255, 255, 255, 0.06); padding: 18px 20px; border-radius: 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.05); }
 
@@ -441,8 +452,8 @@ main { overflow-x: clip; }
    (e nao transform) para nao brigar com o hover e o toque, que usam transform. */
 
 /* Toque e clique: tudo que e clicavel afunda um pouco, como botao fisico. */
-.thumb, .brand-logo, .faq summary, .footer nav a { transition: transform 160ms var(--ease), color 0.2s, background-color 0.2s; }
-.btn:active, .swatch:active, .thumb:active, .mcard:active, .brand-logo:active, .faq summary:active, .footer nav a:active, .gyms__panel:active .app-icon { transform: scale(0.97); }
+.brand-logo, .faq summary, .footer nav a { transition: transform 160ms var(--ease), color 0.2s, background-color 0.2s; }
+.btn:active, .swatch:active, .switch__btn:active, .mcard:active, .brand-logo:active, .faq summary:active, .footer nav a:active, .gyms__panel:active .app-icon { transform: scale(0.97); }
 .mcard__img img, .split__tile img, .dcard, .pcard, .app-icon, .swatch::before { transition: transform 400ms var(--ease); }
 .faq summary { border-radius: 12px; }
 
@@ -455,7 +466,7 @@ main { overflow-x: clip; }
   .nav nav a:hover { background: transparent; }
   .nav nav a::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 3px; height: 1.5px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 250ms var(--ease); }
   .nav nav a:hover::after { transform: scaleX(1); }
-  .thumb:hover .thumb__screen { transform: translateY(-4px); }
+  .switch__btn:not([aria-pressed="true"]):hover { background: #fff; }
   .mcard:hover { transform: translateY(-6px); box-shadow: 0 32px 56px -24px rgba(20, 20, 20, 0.3), 0 2px 6px rgba(20, 20, 20, 0.04); }
   .mcard:hover .mcard__img img { transform: scale(1.07); }
   .split__tile:hover img { transform: scale(1.08) rotate(-2deg); }
@@ -474,15 +485,10 @@ main { overflow-x: clip; }
   .js .hero h1 { animation: lineUp 1000ms var(--ease) 80ms both; }
   .js .hero .lead { animation: fadeUp 800ms var(--ease) 240ms both; }
   .js .hero .btn { animation: fadeUp 800ms var(--ease) 340ms both; }
-  .js .hero .chevrons { animation: fadeUp 800ms var(--ease) 440ms both, nudge 1.6s var(--ease-in-out) 1.8s 3; }
   .js .hero__disc { animation: discIn 1200ms var(--ease) both; }
   .js .hero__word { animation: wordIn 1100ms var(--ease-in-out) 400ms both; }
   .js .hero__stage .phone-wrap { animation: rise 1100ms var(--ease) 150ms both; }
-  .js .thumb { animation: fadeUp 600ms var(--ease) both; }
-  .js .thumb:nth-child(1) { animation-delay: 700ms; }
-  .js .thumb:nth-child(2) { animation-delay: 770ms; }
-  .js .thumb:nth-child(3) { animation-delay: 840ms; }
-  .js .thumb:nth-child(4) { animation-delay: 910ms; }
+  .js .switch-wrap { animation: fadeUp 800ms var(--ease) 440ms both; }
 
   /* Os graficos se desenham quando entram na tela. */
   .js [data-anim] .bar { transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%; transition: transform 0.9s var(--ease); transition-delay: calc(var(--i) * 45ms); }
@@ -528,7 +534,7 @@ main { overflow-x: clip; }
 /* Menos movimento: sem deslocamento, so um fade curto. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .phone .screen { transition: none; }
+  .phone .screen { transition: none; translate: none; }
   .js [data-reveal] { transition: opacity 400ms ease var(--d, 0ms); }
   .js [data-reveal]:not([data-visible]) { opacity: 0; }
 }
