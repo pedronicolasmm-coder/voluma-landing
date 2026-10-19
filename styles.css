@@ -60,6 +60,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 ::selection { background: var(--ink); color: #fff; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
 
+main { overflow-x: clip; }
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
 .center { display: flex; justify-content: center; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -140,31 +141,33 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .chevrons svg:first-child { margin-top: 0; }
 /* O celular fica sempre a esquerda da palavra; o --s e ajustado pelo JS
    para o topo inteiro (celular + miniaturas) caber na altura da tela. */
-.hero__stage { display: grid; justify-items: center; gap: 18px; margin-right: calc(min(8.5vw, 12svh, 9rem) + clamp(28px, 4vw, 72px)); --s: 0.64; }
+/* Celular grande a direita, miniaturas em grade 2x2 a esquerda dele: assim
+   as duas coisas ganham a altura toda da tela. O --s e ajustado pelo JS. */
+.hero__stage { display: grid; grid-template-columns: auto auto; align-items: center; gap: clamp(40px, 4vw, 64px); margin-right: calc(min(8.5vw, 12svh, 9rem) + clamp(28px, 4vw, 72px)); --s: 0.64; }
 .phone-wrap--tilt { rotate: -7deg; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.28)); }
-.thumbs { display: flex; gap: 12px; }
-.thumb { display: grid; justify-items: center; gap: 6px; padding: 0; border: 0; background: none; cursor: pointer; font: 500 12px/1 var(--sans); color: var(--ink-2); }
+.thumbs { order: -1; display: grid; grid-template-columns: repeat(2, auto); gap: 18px 14px; --tw: 72; }
+.thumb { display: grid; justify-items: center; gap: 8px; padding: 0; border: 0; background: none; cursor: pointer; font: 500 13px/1 var(--sans); color: var(--ink-2); }
 .thumb__screen {
   position: relative;
-  width: 58px;
-  height: 130px;
-  border-radius: 12px;
+  width: calc(var(--tw) * 1px);
+  height: calc(var(--tw) * 2.2337px);
+  border-radius: 14px;
   overflow: hidden;
   background: #0A0A0A;
-  box-shadow: 0 0 0 1px var(--line), 0 8px 18px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 1px var(--line), 0 10px 22px -12px rgba(0, 0, 0, 0.45);
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
-.thumb__screen > .screen { position: absolute; inset: auto; top: 0; left: 0; width: 368px; height: 822px; transform: scale(0.1576); transform-origin: 0 0; border-radius: 0; opacity: 1 !important; }
-.thumb > span:last-child { background: #fff; border-radius: 999px; padding: 3px 7px; }
+.thumb__screen > .screen { position: absolute; inset: auto; top: 0; left: 0; width: 368px; height: 822px; transform: scale(calc(var(--tw) / 368)); transform-origin: 0 0; border-radius: 0; opacity: 1 !important; }
+.thumb > span:last-child { background: #fff; border-radius: 999px; padding: 3px 8px; }
 .thumb[aria-pressed="true"] { color: var(--ink); }
-.thumb[aria-pressed="true"] .thumb__screen { box-shadow: 0 0 0 2px var(--ink), 0 8px 18px -10px rgba(0, 0, 0, 0.4); }
-@media (max-height: 780px) and (min-width: 900px) {
-  .thumb__screen { width: 46px; height: 103px; border-radius: 10px; }
-  .thumb__screen > .screen { transform: scale(0.125); }
+.thumb[aria-pressed="true"] .thumb__screen { box-shadow: 0 0 0 2px var(--ink), 0 10px 22px -12px rgba(0, 0, 0, 0.45); }
+@media (max-height: 560px) and (min-width: 900px) {
+  .thumbs { --tw: 60; gap: 12px 12px; }
 }
 @media (max-width: 899px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__stage { margin-right: 0; --s: 0.62; }
+  .hero__stage { grid-template-columns: 1fr; justify-items: center; margin-right: 0; --s: 0.62; }
+  .thumbs { order: 0; display: flex; gap: 12px; --tw: 64; }
   .hero__disc { top: auto; bottom: -160px; right: -220px; translate: none; width: 560px; }
   .hero__word { display: none; }
   .hero { min-height: 0; }

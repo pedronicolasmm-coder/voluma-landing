@@ -139,8 +139,8 @@
       stage.style.removeProperty('--s');
       return;
     }
-    const thumbsBlock = innerHeight <= 780 ? 140 : 168;
-    const avail = innerHeight - 72 - 48 - thumbsBlock;
+    // As miniaturas ficam ao lado do celular, entao ele usa a altura toda.
+    const avail = innerHeight - 72 - 56;
     stage.style.setProperty('--s', Math.max(0.42, Math.min(0.64, avail / 860)).toFixed(3));
   };
   fitHero();
