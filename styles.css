@@ -508,6 +508,15 @@ main { overflow-x: clip; }
 .cta-final .h2 { max-width: 20ch; }
 .cta-final p { color: #D2D2D2; max-width: 50ch; }
 
+/* ========== PAGINA DE CREDITOS ========== */
+.credits { max-width: 760px; display: grid; justify-items: start; gap: 36px; padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(72px, 9vw, 120px); }
+.credits section { display: grid; gap: 10px; }
+.credits h2 { font: 600 18px/1.3 var(--sans); }
+.credits p { color: var(--ink-2); max-width: 62ch; }
+.credits a:not(.btn) { color: var(--ink); text-underline-offset: 3px; }
+.footer__legal p:first-child a { color: #B5B5B5; }
+.footer__legal p:first-child a:hover { color: #fff; }
+
 /* ========== MOVIMENTO ==========
    Curvas da skill animate (Emil Kowalski): --ease (saida forte) em entradas
    e hover, --ease-in-out no que se move pela tela. O estado padrao e sempre
