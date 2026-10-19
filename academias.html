@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voluma para academias · O app de treino com a marca da sua academia</title>
+  <meta name="description" content="Seus alunos registram cada série num app com o nome, o ícone e a cor da sua academia. A equipe do Voluma publica e mantém o app para você.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
+  <meta property="og:title" content="Voluma para academias">
+  <meta property="og:description" content="O app de treino com o nome e a cor da sua academia.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon.png">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Sprite de icones: Phosphor Icons (peso light), MIT -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-apple" viewBox="0 0 256 256"><path d="M219.4,167.84C201.71,155.69,198,135.12,198,120c0-18.42,13.86-34.29,22.12-42.12a6,6,0,0,0,0-8.71C208,57.7,187.07,50,168,50a70.23,70.23,0,0,0-40,12.55,69.6,69.6,0,0,0-89.31,8.08A72.63,72.63,0,0,0,18,123.35a125.11,125.11,0,0,0,39.53,88.33A37.85,37.85,0,0,0,83.6,222h87.7A37.83,37.83,0,0,0,199,210.07a122.6,122.6,0,0,0,17.54-24.2c6.55-12,5.77-13.75,5-15.48A6.07,6.07,0,0,0,219.4,167.84Zm-29.23,34A25.82,25.82,0,0,1,171.3,210H83.6A25.85,25.85,0,0,1,65.78,203,113.21,113.21,0,0,1,30,123a60.55,60.55,0,0,1,17.21-44A56.82,56.82,0,0,1,88,62h.81a57.35,57.35,0,0,1,35.44,12.71,6,6,0,0,0,7.5,0A57.39,57.39,0,0,1,168,62c13.89,0,28.81,4.68,39.11,12-9.44,10.14-21.1,26.59-21.1,46,0,23.78,7.81,42.6,22.66,54.77A107.33,107.33,0,0,1,190.17,201.89Zm-60-171.39A38,38,0,0,1,167,2h1a6,6,0,0,1,0,12h-1a26,26,0,0,0-25.18,19.5,6,6,0,1,1-11.62-3Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 256 256"><path d="M238.84,115.93,71,19.89a14,14,0,0,0-14.12,0A13.68,13.68,0,0,0,50,31.87V224.13a13.68,13.68,0,0,0,6.92,11.94,14,14,0,0,0,14.12,0l167.8-96a13.75,13.75,0,0,0,0-24.14ZM62,217.5V38.5L151.51,128Zm98-81,22.19,22.19L78.4,218.07ZM78.4,37.93l103.79,59.4L160,119.52ZM233,129.58l-.1.06L193,152.49,168.49,128,193,103.51l39.94,22.85.1.06a1.76,1.76,0,0,1,0,3.16Z"/></symbol>
+    <symbol id="i-wifi-slash" viewBox="0 0 256 256"><path d="M138,204a10,10,0,1,1-10-10A10,10,0,0,1,138,204ZM52.44,36A6,6,0,0,0,43.56,44L61.33,63.58a169.41,169.41,0,0,0-41.14,25,6,6,0,1,0,7.62,9.27A157.58,157.58,0,0,1,69.91,73l26.48,29.13a122.21,122.21,0,0,0-44.12,22.19,6,6,0,0,0,7.46,9.41,110,110,0,0,1,45.87-21.47l31.13,34.25A74.4,74.4,0,0,0,128,146a73.44,73.44,0,0,0-43.53,14.15A6,6,0,0,0,88,171a5.93,5.93,0,0,0,3.53-1.15,62,62,0,0,1,59.76-7.31L203.56,220a6,6,0,0,0,8.88-8.08ZM235.81,88.55A170.32,170.32,0,0,0,128,50a173.45,173.45,0,0,0-21.76,1.38,6,6,0,1,0,1.52,11.9A160.58,160.58,0,0,1,128,62,158.26,158.26,0,0,1,228.19,97.82a6,6,0,1,0,7.62-9.27Zm-39.54,45.2A6,6,0,0,0,200,135a6,6,0,0,0,3.73-10.7,122.26,122.26,0,0,0-50.9-23.81,6,6,0,1,0-2.43,11.75A110,110,0,0,1,196.27,133.75Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 256 256"><path d="M208,82H174V56a46,46,0,0,0-92,0V82H48A14,14,0,0,0,34,96V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V96A14,14,0,0,0,208,82ZM94,56a34,34,0,0,1,68,0V82H94ZM210,208a2,2,0,0,1-2,2H48a2,2,0,0,1-2-2V96a2,2,0,0,1,2-2H208a2,2,0,0,1,2,2Z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 256 256"><path d="M188.24,164.24a6,6,0,0,1-8.48,0L158,142.49V208a6,6,0,0,1-12,0V142.49l-21.76,21.75a6,6,0,0,1-8.48-8.48l32-32a6,6,0,0,1,8.48,0l32,32A6,6,0,0,1,188.24,164.24ZM160,42A86.1,86.1,0,0,0,82.43,90.88,62,62,0,1,0,72,214h40a6,6,0,0,0,0-12H72a50,50,0,0,1,0-100,50.68,50.68,0,0,1,5.91.36A85.54,85.54,0,0,0,74,128a6,6,0,0,0,12,0,74,74,0,1,1,103.6,67.85,6,6,0,0,0,4.8,11A86,86,0,0,0,160,42Z"/></symbol>
+    <symbol id="i-eye-slash" viewBox="0 0 256 256"><path d="M52.44,36A6,6,0,0,0,43.56,44L64.44,67c-37.28,21.9-53.23,57-53.92,58.57a6,6,0,0,0,0,4.88c.34.77,8.66,19.22,27.24,37.8C55,185.47,84.62,206,128,206a124.91,124.91,0,0,0,52.57-11.25l23,25.29a6,6,0,0,0,8.88-8.08Zm48.62,71.32,45,49.52a34,34,0,0,1-45-49.52ZM128,194c-31.38,0-58.78-11.42-81.45-33.93A134.57,134.57,0,0,1,22.69,128c4.29-8.2,20.1-35.18,50-51.91L92.89,98.3a46,46,0,0,0,61.35,67.48l17.81,19.6A113.47,113.47,0,0,1,128,194Zm6.4-99.4a6,6,0,0,1,2.25-11.79,46.17,46.17,0,0,1,37.15,40.87,6,6,0,0,1-5.42,6.53l-.56,0a6,6,0,0,1-6-5.45A34.1,34.1,0,0,0,134.4,94.6Zm111.08,35.85c-.41.92-10.37,23-32.86,43.12a6,6,0,1,1-8-8.94A134.07,134.07,0,0,0,233.31,128a134.67,134.67,0,0,0-23.86-32.07C186.78,73.42,159.38,62,128,62a120.19,120.19,0,0,0-19.69,1.6,6,6,0,1,1-2-11.83A131.12,131.12,0,0,1,128,50c43.38,0,73,20.54,90.24,37.76,18.58,18.58,26.9,37,27.24,37.81A6,6,0,0,1,245.48,130.45Z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 256 256"><path d="M254,136a6,6,0,0,1-6,6H230v18a6,6,0,0,1-12,0V142H200a6,6,0,0,1,0-12h18V112a6,6,0,0,1,12,0v18h18A6,6,0,0,1,254,136Zm-57.41,60.14a6,6,0,1,1-9.18,7.72C166.9,179.45,138.69,166,108,166s-58.89,13.45-79.41,37.86a6,6,0,0,1-9.18-7.72C35.14,177.41,55,164.48,77,158.25a66,66,0,1,1,62,0C161,164.48,180.86,177.41,196.59,196.14ZM108,154a54,54,0,1,0-54-54A54.06,54.06,0,0,0,108,154Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path d="M228.24,76.24l-128,128a6,6,0,0,1-8.48,0l-56-56a6,6,0,0,1,8.48-8.48L96,191.51,219.76,67.76a6,6,0,0,1,8.48,8.48Z"/></symbol>
+    <symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M164.24,203.76a6,6,0,1,1-8.48,8.48l-80-80a6,6,0,0,1,0-8.48l80-80a6,6,0,0,1,8.48,8.48L88.49,128Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H134v82a6,6,0,0,1-12,0V134H40a6,6,0,0,1,0-12h82V40a6,6,0,0,1,12,0v82h82A6,6,0,0,1,222,128Z"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M198,64V168a6,6,0,0,1-12,0V78.48L68.24,196.24a6,6,0,0,1-8.48-8.48L177.52,70H88a6,6,0,0,1,0-12H192A6,6,0,0,1,198,64Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 256 256"><path d="M217.9,110.1l-80-80a14,14,0,0,0-19.8,0l-80,80A13.92,13.92,0,0,0,34,120v96a6,6,0,0,0,6,6H216a6,6,0,0,0,6-6V120A13.92,13.92,0,0,0,217.9,110.1ZM210,210H46V120a2,2,0,0,1,.58-1.42l80-80a2,2,0,0,1,2.84,0l80,80A2,2,0,0,1,210,120Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 256 256"><path d="M230,208a6,6,0,0,1-6,6H32a6,6,0,0,1-6-6V48a6,6,0,0,1,12,0v98.78l54.05-47.3a6,6,0,0,1,7.55-.28l60.11,45.08,60.34-52.8a6,6,0,0,1,7.9,9l-64,56a6,6,0,0,1-7.55.28L96.29,111.72,38,162.72V202H224A6,6,0,0,1,230,208Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 256 256"><path d="M229.19,213c-15.81-27.32-40.63-46.49-69.47-54.62a70,70,0,1,0-63.44,0C67.44,166.5,42.62,185.67,26.81,213a6,6,0,1,0,10.38,6C56.4,185.81,90.34,166,128,166s71.6,19.81,90.81,53a6,6,0,1,0,10.38-6ZM70,96a58,58,0,1,1,58,58A58.07,58.07,0,0,1,70,96Z"/></symbol>
+    <symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,122H238V88a14,14,0,0,0-14-14H206V64a14,14,0,0,0-14-14H168a14,14,0,0,0-14,14v58H102V64A14,14,0,0,0,88,50H64A14,14,0,0,0,50,64V74H32A14,14,0,0,0,18,88v34H8a6,6,0,0,0,0,12H18v34a14,14,0,0,0,14,14H50v10a14,14,0,0,0,14,14H88a14,14,0,0,0,14-14V134h52v58a14,14,0,0,0,14,14h24a14,14,0,0,0,14-14V182h18a14,14,0,0,0,14-14V134h10a6,6,0,0,0,0-12ZM32,170a2,2,0,0,1-2-2V88a2,2,0,0,1,2-2H50v84Zm58,22a2,2,0,0,1-2,2H64a2,2,0,0,1-2-2V64a2,2,0,0,1,2-2H88a2,2,0,0,1,2,2Zm104,0a2,2,0,0,1-2,2H168a2,2,0,0,1-2-2V64a2,2,0,0,1,2-2h24a2,2,0,0,1,2,2Zm32-24a2,2,0,0,1-2,2H206V86h18a2,2,0,0,1,2,2Z"/></symbol>
+    <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M212.24,100.24l-80,80a6,6,0,0,1-8.48,0l-80-80a6,6,0,0,1,8.48-8.48L128,167.51l75.760-75.750a6,6,0,0,1,8.480,8.480Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M220.24,132.24l-72,72a6,6,0,0,1-8.48-8.48L201.51,134H40a6,6,0,0,1,0-12H201.51L139.76,60.24a6,6,0,0,1,8.48-8.48l72,72A6,6,0,0,1,220.24,132.24Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol>
+    <symbol id="i-users-three" viewBox="0 0 256 256"><path d="M243.6,148.8a6,6,0,0,1-8.4-1.2A53.58,53.58,0,0,0,192,126a6,6,0,0,1,0-12,26,26,0,1,0-25.18-32.5,6,6,0,0,1-11.62-3,38,38,0,1,1,59.91,39.63A65.69,65.69,0,0,1,244.8,140.4,6,6,0,0,1,243.6,148.8ZM189.19,213a6,6,0,0,1-2.19,8.2,5.9,5.9,0,0,1-3,.81,6,6,0,0,1-5.2-3,59,59,0,0,0-101.62,0,6,6,0,1,1-10.38-6A70.1,70.1,0,0,1,103,182.55a46,46,0,1,1,50.1,0A70.1,70.1,0,0,1,189.19,213ZM128,178a34,34,0,1,0-34-34A34,34,0,0,0,128,178ZM70,120a6,6,0,0,0-6-6A26,26,0,1,1,89.18,81.49a6,6,0,1,0,11.62-3,38,38,0,1,0-59.91,39.63A65.69,65.69,0,0,0,11.2,140.4a6,6,0,1,0,9.6,7.2A53.58,53.58,0,0,1,64,126,6,6,0,0,0,70,120Z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 256 256"><path d="M224.91,69.75a6,6,0,0,0-9.63-2.16l-41.07,37.9L154.7,101.3l-4.19-19.51,37.9-41.07a6,6,0,0,0-2.16-9.63,70,70,0,0,0-89.77,94.39l-61.39,53c-.11.09-.21.19-.32.3A30,30,0,0,0,77.2,221.23c.11-.11.21-.21.3-.32l53-61.39a70,70,0,0,0,94.39-89.77ZM160,154a58,58,0,0,1-28-7.22,6,6,0,0,0-7.45,1.33L68.57,212.88a18,18,0,0,1-25.45-25.45l64.76-55.94A6,6,0,0,0,109.2,124a58,58,0,0,1,64-84.53L139.58,75.93a6,6,0,0,0-1.45,5.33l5.65,26.35a6,6,0,0,0,4.61,4.61l26.35,5.65a6,6,0,0,0,5.33-1.45L216.49,82.8A58.06,58.06,0,0,1,160,154Z"/></symbol>
+    <symbol id="i-device-mobile" viewBox="0 0 256 256"><path d="M176,18H80A22,22,0,0,0,58,40V216a22,22,0,0,0,22,22h96a22,22,0,0,0,22-22V40A22,22,0,0,0,176,18ZM70,62H186V194H70ZM80,30h96a10,10,0,0,1,10,10V50H70V40A10,10,0,0,1,80,30Zm96,196H80a10,10,0,0,1-10-10V206H186v10A10,10,0,0,1,176,226Z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 256 256"><path d="M199.37,55.31A101.32,101.32,0,0,0,128,26h-1A102,102,0,0,0,26,128c0,42.09,26.07,77.44,68,92.26A30.21,30.21,0,0,0,104.11,222,30.06,30.06,0,0,0,134,192a18,18,0,0,1,18-18h46.21a29.82,29.82,0,0,0,29.25-23.31A102.71,102.71,0,0,0,230,127.11,101.25,101.25,0,0,0,199.37,55.31ZM215.76,148a17.89,17.89,0,0,1-17.55,14H152a30,30,0,0,0-30,30,18,18,0,0,1-24,17C61,195.86,38,164.85,38,128a90,90,0,0,1,89.07-90H128a90.34,90.34,0,0,1,90,89.22A90.46,90.46,0,0,1,215.76,148ZM138,76a10,10,0,1,1-10-10A10,10,0,0,1,138,76ZM94,100A10,10,0,1,1,84,90,10,10,0,0,1,94,100Zm0,56a10,10,0,1,1-10-10A10,10,0,0,1,94,156Zm88-56a10,10,0,1,1-10-10A10,10,0,0,1,182,100Z"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html" aria-label="Voluma, página inicial">
+        <img src="assets/icon.png" alt="" width="32" height="32">
+        <span translate="no">voluma</span>
+      </a>
+      <div class="nav__right">
+        <nav aria-label="Seções">
+          <a href="index.html">Para alunos</a>
+          <a href="#implantacao">Implantação</a>
+          <a href="#vantagens">Vantagens</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <a class="btn btn--sm" href="https://wa.me/NUMERO_PENDENTE?text=Ol%C3%A1!%20Tenho%20uma%20academia%20e%20quero%20conhecer%20o%20Voluma." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO: proposta + configurador ao vivo -->
+    <section class="gh" aria-labelledby="gh-title">
+      <div class="container gh__grid" data-gym-demo style="--gym:#FF5C00">
+        <div class="gh__copy">
+          <h1 class="display" id="gh-title">O app de treino com o nome e a cor da sua academia.</h1>
+          <p class="lead">Seus alunos registram cada série num app publicado com a identidade da academia. A equipe do Voluma cuida do resto.</p>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/NUMERO_PENDENTE?text=Ol%C3%A1!%20Tenho%20uma%20academia%20e%20quero%20conhecer%20o%20Voluma." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+            <a class="btn btn--ghost" href="#implantacao">Como funciona</a>
+          </div>
+          <div class="config" data-color-only>
+            <p class="config__title">Experimente com a sua academia</p>
+            <div class="field">
+              <label for="gym-name">Nome da academia</label>
+              <input id="gym-name" name="gym-name" type="text" maxlength="22" autocomplete="organization" spellcheck="false" placeholder="Ex.: Forja Academia…" data-gym-input data-default="Sua Academia">
+              <span class="field__help">O nome aparece embaixo do ícone, na tela do celular do aluno.</span>
+            </div>
+            <div class="swatches" role="group" aria-label="Cor da academia">
+              <button type="button" class="swatch" style="--c:#FF5C00" aria-pressed="true" data-name="laranja">Laranja</button>
+              <button type="button" class="swatch" style="--c:#29B6FF" aria-pressed="false" data-name="azul">Azul</button>
+              <button type="button" class="swatch" style="--c:#7BC23A" aria-pressed="false" data-name="verde">Verde</button>
+              <button type="button" class="swatch" style="--c:#FF4FC0" aria-pressed="false" data-name="rosa">Rosa</button>
+            </div>
+            <p class="sr-only" aria-live="polite" data-gym-live></p>
+          </div>
+        </div>
+
+        <div class="gh__visual">
+          <div class="gh__disc" aria-hidden="true"></div>
+          <div class="phone-wrap">
+            <div class="phone" role="img" aria-label="Tela Hoje do app da academia, com a cor escolhida no botão principal">
+              <div class="screen is-active" aria-hidden="true">
+              <div class="status">9:41</div>
+              <div class="app-head">
+              <div class="app-title">Hoje</div>
+              <div class="app-sub">Segunda · 12 out</div>
+              </div>
+              <div class="app-body">
+              <div class="card">
+              <div class="today-head">
+              <div>
+              <div class="lbl">SEGUNDA</div>
+              <div class="sec">Push</div>
+              <div class="meta">13 séries para hoje</div>
+              </div>
+              <div class="ring" style="--p:0">
+              <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="ring__arc" cx="22" cy="22" r="19"/></svg>
+              <span>13</span>
+              </div>
+              </div>
+              <div class="ex-row"><span>Supino reto</span><span class="mono-sm">4 × 8 · 80 kg</span></div>
+              <div class="ex-row"><span>Desenvolvimento</span><span class="mono-sm">3 × 10 · 45 kg</span></div>
+              <div class="ex-row"><span>Elevação lateral</span><span class="mono-sm">3 × 12 · 12 kg</span></div>
+              <div class="ex-row"><span>Flexão de braço</span><span class="mono-sm">3 × 15</span></div>
+              </div>
+              <div class="btn-accent">Começar treino · 13 séries</div>
+              <div class="lbl lbl--section">PROGRESSO</div>
+              <div class="card">
+              <div class="stats">
+              <div><b>78,4<i>kg</i></b><span>Peso</span></div>
+              <div><b>9.870<i>kg</i></b><span>7 dias</span></div>
+              <div><b>4</b><span>dias seguidos</span></div>
+              </div>
+              <div class="matrix" data-matrix="26" data-seed="7"></div>
+              </div>
+              </div>
+              <div class="tabbar">
+              <svg class="on"><use href="#i-home"/></svg>
+              <svg><use href="#i-calendar"/></svg>
+              <svg><use href="#i-chart"/></svg>
+              <svg><use href="#i-user"/></svg>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="store-card" aria-hidden="true">
+            <div class="app-icon app-icon--sm"><span></span><span></span><span></span><span></span><span></span><span></span><span class="hi"></span></div>
+            <div>
+              <b data-gym-name>Sua Academia</b>
+              <small>na tela inicial do aluno</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLANTACAO: passos + ficha da loja -->
+    <section class="offer" id="implantacao" aria-labelledby="impl-title">
+      <div class="container offer__grid">
+        <div>
+          <h2 class="h2" id="impl-title">Da conversa à loja de aplicativos.</h2>
+          <ol class="steps">
+            <li><span class="num">1</span><div><h3>Você manda nome, logo e cor</h3><p>É só isso que a gente precisa da identidade da academia para montar o app.</p></div></li>
+            <li><span class="num">2</span><div><h3>Os treinos são combinados com o instrutor</h3><p>Os treinos sugeridos do app saem de uma conversa com quem já orienta os seus alunos.</p></div></li>
+            <li><span class="num">3</span><div><h3>A gente publica o app da academia</h3><p>Um app próprio, com o nome da academia, na App Store e no Google Play.</p></div></li>
+            <li><span class="num">4</span><div><h3>Seus alunos baixam e treinam</h3><p>Registram as séries, acompanham a evolução e se encontram no ranking da academia.</p></div></li>
+          </ol>
+        </div>
+        <div class="offer__visual">
+          <article class="listing" aria-label="Exemplo de como o app da academia aparece na loja">
+            <div class="listing__head" data-gym-demo-copy>
+              <div class="app-icon app-icon--md"><span></span><span></span><span></span><span></span><span></span><span></span><span class="hi"></span></div>
+              <div>
+                <b data-gym-name>Sua Academia</b>
+                <small data-gym-sub>Treinos da Sua Academia, semana a semana</small>
+              </div>
+            </div>
+            <span class="listing__badge">Em breve na App Store e no Google Play</span>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-palette"/></svg><span>Ícone, nome e cor da academia</span></li>
+              <li><svg aria-hidden="true"><use href="#i-users-three"/></svg><span>Amigos e ranking só entre os seus alunos</span></li>
+              <li><svg aria-hidden="true"><use href="#i-barbell"/></svg><span>Treinos sugeridos combinados com o instrutor</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VANTAGENS: faixa escura, 4 cards -->
+    <section class="band" id="vantagens" aria-labelledby="vant-title">
+      <img class="band__bg" src="assets/movements/deadlift.svg" alt="" width="900" height="900" loading="lazy" aria-hidden="true">
+      <div class="container">
+        <h2 class="h2" id="vant-title">O que a academia ganha.</h2>
+        <p class="lead-dark">Um app com a sua marca no celular do aluno, sem precisar de equipe técnica.</p>
+        <div class="vgrid">
+          <article class="vcard">
+            <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-device-mobile"/></svg></span>
+            <h3>Sua marca na tela inicial</h3>
+            <p>O aluno abre o app da academia, com o nome, o ícone e a cor dela, toda vez que vai treinar.</p>
+          </article>
+          <article class="vcard">
+            <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-users-three"/></svg></span>
+            <h3>Uma comunidade só de vocês</h3>
+            <p>Cada academia é um app separado. Amigos e ranking ficam entre os seus alunos; ninguém de fora aparece.</p>
+          </article>
+          <article class="vcard">
+            <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-wrench"/></svg></span>
+            <h3>Nenhum trabalho técnico</h3>
+            <p>A equipe do Voluma publica o app e cuida das atualizações. Uma melhoria feita no Voluma chega a todas as academias.</p>
+          </article>
+          <article class="vcard">
+            <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-wifi-slash"/></svg></span>
+            <h3>Funciona dentro da academia</h3>
+            <p>O treino é gravado no celular na hora, mesmo sem sinal, e sincroniza quando a internet volta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA O ALUNO: bloco dividido -->
+    <section class="split" aria-labelledby="aluno-title">
+      <div class="split__dark">
+        <img src="assets/movements/overhead-press.svg" alt="Figura animada do desenvolvimento com barra" width="420" height="420" loading="lazy">
+      </div>
+      <div class="split__panel">
+        <h2 class="h2" id="aluno-title">Tudo do Voluma para o aluno.</h2>
+        <p class="body">Plano da semana, registro de série em um toque, volume e recordes calculados sozinhos, 60 movimentos com a execução animada e amigos com privacidade.</p>
+        <a class="btn btn--ghost" href="index.html">Ver a página para alunos</a>
+      </div>
+      <div class="split__tile split__tile--grey"><img src="assets/movements/dark/leg-press.svg" alt="" width="200" height="200" loading="lazy"></div>
+      <div class="split__tile"><img src="assets/movements/dark/lateral-raise.svg" alt="" width="200" height="200" loading="lazy"></div>
+    </section>
+
+    <!-- DUVIDAS DE DONOS DE ACADEMIA -->
+    <section class="faq" id="duvidas" aria-labelledby="faq-title" style="padding-top: clamp(72px, 9vw, 128px)">
+      <div class="container faq__inner">
+        <h2 class="h2" id="faq-title">Dúvidas de quem tem academia</h2>
+        <div class="faq__list">
+          <details><summary>Quanto custa?</summary><p>Chame a equipe no WhatsApp para conhecer as condições para a sua academia.</p></details>
+          <details><summary>Preciso de alguém técnico na academia?</summary><p>Não. A equipe do Voluma publica e mantém o app. A academia manda nome, logo e cor, e combina os treinos sugeridos com o instrutor.</p></details>
+          <details><summary>Alunos de outras academias veem os meus?</summary><p>Não. Cada academia é um app separado: amigos e ranking ficam só entre os alunos dela.</p></details>
+          <details><summary>O aluno precisa criar conta?</summary><p>Não. O app funciona sem conta. O login com Google só é usado para amigos e backup na nuvem.</p></details>
+          <details><summary>A academia tem um painel para acompanhar os alunos?</summary><p>Ainda não. Hoje o app é focado no treino do aluno e na comunidade da academia.</p></details>
+          <details><summary>Os alunos veem os números uns dos outros?</summary><p>Só entre amigos que aceitaram o pedido, e só se cada um ligar o compartilhamento. O ranking compara dias treinados, não a carga.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section class="cta-final" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 class="h2" id="cta-title">Leve o Voluma para a sua academia.</h2>
+        <p>Conte um pouco sobre a sua academia e a gente explica como fica o app de vocês.</p>
+        <a class="btn btn--light" href="https://wa.me/NUMERO_PENDENTE?text=Ol%C3%A1!%20Tenho%20uma%20academia%20e%20quero%20conhecer%20o%20Voluma." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo" translate="no">voluma</span>
+        <p>O app de treino com a marca da sua academia. Registro de séries, evolução em números e a comunidade dos seus alunos.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <a href="index.html">Para alunos</a>
+        <a href="#implantacao">Implantação</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <div class="footer__stores">
+        <h2>Contato</h2>
+        <a class="btn btn--light btn--sm" href="https://wa.me/NUMERO_PENDENTE?text=Ol%C3%A1!%20Tenho%20uma%20academia%20e%20quero%20conhecer%20o%20Voluma." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <p>Ilustrações dos exercícios: <a href="https://github.com/bryllim/workout-guide">workout-guide</a> de Bryl Lim, derivadas de <a href="https://github.com/everkinetic/data">Everkinetic</a>, sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.</p>
+      <p>© 2026 Voluma</p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=9" defer></script>
+</body>
+</html>

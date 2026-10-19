@@ -445,6 +445,69 @@ main { overflow-x: clip; }
 .card--rows .lbl { padding: 12px 0 6px; }
 .card--rows .row:first-child { border-top: 0; }
 
+/* ========== PAGINA PARA ACADEMIAS ==========
+   Mesmo sistema da pagina principal; o que e so dela fica aqui. */
+.btn svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.btn--sm { padding: 11px 18px; font-size: 14px; }
+.btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn--ghost:hover { background: var(--grey-2); }
+.btn--light { background: #fff; color: var(--ink); }
+.btn--light:hover { background: var(--grey-2); }
+.nav__right { display: flex; align-items: center; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.gh { position: relative; overflow: hidden; padding: clamp(24px, 4svh, 48px) 0 clamp(56px, 8vw, 96px); }
+.gh__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.gh__copy { display: grid; justify-items: start; gap: 22px; }
+.gh .display { max-width: 18ch; font-size: clamp(2.1rem, 3.5vw, 3.2rem); }
+.config { display: grid; gap: 14px; margin-top: 4px; padding: 20px; border-radius: var(--r-card); background: var(--grey-1); width: min(100%, 470px); }
+.config__title { font: 600 15px/1.3 var(--sans); }
+.field { display: grid; gap: 6px; }
+.field label { font: 500 13px/1.2 var(--sans); }
+.field input { font: 400 16px/1.2 var(--sans); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--grey-3); background: #fff; color: var(--ink); width: 100%; }
+.field input::placeholder { color: #6E6E73; }
+.field input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; border-color: var(--ink); }
+.field__help { font-size: 12px; color: var(--ink-2); }
+.gh__visual { position: relative; display: grid; place-items: center; min-height: calc(844px * var(--s) + 40px); --s: 0.6; }
+.gh__disc { position: absolute; top: 50%; left: 55%; width: min(600px, 100%); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: var(--graphite); }
+.gh__visual .phone-wrap { rotate: -6deg; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.3)); }
+[data-gym-demo] .btn-accent { background: var(--gym); box-shadow: 0 0 24px -2px color-mix(in srgb, var(--gym) 55%, transparent); transition: background-color 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+.store-card { position: absolute; left: 0; bottom: 10%; display: flex; align-items: center; gap: 14px; padding: 14px 20px 14px 14px; background: #fff; border-radius: 20px; box-shadow: var(--shadow); max-width: 300px; }
+.store-card b { display: block; font: 600 16px/1.2 var(--sans); }
+.store-card small { display: block; font-size: 12px; color: var(--ink-2); margin-top: 3px; }
+.app-icon--sm { zoom: 0.5; }
+.app-icon--md { zoom: 0.7; }
+[data-gym-demo-copy] { --gym: #FF5C00; }
+@media (max-width: 899px) {
+  .gh__grid { grid-template-columns: 1fr; }
+  .gh__visual { --s: 0.56; margin-top: 12px; }
+  .store-card { left: 0; bottom: 0; }
+  .gh .display { max-width: none; }
+}
+
+.listing { background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow); padding: 26px; width: min(100%, 420px); display: grid; gap: 20px; }
+.listing__head { display: flex; align-items: center; gap: 16px; }
+.listing__head b { display: block; font: 600 20px/1.2 var(--sans); }
+.listing__head small { display: block; font-size: 13px; color: var(--ink-2); margin-top: 4px; }
+.listing__badge { justify-self: start; padding: 8px 14px; border-radius: 999px; background: var(--grey-2); font: 500 13px/1 var(--sans); }
+.listing ul { display: grid; gap: 12px; }
+.listing li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; font-size: 14px; color: var(--ink-2); }
+.listing li svg { width: 20px; height: 20px; fill: var(--ink); margin-top: 1px; }
+
+.band .lead-dark { color: #B5B5B5; max-width: 56ch; margin: 12px auto 0; }
+.vgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); margin-top: 48px; text-align: left; }
+.vcard { background: var(--grey-2); color: var(--ink); border-radius: var(--r-card); padding: clamp(24px, 3vw, 34px); display: grid; gap: 12px; align-content: start; }
+.vcard__icon { width: 52px; height: 52px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; margin-bottom: 6px; }
+.vcard__icon svg { width: 26px; height: 26px; fill: #fff; }
+.vcard h3 { font: 400 clamp(1.3rem, 2vw, 1.55rem)/1.2 var(--display); }
+.vcard p { color: var(--ink-2); max-width: 46ch; }
+@media (max-width: 767px) { .vgrid { grid-template-columns: 1fr; } }
+
+.cta-final { background: var(--graphite); color: #fff; padding: clamp(72px, 9vw, 120px) 0; text-align: center; }
+.cta-final .container { display: grid; justify-items: center; gap: 20px; }
+.cta-final .h2 { max-width: 20ch; }
+.cta-final p { color: #D2D2D2; max-width: 50ch; }
+
 /* ========== MOVIMENTO ==========
    Curvas da skill animate (Emil Kowalski): --ease (saida forte) em entradas
    e hover, --ease-in-out no que se move pela tela. O estado padrao e sempre
@@ -453,8 +516,8 @@ main { overflow-x: clip; }
 
 /* Toque e clique: tudo que e clicavel afunda um pouco, como botao fisico. */
 .brand-logo, .faq summary, .footer nav a { transition: transform 160ms var(--ease), color 0.2s, background-color 0.2s; }
-.btn:active, .swatch:active, .switch__btn:active, .mcard:active, .brand-logo:active, .faq summary:active, .footer nav a:active, .gyms__panel:active .app-icon { transform: scale(0.97); }
-.mcard__img img, .split__tile img, .dcard, .pcard, .app-icon, .swatch::before { transition: transform 400ms var(--ease); }
+.btn:active, .swatch:active, .vcard:active, .switch__btn:active, .mcard:active, .brand-logo:active, .faq summary:active, .footer nav a:active, .gyms__panel:active .app-icon { transform: scale(0.97); }
+.mcard__img img, .split__tile img, .dcard, .pcard, .vcard, .listing, .store-card, .app-icon, .swatch::before { transition: transform 400ms var(--ease); }
 .faq summary { border-radius: 12px; }
 
 /* Mouse de verdade: realce ao passar por cima. No toque o hover "gruda",
@@ -470,7 +533,7 @@ main { overflow-x: clip; }
   .mcard:hover { transform: translateY(-6px); box-shadow: 0 32px 56px -24px rgba(20, 20, 20, 0.3), 0 2px 6px rgba(20, 20, 20, 0.04); }
   .mcard:hover .mcard__img img { transform: scale(1.07); }
   .split__tile:hover img { transform: scale(1.08) rotate(-2deg); }
-  .dcard:hover, .pcard:hover { transform: translateY(-5px); }
+  .dcard:hover, .pcard:hover, .vcard:hover, .listing:hover, .store-card:hover { transform: translateY(-5px); }
   .brand-logo:hover { transform: translateY(-3px); }
   .swatch:hover::before { transform: scale(1.18) rotate(10deg); }
   .faq summary:hover { background: var(--grey-1); }

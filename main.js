@@ -221,17 +221,29 @@
     more.textContent = open ? 'Ver menos' : 'Ver mais';
   });
 
-  // Academias: trocar a cor mostra como fica o app de cada uma.
+  // Academias: trocar a cor mostra como fica o app de cada uma. Na pagina
+  // para academias a cor e o nome sao separados (data-color-only): o nome vem
+  // do campo que o dono digita.
   const demo = document.querySelector('[data-gym-demo]');
-  const nameEl = document.querySelector('[data-gym-name]');
+  const nameEls = [...document.querySelectorAll('[data-gym-name]')];
+  const subEls = [...document.querySelectorAll('[data-gym-sub]')];
   const live = document.querySelector('[data-gym-live]');
+  const colorOnly = !!document.querySelector('[data-color-only]');
+  const setName = (name) => {
+    nameEls.forEach((el) => { el.textContent = name; });
+    subEls.forEach((el) => { el.textContent = `Treinos da ${name}, semana a semana`; });
+  };
   document.querySelectorAll('.swatch').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.swatch').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      demo.style.setProperty('--gym', btn.style.getPropertyValue('--c'));
-      nameEl.textContent = btn.dataset.name;
-      live.textContent = `Mostrando o app ${btn.dataset.name}`;
+      document.querySelectorAll('[data-gym-demo], [data-gym-demo-copy]').forEach((el) => el.style.setProperty('--gym', btn.style.getPropertyValue('--c')));
+      if (!colorOnly) setName(btn.dataset.name);
+      if (live) live.textContent = colorOnly ? `Cor ${btn.dataset.name} aplicada` : `Mostrando o app ${btn.dataset.name}`;
     });
+  });
+  const gymInput = document.querySelector('[data-gym-input]');
+  gymInput?.addEventListener('input', () => {
+    setName(gymInput.value.trim() || gymInput.dataset.default);
   });
 
   // ROLAR A PAGINA: cada secao com a sua entrada (o CSS faz o movimento).
@@ -254,6 +266,14 @@
     ["#faq-title", "up"],
     [".faq details", "up", 60, 80],
     [".footer__grid > *", "up", 100],
+    // Pagina para academias
+    [".gh__copy > *", "up", 90],
+    [".gh__visual", "pop", 0, 150],
+    ["#impl-title", "up"],
+    [".listing", "pop", 0, 150],
+    ["#vant-title, .band .lead-dark", "up", 90],
+    [".vcard", "up", 110, 100],
+    [".cta-final .container > *", "up", 90],
   ];
   reveals.forEach(([sel, type, step = 0, base = 0]) => {
     document.querySelectorAll(sel).forEach((el, i) => {
