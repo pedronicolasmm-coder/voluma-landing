@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -255,7 +255,7 @@
 
     <!-- FAIXA DA MARCA -->
     <div class="strip" aria-hidden="true">
-      <span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span>
+      <div class="strip__track"><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span><i></i><span>VOLUMA</span></div>
     </div>
 
     <!-- COMO FUNCIONA: lista numerada + card flutuante -->
@@ -272,7 +272,7 @@
         <div class="offer__visual">
           <article class="pcard" aria-label="Exemplo de resultado de treino">
             <div class="pcard__img">
-              <b>4.342<i>kg</i></b>
+              <b><span class="cnt" data-count="4342" data-dec="0">4.342</span><i>kg</i></b>
               <span>VOLUME LEVANTADO</span>
             </div>
             <h3>Push · Segunda</h3>
@@ -333,12 +333,12 @@
           </article>
           <article class="dcard">
             <h3>Sequência</h3>
-            <p class="big">23<span>dias seguidos</span></p>
+            <p class="big"><b class="cnt" data-count="23" data-dec="0">23</b><span>dias seguidos</span></p>
             <div class="matrix" data-matrix="18" data-seed="3" role="img" aria-label="Grade de pontos dos dias treinados nos últimos meses"></div>
           </article>
           <article class="dcard">
             <h3>Peso corporal</h3>
-            <p class="big">78,4<span>kg</span></p>
+            <p class="big"><b class="cnt" data-count="78.4" data-dec="1">78,4</b><span>kg</span></p>
             <div class="chart chart--line" data-chart="line" role="img" aria-label="Gráfico de linha do peso corporal descendo de 80,6 para 78,4 quilos"></div>
           </article>
         </div>
@@ -409,6 +409,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=4" defer></script>
+  <script src="main.js?v=5" defer></script>
 </body>
 </html>

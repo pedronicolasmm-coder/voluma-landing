@@ -195,4 +195,109 @@
       live.textContent = `Mostrando o app ${btn.dataset.name}`;
     });
   });
+
+  // ROLAR A PAGINA: cada secao com a sua entrada (o CSS faz o movimento).
+  // [seletor, tipo, atraso da cascata em ms, atraso inicial]
+  const reveals = [
+    [".brands .h3, .brands .small", "up", 80],
+    [".brand-logo", "up", 110, 160],
+    [".split__dark", "wipe"],
+    [".split__panel > *", "up", 90, 200],
+    [".split__tile", "rise", 140, 250],
+    ["#offer-title", "up"],
+    [".steps li", "left", 120, 120],
+    [".pcard", "pop", 0, 150],
+    [".mini", "right", 0, 500],
+    ["#mov-title, .collection .container > .body", "up", 90],
+    [".band .h2, .band .body", "up", 90],
+    [".dcard", "up", 110, 150],
+    [".gyms__card", "left"],
+    [".gyms__panel", "right", 0, 140],
+    ["#faq-title", "up"],
+    [".faq details", "up", 60, 80],
+    [".footer__grid > *", "up", 100],
+  ];
+  reveals.forEach(([sel, type, step = 0, base = 0]) => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.dataset.reveal = type;
+      el.style.setProperty("--d", `${base + i * step}ms`);
+    });
+  });
+  // Cards de movimento: a cascata reinicia a cada linha de 3.
+  document.querySelectorAll(".mcard").forEach((el, i) => {
+    el.dataset.reveal = "up";
+    el.style.setProperty("--d", `${(i % 3) * 90}ms`);
+  });
+
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      revealIO.unobserve(e.target);
+      (byParent.get(e.target) || [e.target]).forEach((el) => {
+        el.setAttribute("data-visible", "");
+        // Depois da entrada, devolve ao elemento as transicoes dele (hover, toque).
+        const wait = parseInt(el.style.getPropertyValue("--d"), 10) || 0;
+        setTimeout(() => {
+          el.removeAttribute("data-reveal");
+          el.removeAttribute("data-visible");
+        }, wait + 1100);
+      });
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+  // Quem comeca 100% recortado (wipe, rise) nao "aparece" para o observer:
+  // observa o pai e revela os filhos juntos.
+  const byParent = new Map();
+  document.querySelectorAll("[data-reveal]").forEach((el) => {
+    const clipped = el.dataset.reveal === "wipe" || el.dataset.reveal === "rise";
+    const watch = clipped ? el.parentElement : el;
+    if (!byParent.has(watch)) byParent.set(watch, []);
+    byParent.get(watch).push(el);
+    revealIO.observe(watch);
+  });
+
+  // NUMEROS: contam de 0 ate o valor quando aparecem (formato brasileiro).
+  const counters = [...document.querySelectorAll(".cnt[data-count]")];
+  const fmt = (v, dec) => new Intl.NumberFormat("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec }).format(v);
+  if (!reduce) {
+    counters.forEach((el) => { el.textContent = fmt(0, Number(el.dataset.dec)); });
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        countIO.unobserve(e.target);
+        const el = e.target;
+        const target = Number(el.dataset.count);
+        const dec = Number(el.dataset.dec);
+        const start = performance.now();
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / 1300);
+          const eased = 1 - Math.pow(1 - t, 4);
+          el.textContent = fmt(target * eased, dec);
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((el) => countIO.observe(el));
+  }
+
+  // MOUSE: o celular do topo inclina levemente seguindo o cursor.
+  // So com mouse de verdade e sem pedido de menos movimento.
+  const tiltTarget = document.querySelector(".phone-wrap--tilt");
+  const hero = document.querySelector(".hero");
+  if (tiltTarget && hero && !reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let frame = 0;
+    hero.addEventListener("pointermove", (e) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const r = tiltTarget.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / innerWidth;
+        const dy = (e.clientY - (r.top + r.height / 2)) / innerHeight;
+        tiltTarget.style.transform = `perspective(1200px) rotateY(${(dx * 16).toFixed(2)}deg) rotateX(${(-dy * 12).toFixed(2)}deg)`;
+      });
+    });
+    hero.addEventListener("pointerleave", () => {
+      cancelAnimationFrame(frame);
+      tiltTarget.style.transform = "";
+    });
+  }
 })();
