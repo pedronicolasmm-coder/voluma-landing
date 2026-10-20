@@ -112,11 +112,30 @@ main { overflow-x: clip; }
 @media (hover: hover) and (pointer: fine) {
   .nav nav a.nav__switch:hover { background: var(--ink); color: #fff; }
 }
+/* Celular: segunda faixa no topo com todos os links em pilulas, sempre
+   visivel. Se nao couber, arrasta para o lado. */
 @media (max-width: 879px) {
-  .nav nav a:not(.nav__switch) { display: none; }
-  .nav nav a.nav__switch { margin-right: 0; }
+  html { scroll-padding-top: 128px; }
+  .nav__inner { flex-wrap: wrap; height: auto; row-gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .nav .nav__right { display: contents; }
+  .nav .btn--sm { margin-left: auto; padding: 11px; }
   .nav .nav__cta-text { display: none; }
-  .nav .btn--sm { padding: 11px; }
+  .nav nav {
+    order: 3;
+    flex: 1 0 100%;
+    gap: 6px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 2px calc(var(--gutter) + 28px) 2px var(--gutter);
+    -webkit-mask: linear-gradient(90deg, #000 85%, transparent);
+    mask: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .nav nav::-webkit-scrollbar { display: none; }
+  .nav nav a { flex: none; white-space: nowrap; padding: 8px 14px; border-radius: 999px; background: var(--grey-2); font-size: 14px; }
+  .nav nav a::after { display: none; }
+  .nav nav a.nav__switch { margin-right: 0; padding: 8px 14px 8px 11px; background: #fff; }
 }
 
 /* HERO */
