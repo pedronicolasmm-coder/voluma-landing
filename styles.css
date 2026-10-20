@@ -103,7 +103,21 @@ main { overflow-x: clip; }
 .nav nav { display: flex; gap: 6px; }
 .nav nav a { padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--ink); text-decoration: none; transition: background-color 0.2s; }
 .nav nav a:hover { background: var(--grey-2); }
-@media (max-width: 879px) { .nav nav { display: none; } }
+/* Troca de pagina (alunos <-> academias): primeiro item, em botao, sempre visivel. */
+.nav nav { align-items: center; }
+.nav nav a.nav__switch { display: inline-flex; align-items: center; gap: 8px; margin-right: 6px; padding: 9px 16px 9px 13px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ink); color: var(--ink); font-weight: 600; transition: background-color 200ms var(--ease), color 200ms var(--ease), transform 160ms var(--ease); }
+.nav__switch svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.nav nav a.nav__switch::after { display: none; }
+.nav nav a.nav__switch:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .nav nav a.nav__switch:hover { background: var(--ink); color: #fff; }
+}
+@media (max-width: 879px) {
+  .nav nav a:not(.nav__switch) { display: none; }
+  .nav nav a.nav__switch { margin-right: 0; }
+  .nav .nav__cta-text { display: none; }
+  .nav .btn--sm { padding: 11px; }
+}
 
 /* HERO */
 .hero { position: relative; overflow: hidden; padding: clamp(16px, 3svh, 40px) 0 clamp(40px, 6svh, 72px); min-height: calc(100svh - 72px); display: grid; align-items: center; }
