@@ -96,7 +96,9 @@
     new ResizeObserver(() => {
       if (el.clientWidth === lastWidth) return;
       lastWidth = el.clientWidth;
-      drawBars(el);
+      // Redesenha no proximo quadro: mexer no DOM dentro do callback gera o
+      // aviso "ResizeObserver loop" no Safari.
+      requestAnimationFrame(() => drawBars(el));
     }).observe(el);
   });
   document.querySelectorAll('[data-chart="line"]').forEach(drawLine);
