@@ -545,10 +545,14 @@ main { overflow-x: clip; }
 .cta-final p { color: #D2D2D2; max-width: 50ch; }
 .config__note a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
 
-/* ========== EXEMPLO PRONTO: academia ficticia (Forja) ==========
+/* ========== EXEMPLO PRONTO: a Ironberg (simulacao autorizada) ==========
    As telas sao as mesmas do Voluma. O atributo data-look da secao troca o
-   tema: "forja" (aco, carvao e amarelo) ou "voluma" (o padrao escuro). */
-.case { padding: clamp(72px, 9vw, 128px) 0; background: var(--grey-1); overflow-x: clip; }
+   tema: "ironberg" (preto, grafite e vermelho, titulos condensados) ou
+   "voluma" (o padrao escuro). */
+@font-face { font-family: "Barlow Condensed"; src: url("assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("assets/fonts/barlow-condensed-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("assets/fonts/barlow-condensed-latin-800-italic.woff2") format("woff2"); font-weight: 800; font-style: italic; font-display: swap; }
+.case { --cond: "Barlow Condensed", "Arial Narrow", sans-serif; --red: #D20000; --neon: #F20404; padding: clamp(72px, 9vw, 128px) 0; background: var(--grey-1); overflow-x: clip; }
 .case__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: clamp(32px, 5vw, 72px); align-items: end; }
 .case__copy { display: grid; justify-items: start; gap: 18px; }
 .case__tag { font: 500 13px/1 var(--sans); padding: 8px 14px; border-radius: 999px; background: #fff; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
@@ -562,8 +566,8 @@ main { overflow-x: clip; }
 
 .kit { background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow); padding: 24px; display: grid; gap: 20px; }
 .kit__brand { display: flex; align-items: center; gap: 14px; }
-.kit__brand b { display: block; font: 900 21px/1.1 var(--sans); letter-spacing: -0.01em; text-transform: uppercase; color: #0E1013; transform: skewX(-8deg); transform-origin: left; }
-.kit__brand small { display: block; font-size: 13px; color: var(--ink-2); margin-top: 4px; }
+.kit__brand b { display: block; font: 800 28px/1 var(--cond); letter-spacing: 0.01em; text-transform: uppercase; color: #080808; }
+.kit__brand small { display: block; font-size: 13px; color: var(--ink-2); margin-top: 6px; }
 .kit__colors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .chip { display: grid; gap: 4px; }
 .chip i { height: 48px; border-radius: 12px; background: var(--c); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07); margin-bottom: 4px; }
@@ -573,12 +577,6 @@ main { overflow-x: clip; }
 .kit__list li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 14px; color: var(--ink-2); }
 .kit__list svg { width: 18px; height: 18px; fill: var(--ink); margin-top: 2px; }
 
-.forja-icon { width: 56px; height: 56px; flex: none; border-radius: 16px; background: linear-gradient(160deg, #22262C, #0E1013); color: #FFC21A; display: grid; place-items: center; box-shadow: inset 0 0 0 1px #2A2F36, 0 10px 20px -12px rgba(0, 0, 0, 0.8); }
-.forja-icon svg { width: 64%; height: 64%; }
-.forja-icon--xs { width: 40px; height: 40px; border-radius: 12px; box-shadow: inset 0 0 0 1px #2A2F36; }
-.forja-word { display: grid; justify-items: center; font: 900 22px/1 var(--sans); letter-spacing: -0.01em; text-transform: uppercase; }
-.forja-word > span { display: block; transform: skewX(-9deg); }
-.forja-word small { font: 700 11px/1 var(--sans); letter-spacing: 0.42em; padding-left: 0.42em; margin-top: 12px; color: #FFC21A; }
 
 .case__phones { --s: 0.56; display: grid; grid-template-columns: repeat(4, max-content); justify-content: space-between; gap: 24px; margin-top: clamp(40px, 6vw, 72px); }
 .case__item { display: grid; justify-items: center; gap: 16px; margin: 0; }
@@ -589,10 +587,6 @@ main { overflow-x: clip; }
 /* Telas que existem nas duas versoes */
 .splash { display: grid; place-items: center; }
 .splash__in { display: grid; justify-items: center; gap: 26px; }
-.splash__mark { width: 132px; height: 132px; color: #FFC21A; filter: drop-shadow(0 0 30px rgba(255, 194, 26, 0.35)); }
-.forja-word--xl { font-size: 66px; color: #F2F2F2; }
-.forja-word--xl small { font-size: 13px; margin-top: 14px; }
-.hazard { position: absolute; left: 0; right: 0; bottom: 0; height: 22px; background: repeating-linear-gradient(-45deg, #FFC21A 0 12px, #0E1013 12px 24px); opacity: 0.9; }
 .splash__in img { width: 104px; height: 104px; border-radius: 26px; }
 .splash__voluma { font: 400 34px/1 var(--display); color: #F5F5F5; }
 .app-head--brand { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -611,43 +605,52 @@ main { overflow-x: clip; }
 .rank__foot { font-size: 12px; color: var(--text-2); text-align: center; }
 
 /* Mostra so o que e de cada versao */
-.case[data-look="forja"] .only-voluma,
-.case[data-look="voluma"] .only-forja { display: none; }
+.case[data-look="ironberg"] .only-voluma,
+.case[data-look="voluma"] .only-ironberg { display: none; }
 
-/* Versao Forja: aco, carvao e amarelo; titulos pesados e inclinados */
-.case[data-look="forja"] .screen {
-  --text: #F2F2F2; --text-2: #8D939C; --divider: rgba(255, 255, 255, 0.09); --border-strong: rgba(255, 255, 255, 0.2); --s2: rgba(255, 255, 255, 0.06);
+/* Versao Ironberg: preto, grafite e vermelho; titulos condensados como no site deles */
+.case[data-look="ironberg"] .screen {
+  --text: #F4F4F4; --text-2: #9A9A9A; --divider: rgba(255, 255, 255, 0.09); --border-strong: rgba(255, 255, 255, 0.2); --s2: rgba(255, 255, 255, 0.06);
   background:
-    radial-gradient(420px 320px at 92% 0%, rgba(255, 194, 26, 0.13), transparent 70%),
-    linear-gradient(180deg, #171A1F 0%, #0E1013 55%);
+    radial-gradient(420px 320px at 90% 0%, rgba(210, 0, 0, 0.24), transparent 70%),
+    linear-gradient(180deg, #131315 0%, #080808 60%);
 }
-.case[data-look="forja"] .screen.splash {
+.case[data-look="ironberg"] .screen.splash {
   background:
-    radial-gradient(420px 400px at 50% 42%, rgba(255, 194, 26, 0.16), transparent 70%),
-    linear-gradient(115deg, #1B1F25 0%, #0B0C0F 45%, #1A1D22 70%, #0B0C0F 100%);
+    radial-gradient(360px 360px at 50% 42%, rgba(210, 0, 0, 0.38), transparent 70%),
+    #040404;
 }
-.case[data-look="forja"] .screen .card { background: #181B20; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.05); }
-.case[data-look="forja"] .app-title { font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; transform: skewX(-8deg); transform-origin: left; }
-.case[data-look="forja"] .lbl--section { color: #FFC21A; }
-.case[data-look="forja"] .tag { color: #FFC21A; box-shadow: inset 0 0 0 1px rgba(255, 194, 26, 0.55); }
-.case[data-look="forja"] .ring .ring__arc { stroke: #FFC21A; }
-.case[data-look="forja"] .btn-accent { background: #FFC21A; color: #0E1013; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 26px -6px rgba(255, 194, 26, 0.6); }
-.case[data-look="forja"] .screen .matrix i { background: rgba(255, 255, 255, 0.06); }
-.case[data-look="forja"] .screen .matrix i[data-l="1"] { background: rgba(255, 194, 26, 0.25); }
-.case[data-look="forja"] .screen .matrix i[data-l="2"] { background: rgba(255, 194, 26, 0.48); }
-.case[data-look="forja"] .screen .matrix i[data-l="3"] { background: rgba(255, 194, 26, 0.74); }
-.case[data-look="forja"] .screen .matrix i[data-l="4"] { background: #FFC21A; }
-.case[data-look="forja"] .tabbar { background: #181B20; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.06); }
-.case[data-look="forja"] .tabbar svg { fill: #5C626B; }
-.case[data-look="forja"] .tabbar svg.on { fill: #FFC21A; }
-.case[data-look="forja"] .set.is-next { background: rgba(255, 194, 26, 0.06); border-color: rgba(255, 194, 26, 0.7); }
-.case[data-look="forja"] .set.is-done .cell { background: #FFC21A; border-color: #FFC21A; box-shadow: 0 0 14px -2px rgba(255, 194, 26, 0.6); }
-.case[data-look="forja"] .cell svg { fill: #0E1013; }
-.case[data-look="forja"] .finish { background: #FFC21A; color: #0E1013; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 26px -8px rgba(255, 194, 26, 0.7); }
-.case[data-look="forja"] .rank.is-me { background: rgba(255, 194, 26, 0.12); }
-.case[data-look="forja"] .rank.is-me .av { background: #FFC21A; color: #0E1013; }
-.case[data-look="forja"] .scope { background: rgba(255, 194, 26, 0.1); color: #FFC21A; }
+.case[data-look="ironberg"] .screen .card { background: #151517; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.05); }
+.case[data-look="ironberg"] .app-title { font: 800 38px/1 var(--cond); text-transform: uppercase; letter-spacing: 0.01em; }
+.case[data-look="ironberg"] .app-title--sm { font-size: 30px; }
+.case[data-look="ironberg"] .sec { font: 700 24px/1.1 var(--cond); text-transform: uppercase; letter-spacing: 0.01em; }
+.case[data-look="ironberg"] .sec--sm { font-size: 21px; }
+.case[data-look="ironberg"] .lbl--section { color: var(--neon); }
+.case[data-look="ironberg"] .tag { color: var(--neon); box-shadow: inset 0 0 0 1px rgba(242, 4, 4, 0.6); }
+.case[data-look="ironberg"] .ring .ring__arc { stroke: var(--neon); }
+.case[data-look="ironberg"] .btn-accent,
+.case[data-look="ironberg"] .finish { background: var(--red); color: #fff; font: 700 20px/1 var(--cond); letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 0 28px -4px rgba(242, 4, 4, 0.65); }
+.case[data-look="ironberg"] .screen .matrix i { background: rgba(255, 255, 255, 0.06); }
+.case[data-look="ironberg"] .screen .matrix i[data-l="1"] { background: rgba(242, 4, 4, 0.3); }
+.case[data-look="ironberg"] .screen .matrix i[data-l="2"] { background: rgba(242, 4, 4, 0.52); }
+.case[data-look="ironberg"] .screen .matrix i[data-l="3"] { background: rgba(242, 4, 4, 0.76); }
+.case[data-look="ironberg"] .screen .matrix i[data-l="4"] { background: var(--neon); }
+.case[data-look="ironberg"] .tabbar { background: #151517; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.06); }
+.case[data-look="ironberg"] .tabbar svg { fill: #5E5E62; }
+.case[data-look="ironberg"] .tabbar svg.on { fill: var(--neon); }
+.case[data-look="ironberg"] .set.is-next { background: rgba(210, 0, 0, 0.08); border-color: rgba(242, 4, 4, 0.75); }
+.case[data-look="ironberg"] .set.is-done .cell { background: var(--red); border-color: var(--red); box-shadow: 0 0 14px -2px rgba(242, 4, 4, 0.75); }
+.case[data-look="ironberg"] .cell svg { fill: #fff; }
+.case[data-look="ironberg"] .rank.is-me { background: rgba(210, 0, 0, 0.16); }
+.case[data-look="ironberg"] .rank.is-me .av { background: var(--red); }
+.case[data-look="ironberg"] .scope { background: rgba(210, 0, 0, 0.14); color: var(--neon); }
 .case[data-look="voluma"] .rank.is-me .av { background: var(--accent); color: #000; }
+.ib-icon { width: 56px; height: 56px; flex: none; border-radius: 16px; background: #000; display: grid; place-items: center; box-shadow: inset 0 0 0 1px rgba(242, 4, 4, 0.5), 0 10px 20px -10px rgba(210, 0, 0, 0.7); }
+.ib-icon img { width: 50px; height: auto; }
+.ib-icon--xs { width: 46px; height: 46px; border-radius: 13px; box-shadow: inset 0 0 0 1px rgba(242, 4, 4, 0.5), 0 0 16px -4px rgba(242, 4, 4, 0.6); }
+.ib-icon--xs img { width: 42px; }
+.splash__in .splash__logo { width: 250px; height: auto; border-radius: 0; filter: drop-shadow(0 0 8px rgba(242, 4, 4, 0.95)) drop-shadow(0 0 30px rgba(210, 0, 0, 0.7)); }
+.splash__slogan { font: italic 800 26px/1 var(--cond); letter-spacing: 0.06em; text-transform: uppercase; color: #F20404; text-shadow: 0 0 16px rgba(242, 4, 4, 0.7); }
 
 @media (max-width: 1099px) {
   .case__phones { grid-template-columns: repeat(2, max-content); justify-content: center; column-gap: 48px; row-gap: 40px; }
