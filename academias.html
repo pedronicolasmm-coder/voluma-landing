@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -46,6 +46,8 @@
     <symbol id="i-users-three" viewBox="0 0 256 256"><path d="M243.6,148.8a6,6,0,0,1-8.4-1.2A53.58,53.58,0,0,0,192,126a6,6,0,0,1,0-12,26,26,0,1,0-25.18-32.5,6,6,0,0,1-11.62-3,38,38,0,1,1,59.91,39.63A65.69,65.69,0,0,1,244.8,140.4,6,6,0,0,1,243.6,148.8ZM189.19,213a6,6,0,0,1-2.19,8.2,5.9,5.9,0,0,1-3,.81,6,6,0,0,1-5.2-3,59,59,0,0,0-101.62,0,6,6,0,1,1-10.38-6A70.1,70.1,0,0,1,103,182.55a46,46,0,1,1,50.1,0A70.1,70.1,0,0,1,189.19,213ZM128,178a34,34,0,1,0-34-34A34,34,0,0,0,128,178ZM70,120a6,6,0,0,0-6-6A26,26,0,1,1,89.18,81.49a6,6,0,1,0,11.62-3,38,38,0,1,0-59.91,39.63A65.69,65.69,0,0,0,11.2,140.4a6,6,0,1,0,9.6,7.2A53.58,53.58,0,0,1,64,126,6,6,0,0,0,70,120Z"/></symbol>
     <symbol id="i-wrench" viewBox="0 0 256 256"><path d="M224.91,69.75a6,6,0,0,0-9.63-2.16l-41.07,37.9L154.7,101.3l-4.19-19.51,37.9-41.07a6,6,0,0,0-2.16-9.63,70,70,0,0,0-89.77,94.39l-61.39,53c-.11.09-.21.19-.32.3A30,30,0,0,0,77.2,221.23c.11-.11.21-.21.3-.32l53-61.39a70,70,0,0,0,94.39-89.77ZM160,154a58,58,0,0,1-28-7.22,6,6,0,0,0-7.45,1.33L68.57,212.88a18,18,0,0,1-25.45-25.45l64.76-55.94A6,6,0,0,0,109.2,124a58,58,0,0,1,64-84.53L139.58,75.93a6,6,0,0,0-1.45,5.33l5.65,26.35a6,6,0,0,0,4.61,4.61l26.35,5.65a6,6,0,0,0,5.33-1.45L216.49,82.8A58.06,58.06,0,0,1,160,154Z"/></symbol>
     <symbol id="i-device-mobile" viewBox="0 0 256 256"><path d="M176,18H80A22,22,0,0,0,58,40V216a22,22,0,0,0,22,22h96a22,22,0,0,0,22-22V40A22,22,0,0,0,176,18ZM70,62H186V194H70ZM80,30h96a10,10,0,0,1,10,10V50H70V40A10,10,0,0,1,80,30Zm96,196H80a10,10,0,0,1-10-10V206H186v10A10,10,0,0,1,176,226Z"/></symbol>
+    <!-- Marca da Garra, academia ficticia do exemplo claro (desenho proprio) -->
+    <symbol id="garra-mark" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M17 50C21 38 25 25 28 13"/><path d="M30 54C34 42 38 28 41 15"/><path d="M43 50C46 41 49 31 51 22"/></g></symbol>
     <symbol id="i-palette" viewBox="0 0 256 256"><path d="M199.37,55.31A101.32,101.32,0,0,0,128,26h-1A102,102,0,0,0,26,128c0,42.09,26.07,77.44,68,92.26A30.21,30.21,0,0,0,104.11,222,30.06,30.06,0,0,0,134,192a18,18,0,0,1,18-18h46.21a29.82,29.82,0,0,0,29.25-23.31A102.71,102.71,0,0,0,230,127.11,101.25,101.25,0,0,0,199.37,55.31ZM215.76,148a17.89,17.89,0,0,1-17.55,14H152a30,30,0,0,0-30,30,18,18,0,0,1-24,17C61,195.86,38,164.85,38,128a90,90,0,0,1,89.07-90H128a90.34,90.34,0,0,1,90,89.22A90.46,90.46,0,0,1,215.76,148ZM138,76a10,10,0,1,1-10-10A10,10,0,0,1,138,76ZM94,100A10,10,0,1,1,84,90,10,10,0,0,1,94,100Zm0,56a10,10,0,1,1-10-10A10,10,0,0,1,94,156Zm88-56a10,10,0,1,1-10-10A10,10,0,0,1,182,100Z"/></symbol>
   </svg>
 
@@ -165,14 +167,53 @@
           <div class="case__copy">
             <span class="case__tag">Exemplo pronto</span>
             <h2 class="h2" id="case-title">Assim fica o app de uma academia.</h2>
-            <p class="lead">A gente simulou o app da Ironberg, de São Paulo, para mostrar o resultado. É o mesmo Voluma, com outra cara: ícone, abertura, tema, cores e detalhes em todas as telas.</p>
-            <div class="seg" role="group" aria-label="Comparar o app da Ironberg com o Voluma padrão">
-              <button type="button" aria-pressed="true" data-look-btn="ironberg">App da Ironberg</button>
+            <p class="lead">Veja o mesmo Voluma com a cara de duas academias: a Ironberg, de São Paulo, no tema escuro, e a Garra, no tema claro. Muda o ícone, a abertura, o tema, as cores e os detalhes em todas as telas.</p>
+            <div class="seg" role="group" aria-label="Escolher qual app mostrar">
+              <button type="button" aria-pressed="true" data-look-btn="ironberg">Ironberg</button>
+              <button type="button" aria-pressed="false" data-look-btn="garra">Garra · claro</button>
               <button type="button" aria-pressed="false" data-look-btn="voluma">Voluma padrão</button>
             </div>
           </div>
 
-          <aside class="kit" aria-label="Identidade visual da Ironberg">
+          <aside class="kit only-garra" aria-label="Identidade visual da Garra Academia">
+            <div class="kit__brand">
+              <span class="garra-icon" aria-hidden="true"><svg><use href="#garra-mark"/></svg></span>
+              <div>
+                <b>Garra Academia</b>
+                <small>Musculação e funcional · academia fictícia</small>
+              </div>
+            </div>
+            <div class="kit__colors">
+              <span class="chip" style="--c:#1747F5"><i></i><b>Azul Garra</b><code>#1747F5</code></span>
+              <span class="chip" style="--c:#0F1115"><i></i><b>Grafite</b><code>#0F1115</code></span>
+              <span class="chip" style="--c:#FFFFFF"><i></i><b>Branco</b><code>#FFFFFF</code></span>
+            </div>
+            <ul class="kit__list">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ícone e tela de abertura com a marca</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tema claro, cores e títulos da academia</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Treinos com os nomes do instrutor</li>
+            </ul>
+          </aside>
+
+          <aside class="kit only-voluma" aria-label="Identidade visual do Voluma padrão">
+            <div class="kit__brand">
+              <img class="kit__voluma" src="assets/icon.png" alt="" width="56" height="56">
+              <div>
+                <b class="kit__name--voluma" translate="no">voluma</b>
+                <small>O app padrão, antes da personalização</small>
+              </div>
+            </div>
+            <div class="kit__colors">
+              <span class="chip" style="--c:#FF5C00"><i></i><b>Laranja</b><code>#FF5C00</code></span>
+              <span class="chip" style="--c:#0A0A0A"><i></i><b>Preto</b><code>#0A0A0A</code></span>
+              <span class="chip" style="--c:#F5F5F5"><i></i><b>Branco</b><code>#F5F5F5</code></span>
+            </div>
+            <ul class="kit__list">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>É daqui que a gente parte para criar o app da sua academia</li>
+            </ul>
+          </aside>
+
+          <aside class="kit only-ironberg" aria-label="Identidade visual da Ironberg">
             <div class="kit__brand">
               <span class="ib-icon" aria-hidden="true"><img src="assets/ironberg-logo.webp" alt="" width="52" height="52"></span>
               <div>
@@ -202,6 +243,10 @@
                     <img class="splash__logo" src="assets/ironberg-logo.webp" alt="" width="250" height="250">
                     <span class="splash__slogan">O ambiente transforma!</span>
                   </div>
+                  <div class="splash__in only-garra">
+                    <svg class="garra-mark--xl"><use href="#garra-mark"/></svg>
+                    <span class="garra-word">Garra<small>Academia</small></span>
+                  </div>
                   <div class="splash__in only-voluma">
                     <img src="assets/icon.png" alt="" width="104" height="104" loading="lazy">
                     <span class="splash__voluma" translate="no">voluma</span>
@@ -223,6 +268,7 @@
                       <div class="app-sub">Segunda · 12 out</div>
                     </div>
                     <span class="ib-icon ib-icon--xs only-ironberg"><img src="assets/ironberg-logo.webp" alt="" width="40" height="40"></span>
+                    <span class="garra-icon garra-icon--xs only-garra"><svg><use href="#garra-mark"/></svg></span>
                   </div>
                   <div class="app-body">
                     <div class="card">
@@ -231,7 +277,7 @@
                           <div class="lbl">SEGUNDA</div>
                           <div class="sec">Peito e tríceps</div>
                           <div class="meta">13 séries para hoje</div>
-                          <span class="tag only-ironberg">SUGERIDO PELO INSTRUTOR</span>
+                          <span class="tag not-voluma">SUGERIDO PELO INSTRUTOR</span>
                         </div>
                         <div class="ring" style="--p:0">
                           <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="ring__arc" cx="22" cy="22" r="19"/></svg>
@@ -277,7 +323,7 @@
                   <div class="app-body">
                     <div class="card">
                       <div class="ex-head">
-                        <img src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy">
+                        <img class="not-garra" src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy"><img class="only-garra" src="assets/movements/dark/bench-press.svg" alt="" width="52" height="52" loading="lazy">
                         <div><div class="sec sec--sm">Supino reto</div><div class="meta">4 séries · 80 kg</div></div>
                       </div>
                       <div class="set is-done">
@@ -301,7 +347,7 @@
                       </div>
                     </div>
                     <div class="card card--row card--next">
-                      <img src="assets/movements/bench-press.svg" alt="" width="44" height="44" loading="lazy">
+                      <img class="not-garra" src="assets/movements/bench-press.svg" alt="" width="44" height="44" loading="lazy"><img class="only-garra" src="assets/movements/dark/bench-press.svg" alt="" width="44" height="44" loading="lazy">
                       <div><b>Supino inclinado</b><span class="meta">3 × 10 · 34 kg</span></div>
                     </div>
                   </div>
@@ -322,7 +368,7 @@
                     <div class="app-sub">Dias treinados em outubro</div>
                   </div>
                   <div class="app-body">
-                    <span class="scope"><span class="only-ironberg">Entre os seus amigos da Ironberg</span><span class="only-voluma">Entre os seus amigos</span></span>
+                    <span class="scope"><span class="only-ironberg">Entre os seus amigos da Ironberg</span><span class="only-garra">Entre os seus amigos da Garra</span><span class="only-voluma">Entre os seus amigos</span></span>
                     <div class="card card--rank">
                       <div class="rank"><span class="rank__pos">1</span><span class="av" style="--av:#C9822B">CR</span><span class="rank__name">Camila R.</span><b>18<i>dias</i></b></div>
                       <div class="rank"><span class="rank__pos">2</span><span class="av" style="--av:#3D6FB6">DM</span><span class="rank__name">Diego M.</span><b>17<i>dias</i></b></div>
@@ -346,7 +392,7 @@
           </figure>
         </div>
 
-        <p class="case__note">Simulação do app da Ironberg, publicada com autorização. A marca e o logo pertencem à Ironberg. O app da sua academia sai com a identidade de vocês.</p>
+        <p class="case__note"><span class="only-ironberg">Simulação do app da Ironberg, publicada com autorização. A marca e o logo pertencem à Ironberg.</span><span class="only-garra">A Garra não existe: foi criada só para este exemplo.</span><span class="only-voluma">Este é o Voluma antes da personalização.</span> O app da sua academia sai com a identidade de vocês.</p>
       </div>
     </section>
 
@@ -527,6 +573,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=19" defer></script>
+  <script src="main.js?v=20" defer></script>
 </body>
 </html>
