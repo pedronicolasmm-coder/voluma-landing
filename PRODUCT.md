@@ -22,7 +22,7 @@ Quem treina em academia no Brasil, do iniciante ao avançado. Usa o celular entr
 ## O que não pode afirmar
 
 - Preço, número de usuários, avaliações nas lojas, depoimentos. Nada disso existe ainda.
-- Data de lançamento. O status é "em breve" na App Store e no Google Play.
+- Data de lançamento. O status é "em breve" na App Store e na Play Store.
 
 ## Marca
 
