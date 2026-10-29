@@ -248,6 +248,22 @@
     setName(gymInput.value.trim() || gymInput.dataset.default);
   });
 
+  // Exemplo pronto: compara o app da academia ficticia com o Voluma padrao.
+  // O CSS troca o tema pelo data-look; aqui so muda o atributo e pisca as telas.
+  const caseEl = document.querySelector('.case[data-look]');
+  const lookBtns = [...document.querySelectorAll('[data-look-btn]')];
+  lookBtns.forEach((btn) => btn.addEventListener('click', () => {
+    if (caseEl.dataset.look === btn.dataset.lookBtn) return;
+    caseEl.dataset.look = btn.dataset.lookBtn;
+    lookBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    if (!reduce) {
+      caseEl.querySelectorAll('.phone').forEach((p, i) => p.animate(
+        [{ opacity: 0.35, translate: '0 6px' }, { opacity: 1, translate: '0 0' }],
+        { duration: 420, delay: i * 50, easing: 'cubic-bezier(0.23, 1, 0.32, 1)', fill: 'backwards' },
+      ));
+    }
+  }));
+
   // ROLAR A PAGINA: cada secao com a sua entrada (o CSS faz o movimento).
   // [seletor, tipo, atraso da cascata em ms, atraso inicial]
   const reveals = [
@@ -271,6 +287,11 @@
     // Pagina para academias
     [".gh__copy > *", "up", 90],
     [".gh__visual", "pop", 0, 150],
+    [".case__copy > *", "up", 90],
+    [".kit", "pop", 0, 150],
+    [".train__copy > *", "up", 90],
+    [".train__visual", "pop", 0, 150],
+    [".case__item", "up", 110, 100],
     ["#impl-title", "up"],
     [".listing", "pop", 0, 150],
     ["#vant-title, .band .lead-dark", "up", 90],

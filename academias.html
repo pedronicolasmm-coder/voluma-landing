@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -46,6 +46,8 @@
     <symbol id="i-users-three" viewBox="0 0 256 256"><path d="M243.6,148.8a6,6,0,0,1-8.4-1.2A53.58,53.58,0,0,0,192,126a6,6,0,0,1,0-12,26,26,0,1,0-25.18-32.5,6,6,0,0,1-11.62-3,38,38,0,1,1,59.91,39.63A65.69,65.69,0,0,1,244.8,140.4,6,6,0,0,1,243.6,148.8ZM189.19,213a6,6,0,0,1-2.19,8.2,5.9,5.9,0,0,1-3,.81,6,6,0,0,1-5.2-3,59,59,0,0,0-101.62,0,6,6,0,1,1-10.38-6A70.1,70.1,0,0,1,103,182.55a46,46,0,1,1,50.1,0A70.1,70.1,0,0,1,189.19,213ZM128,178a34,34,0,1,0-34-34A34,34,0,0,0,128,178ZM70,120a6,6,0,0,0-6-6A26,26,0,1,1,89.18,81.49a6,6,0,1,0,11.62-3,38,38,0,1,0-59.91,39.63A65.69,65.69,0,0,0,11.2,140.4a6,6,0,1,0,9.6,7.2A53.58,53.58,0,0,1,64,126,6,6,0,0,0,70,120Z"/></symbol>
     <symbol id="i-wrench" viewBox="0 0 256 256"><path d="M224.91,69.75a6,6,0,0,0-9.63-2.16l-41.07,37.9L154.7,101.3l-4.19-19.51,37.9-41.07a6,6,0,0,0-2.16-9.63,70,70,0,0,0-89.77,94.39l-61.39,53c-.11.09-.21.19-.32.3A30,30,0,0,0,77.2,221.23c.11-.11.21-.21.3-.32l53-61.39a70,70,0,0,0,94.39-89.77ZM160,154a58,58,0,0,1-28-7.22,6,6,0,0,0-7.45,1.33L68.57,212.88a18,18,0,0,1-25.45-25.45l64.76-55.94A6,6,0,0,0,109.2,124a58,58,0,0,1,64-84.53L139.58,75.93a6,6,0,0,0-1.45,5.33l5.65,26.35a6,6,0,0,0,4.61,4.61l26.35,5.65a6,6,0,0,0,5.33-1.45L216.49,82.8A58.06,58.06,0,0,1,160,154Z"/></symbol>
     <symbol id="i-device-mobile" viewBox="0 0 256 256"><path d="M176,18H80A22,22,0,0,0,58,40V216a22,22,0,0,0,22,22h96a22,22,0,0,0,22-22V40A22,22,0,0,0,176,18ZM70,62H186V194H70ZM80,30h96a10,10,0,0,1,10,10V50H70V40A10,10,0,0,1,80,30Zm96,196H80a10,10,0,0,1-10-10V206H186v10A10,10,0,0,1,176,226Z"/></symbol>
+    <!-- Marca da Forja, academia ficticia do exemplo pronto (desenho proprio) -->
+    <symbol id="forja-mark" viewBox="0 0 64 64"><path fill="currentColor" fill-rule="evenodd" d="M32 3.5 56.7 17.75v28.5L32 60.5 7.3 46.25v-28.5ZM24 18h19.5v7.2H31.6v4h9.4v6.6h-9.4V46H24Z"/></symbol>
     <symbol id="i-palette" viewBox="0 0 256 256"><path d="M199.37,55.31A101.32,101.32,0,0,0,128,26h-1A102,102,0,0,0,26,128c0,42.09,26.07,77.44,68,92.26A30.21,30.21,0,0,0,104.11,222,30.06,30.06,0,0,0,134,192a18,18,0,0,1,18-18h46.21a29.82,29.82,0,0,0,29.25-23.31A102.71,102.71,0,0,0,230,127.11,101.25,101.25,0,0,0,199.37,55.31ZM215.76,148a17.89,17.89,0,0,1-17.55,14H152a30,30,0,0,0-30,30,18,18,0,0,1-24,17C61,195.86,38,164.85,38,128a90,90,0,0,1,89.07-90H128a90.34,90.34,0,0,1,90,89.22A90.46,90.46,0,0,1,215.76,148ZM138,76a10,10,0,1,1-10-10A10,10,0,0,1,138,76ZM94,100A10,10,0,1,1,84,90,10,10,0,0,1,94,100Zm0,56a10,10,0,1,1-10-10A10,10,0,0,1,94,156Zm88-56a10,10,0,1,1-10-10A10,10,0,0,1,182,100Z"/></symbol>
   </svg>
 
@@ -58,6 +60,8 @@
       <div class="nav__right">
         <nav aria-label="Seções">
           <a class="nav__switch" href="index.html"><svg aria-hidden="true"><use href="#i-barbell"/></svg>Para alunos</a>
+          <a href="#exemplo">Exemplo</a>
+          <a href="#treinos">Treinos</a>
           <a href="#implantacao">Implantação</a>
           <a href="#vantagens">Vantagens</a>
           <a href="#duvidas">Dúvidas</a>
@@ -93,7 +97,7 @@
               <button type="button" class="swatch" style="--c:#FF4FC0" aria-pressed="false" data-name="rosa">Rosa</button>
             </div>
             <p class="sr-only" aria-live="polite" data-gym-live></p>
-            <p class="config__note"><svg aria-hidden="true"><use href="#i-palette"/></svg><span><b>Isso é só uma amostra.</b> No app de verdade, a gente refaz toda a identidade visual com base na sua academia: ícone, cores, telas e detalhes, tudo com a cara de vocês.</span></p>
+            <p class="config__note"><svg aria-hidden="true"><use href="#i-palette"/></svg><span><b>Isso é só uma amostra.</b> No app de verdade, a gente refaz toda a identidade visual com base na sua academia: ícone, cores, telas e detalhes, tudo com a cara de vocês. <a href="#exemplo">Veja um exemplo pronto</a>.</span></p>
           </div>
         </div>
 
@@ -150,6 +154,249 @@
             <div>
               <b data-gym-name>Sua Academia</b>
               <small>na tela inicial do aluno</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXEMPLO PRONTO: o app com a identidade de uma academia ficticia -->
+    <section class="case" id="exemplo" aria-labelledby="case-title" data-look="forja">
+      <div class="container">
+        <div class="case__head">
+          <div class="case__copy">
+            <span class="case__tag">Exemplo pronto</span>
+            <h2 class="h2" id="case-title">Assim fica o app de uma academia.</h2>
+            <p class="lead">A Forja é uma academia fictícia que a gente criou para mostrar o resultado. É o mesmo Voluma, com outra cara: ícone, abertura, tema, cores e detalhes em todas as telas.</p>
+            <div class="seg" role="group" aria-label="Comparar o app da Forja com o Voluma padrão">
+              <button type="button" aria-pressed="true" data-look-btn="forja">App da Forja</button>
+              <button type="button" aria-pressed="false" data-look-btn="voluma">Voluma padrão</button>
+            </div>
+          </div>
+
+          <aside class="kit" aria-label="Identidade visual da Forja Academia">
+            <div class="kit__brand">
+              <span class="forja-icon" aria-hidden="true"><svg><use href="#forja-mark"/></svg></span>
+              <div>
+                <b>Forja Academia</b>
+                <small>Musculação e treino pesado · academia fictícia</small>
+              </div>
+            </div>
+            <div class="kit__colors">
+              <span class="chip" style="--c:#FFC21A"><i></i><b>Amarelo Forja</b><code>#FFC21A</code></span>
+              <span class="chip" style="--c:#2A2F36"><i></i><b>Aço</b><code>#2A2F36</code></span>
+              <span class="chip" style="--c:#0E1013"><i></i><b>Carvão</b><code>#0E1013</code></span>
+            </div>
+            <ul class="kit__list">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ícone e tela de abertura com a marca</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tema, cores e títulos da academia</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Treinos com os nomes do instrutor</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="case__phones">
+          <figure class="case__item">
+            <div class="phone-wrap">
+              <div class="phone" role="img" aria-label="Tela de abertura do app">
+                <div class="screen splash is-active" aria-hidden="true">
+                  <div class="splash__in only-forja">
+                    <svg class="splash__mark"><use href="#forja-mark"/></svg>
+                    <span class="forja-word forja-word--xl"><span>Forja</span><small>Academia</small></span>
+                  </div>
+                  <i class="hazard only-forja"></i>
+                  <div class="splash__in only-voluma">
+                    <img src="assets/icon.png" alt="" width="104" height="104" loading="lazy">
+                    <span class="splash__voluma" translate="no">voluma</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Abertura</figcaption>
+          </figure>
+
+          <figure class="case__item">
+            <div class="phone-wrap">
+              <div class="phone" role="img" aria-label="Tela Hoje, com o treino do dia">
+                <div class="screen is-active" aria-hidden="true">
+                  <div class="status">9:41</div>
+                  <div class="app-head app-head--brand">
+                    <div>
+                      <div class="app-title">Hoje</div>
+                      <div class="app-sub">Segunda · 12 out</div>
+                    </div>
+                    <span class="forja-icon forja-icon--xs only-forja"><svg><use href="#forja-mark"/></svg></span>
+                  </div>
+                  <div class="app-body">
+                    <div class="card">
+                      <div class="today-head">
+                        <div>
+                          <div class="lbl">SEGUNDA</div>
+                          <div class="sec">Peito e ombro</div>
+                          <div class="meta">13 séries para hoje</div>
+                          <span class="tag only-forja">SUGERIDO PELO INSTRUTOR</span>
+                        </div>
+                        <div class="ring" style="--p:0">
+                          <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="ring__arc" cx="22" cy="22" r="19"/></svg>
+                          <span>13</span>
+                        </div>
+                      </div>
+                      <div class="ex-row"><span>Supino reto</span><span class="mono-sm">4 × 8 · 80 kg</span></div>
+                      <div class="ex-row"><span>Desenvolvimento</span><span class="mono-sm">3 × 10 · 45 kg</span></div>
+                      <div class="ex-row"><span>Elevação lateral</span><span class="mono-sm">3 × 12 · 12 kg</span></div>
+                    </div>
+                    <div class="btn-accent">Começar treino · 13 séries</div>
+                    <div class="lbl lbl--section">PROGRESSO</div>
+                    <div class="card">
+                      <div class="stats">
+                        <div><b>78,4<i>kg</i></b><span>Peso</span></div>
+                        <div><b>9.870<i>kg</i></b><span>7 dias</span></div>
+                        <div><b>4</b><span>dias seguidos</span></div>
+                      </div>
+                      <div class="matrix" data-matrix="26" data-seed="11"></div>
+                    </div>
+                  </div>
+                  <div class="tabbar">
+                    <svg class="on"><use href="#i-home"/></svg>
+                    <svg><use href="#i-calendar"/></svg>
+                    <svg><use href="#i-chart"/></svg>
+                    <svg><use href="#i-user"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Hoje</figcaption>
+          </figure>
+
+          <figure class="case__item">
+            <div class="phone-wrap">
+              <div class="phone" role="img" aria-label="Tela de treino, com as séries sendo marcadas">
+                <div class="screen is-active" aria-hidden="true">
+                  <div class="status">9:41</div>
+                  <div class="app-head app-head--back">
+                    <span class="back"><svg><use href="#i-caret-left"/></svg></span>
+                    <div class="app-title app-title--sm">Treino</div>
+                  </div>
+                  <div class="app-body">
+                    <div class="card">
+                      <div class="ex-head">
+                        <img src="assets/movements/bench-press.svg" alt="" width="52" height="52" loading="lazy">
+                        <div><div class="sec sec--sm">Supino reto</div><div class="meta">4 séries · 80 kg</div></div>
+                      </div>
+                      <div class="set is-done">
+                        <div class="set__line"><span class="lbl">SÉRIE 1</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                        <div class="meta">última vez · 8 × 77,5 kg</div>
+                      </div>
+                      <div class="set is-done">
+                        <div class="set__line"><span class="lbl">SÉRIE 2</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                        <div class="meta">última vez · 8 × 77,5 kg</div>
+                      </div>
+                      <div class="set is-next">
+                        <div class="set__line"><span class="lbl">SÉRIE 3</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                        <div class="meta">última vez · 7 × 77,5 kg</div>
+                        <div class="steppers">
+                          <div class="stepper"><span class="lbl">REPS</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>8</b><svg><use href="#i-plus"/></svg></span></div>
+                          <div class="stepper"><span class="lbl">PESO</span><span class="stepper__ctl"><svg><use href="#i-minus"/></svg><b>80 kg</b><svg><use href="#i-plus"/></svg></span></div>
+                        </div>
+                      </div>
+                      <div class="set">
+                        <div class="set__line"><span class="lbl">SÉRIE 4</span><span class="set__val">8 × 80<i>kg</i></span><span class="cell"><svg><use href="#i-check"/></svg></span></div>
+                      </div>
+                    </div>
+                    <div class="card card--row card--next">
+                      <img src="assets/movements/overhead-press.svg" alt="" width="44" height="44" loading="lazy">
+                      <div><b>Desenvolvimento</b><span class="meta">3 × 10 · 45 kg</span></div>
+                    </div>
+                  </div>
+                  <div class="finish">Finalizar treino · 2 de 13</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Treino</figcaption>
+          </figure>
+
+          <figure class="case__item">
+            <div class="phone-wrap">
+              <div class="phone" role="img" aria-label="Ranking de dias treinados entre amigos da academia">
+                <div class="screen is-active" aria-hidden="true">
+                  <div class="status">9:41</div>
+                  <div class="app-head">
+                    <div class="app-title">Ranking</div>
+                    <div class="app-sub">Dias treinados em outubro</div>
+                  </div>
+                  <div class="app-body">
+                    <span class="scope"><span class="only-forja">Entre os seus amigos da Forja</span><span class="only-voluma">Entre os seus amigos</span></span>
+                    <div class="card card--rank">
+                      <div class="rank"><span class="rank__pos">1</span><span class="av" style="--av:#C9822B">CR</span><span class="rank__name">Camila R.</span><b>18<i>dias</i></b></div>
+                      <div class="rank"><span class="rank__pos">2</span><span class="av" style="--av:#3D6FB6">DM</span><span class="rank__name">Diego M.</span><b>17<i>dias</i></b></div>
+                      <div class="rank is-me"><span class="rank__pos">3</span><span class="av" style="--av:#555">VC</span><span class="rank__name">Você</span><b>15<i>dias</i></b></div>
+                      <div class="rank"><span class="rank__pos">4</span><span class="av" style="--av:#A0527A">BS</span><span class="rank__name">Bruna S.</span><b>14<i>dias</i></b></div>
+                      <div class="rank"><span class="rank__pos">5</span><span class="av" style="--av:#6B6B6B">RT</span><span class="rank__name">Rafael T.</span><b>12<i>dias</i></b></div>
+                      <div class="rank"><span class="rank__pos">6</span><span class="av" style="--av:#8A7A2E">AP</span><span class="rank__name">Ana P.</span><b>11<i>dias</i></b></div>
+                    </div>
+                    <p class="rank__foot">O ranking compara dias treinados, nunca a carga.</p>
+                  </div>
+                  <div class="tabbar">
+                    <svg><use href="#i-home"/></svg>
+                    <svg><use href="#i-calendar"/></svg>
+                    <svg class="on"><use href="#i-chart"/></svg>
+                    <svg><use href="#i-user"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Ranking</figcaption>
+          </figure>
+        </div>
+
+        <p class="case__note">A Forja não existe: foi criada só para este exemplo. O app da sua academia sai com a identidade de vocês.</p>
+      </div>
+    </section>
+
+    <!-- TREINOS: a academia decide os treinos que o aluno encontra no app -->
+    <section class="train" id="treinos" aria-labelledby="train-title">
+      <div class="container train__grid">
+        <div class="train__copy">
+          <span class="case__tag">Treinos personalizados</span>
+          <h2 class="h2" id="train-title">Os treinos do app são do jeito da sua academia.</h2>
+          <p class="lead">Você e o seu instrutor decidem o que o aluno vai encontrar no app. A gente monta tudo do jeito que vocês quiserem e atualiza sempre que vocês pedirem.</p>
+          <ul class="train__list">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>A divisão que vocês usam:</b> ABC, ABCD, Push, Pull e Legs ou outra.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Os exercícios e a ordem</b> de cada treino.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Séries, repetições e carga</b> sugeridas.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Os nomes</b> do jeito que a academia chama, como "Treino A" ou "Peito e tríceps".</span></li>
+          </ul>
+          <p class="train__foot">E o aluno ainda pode ajustar a própria semana no app.</p>
+        </div>
+
+        <div class="train__visual">
+          <div class="phone-wrap">
+            <div class="phone" role="img" aria-label="Tela Plano com a semana de treinos montada pela academia">
+              <div class="screen is-active" aria-hidden="true">
+                <div class="status">9:41</div>
+                <div class="app-head">
+                  <div class="app-title">Plano</div>
+                  <span class="tag">MONTADO PELA SUA ACADEMIA</span>
+                </div>
+                <div class="app-body">
+                  <div class="lbl lbl--section">SUA SEMANA</div>
+                  <div class="card card--list">
+                    <div class="day"><div><b>Segunda</b><span>Treino A · Peito e tríceps</span></div><em>HOJE</em></div>
+                    <div class="day"><div><b>Terça</b><span>Treino B · Costas e bíceps</span></div></div>
+                    <div class="day"><div><b>Quarta</b><span>Treino C · Pernas</span></div></div>
+                    <div class="day day--rest"><div><b>Quinta</b><span>Descanso</span></div></div>
+                    <div class="day"><div><b>Sexta</b><span>Treino A · Peito e tríceps</span></div></div>
+                    <div class="day"><div><b>Sábado</b><span>Treino B · Costas e bíceps</span></div></div>
+                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
+                  </div>
+                </div>
+                <div class="tabbar">
+                  <svg><use href="#i-home"/></svg>
+                  <svg class="on"><use href="#i-calendar"/></svg>
+                  <svg><use href="#i-chart"/></svg>
+                  <svg><use href="#i-user"/></svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -239,6 +486,7 @@
         <h2 class="h2" id="faq-title">Dúvidas de quem tem academia</h2>
         <div class="faq__list">
           <details><summary>Quanto custa?</summary><p>Chame a equipe no WhatsApp para conhecer as condições para a sua academia.</p></details>
+          <details><summary>Posso montar os treinos do meu jeito?</summary><p>Pode. Você e o seu instrutor decidem a divisão, os exercícios, as séries, as repetições e a carga sugerida. A gente coloca no app do jeito que vocês quiserem e atualiza sempre que vocês pedirem.</p></details>
           <details><summary>Preciso de alguém técnico na academia?</summary><p>Não. A equipe do Voluma publica e mantém o app. A academia manda nome, logo e cor, e combina os treinos sugeridos com o instrutor.</p></details>
           <details><summary>Alunos de outras academias veem os meus?</summary><p>Não. Cada academia é um app separado: amigos e ranking ficam só entre os alunos dela.</p></details>
           <details><summary>O aluno precisa criar conta?</summary><p>Não. O app funciona sem conta. O login com Google só é usado para amigos e backup na nuvem.</p></details>
@@ -282,6 +530,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=14" defer></script>
+  <script src="main.js?v=17" defer></script>
 </body>
 </html>
