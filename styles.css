@@ -743,6 +743,11 @@ main { overflow-x: clip; }
   .train__visual { --s: 0.56; }
 }
 
+/* ========== PERSONALIZACAO: faixa escura logo depois do topo ========== */
+.own__kicker { display: inline-block; margin-bottom: 16px; font: 600 13px/1 var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.own .h2 { max-width: 20ch; }
+.own .vcard h3 { font-size: clamp(1.4rem, 2.2vw, 1.7rem); }
+
 /* ========== PAGINA DE CREDITOS ========== */
 .credits { max-width: 760px; display: grid; justify-items: start; gap: 36px; padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(72px, 9vw, 120px); }
 .credits section { display: grid; gap: 10px; }

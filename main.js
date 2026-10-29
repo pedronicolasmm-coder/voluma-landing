@@ -287,6 +287,7 @@
     // Pagina para academias
     [".gh__copy > *", "up", 90],
     [".gh__visual", "pop", 0, 150],
+    [".own__kicker", "up"],
     [".case__copy > *", "up", 90],
     [".kit", "pop", 0, 150],
     [".train__copy > *", "up", 90],
