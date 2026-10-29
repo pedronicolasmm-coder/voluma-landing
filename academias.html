@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=21">
+  <link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -166,7 +166,7 @@
       <div class="container">
         <span class="own__kicker">Personalização total</span>
         <h2 class="h2" id="own-title">O app é do jeito que vocês quiserem.</h2>
-        <p class="lead-dark">O dono e o instrutor decidem como o app fica e o que o aluno treina. A gente coloca tudo no app e muda sempre que vocês pedirem.</p>
+        <p class="lead-dark">O dono e o instrutor decidem como o app fica e o que o aluno treina. Os treinos vocês mesmos montam na aba admin, arrastando os exercícios, e mudam quando quiserem.</p>
         <div class="vgrid">
           <article class="vcard">
             <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-palette"/></svg></span>
@@ -176,7 +176,7 @@
           <article class="vcard">
             <span class="vcard__icon"><svg aria-hidden="true"><use href="#i-barbell"/></svg></span>
             <h3>O instrutor monta os treinos</h3>
-            <p>A divisão, os exercícios, a ordem, as séries, as repetições e a carga, com os nomes que a academia já usa. Do jeito que ele orienta hoje.</p>
+            <p>A divisão, os exercícios, a ordem, as séries, as repetições e a carga, com os nomes que a academia já usa. Ele monta tudo sozinho na aba admin, arrastando os exercícios.</p>
           </article>
         </div>
       </div>
@@ -299,7 +299,7 @@
                           <div class="lbl">SEGUNDA</div>
                           <div class="sec">Peito e tríceps</div>
                           <div class="meta">13 séries para hoje</div>
-                          <span class="tag not-voluma">SUGERIDO PELO INSTRUTOR</span>
+                          <span class="tag not-voluma">MONTADO PELO INSTRUTOR</span>
                         </div>
                         <div class="ring" style="--p:0">
                           <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="ring__arc" cx="22" cy="22" r="19"/></svg>
@@ -424,8 +424,9 @@
         <div class="train__copy">
           <span class="case__tag">Treinos personalizados</span>
           <h2 class="h2" id="train-title">Você e o seu instrutor montam os treinos como quiserem.</h2>
-          <p class="lead">Você e o seu instrutor decidem o que o aluno vai encontrar no app. A gente monta tudo do jeito que vocês quiserem e atualiza sempre que vocês pedirem.</p>
+          <p class="lead">Na aba admin do app, você e o seu instrutor montam os treinos arrastando os exercícios, e mudam quando quiserem, sem depender de ninguém. Os alunos encontram os treinos novos no app.</p>
           <ul class="train__list">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Arraste e solte</b> para montar e reordenar cada treino.</span></li>
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>A divisão que vocês usam:</b> ABC, ABCD, Push, Pull e Legs ou outra.</span></li>
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Os exercícios e a ordem</b> de cada treino.</span></li>
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Séries, repetições e carga</b> sugeridas.</span></li>
@@ -436,31 +437,28 @@
 
         <div class="train__visual">
           <div class="phone-wrap">
-            <div class="phone" role="img" aria-label="Tela Plano com a semana de treinos montada pela academia">
+            <div class="phone" role="img" aria-label="Aba admin do app: o instrutor arrasta um exercício para montar o Treino A">
               <div class="screen is-active" aria-hidden="true">
                 <div class="status">9:41</div>
                 <div class="app-head">
-                  <div class="app-title">Plano</div>
-                  <span class="tag">MONTADO PELA SUA ACADEMIA</span>
+                  <span class="tag">ABA ADMIN</span>
+                  <div class="app-title app-title--sm">Treino A · Push</div>
+                  <div class="app-sub">Peito, ombro e tríceps</div>
                 </div>
                 <div class="app-body">
-                  <div class="lbl lbl--section">SUA SEMANA</div>
-                  <div class="card card--list">
-                    <div class="day"><div><b>Segunda</b><span>Treino A · Peito e tríceps</span></div><em>HOJE</em></div>
-                    <div class="day"><div><b>Terça</b><span>Treino B · Costas e bíceps</span></div></div>
-                    <div class="day"><div><b>Quarta</b><span>Treino C · Pernas</span></div></div>
-                    <div class="day day--rest"><div><b>Quinta</b><span>Descanso</span></div></div>
-                    <div class="day"><div><b>Sexta</b><span>Treino A · Peito e tríceps</span></div></div>
-                    <div class="day"><div><b>Sábado</b><span>Treino B · Costas e bíceps</span></div></div>
-                    <div class="day day--rest"><div><b>Domingo</b><span>Descanso</span></div></div>
+                  <div class="lbl lbl--section">ARRASTE PARA ORGANIZAR</div>
+                  <div class="card card--drag">
+                    <div class="drag"><span class="grip"></span><img src="assets/movements/bench-press.svg" alt="" width="36" height="36" loading="lazy"><div><b>Supino reto</b><span class="meta">4 × 8 · 80 kg</span></div></div>
+                    <div class="drag-wrap">
+                      <div class="drag-slot"></div>
+                      <div class="drag is-lifted"><span class="grip"></span><img src="assets/movements/overhead-press.svg" alt="" width="36" height="36" loading="lazy"><div><b>Desenvolvimento</b><span class="meta">3 × 10 · 45 kg</span></div></div>
+                    </div>
+                    <div class="drag"><span class="grip"></span><img src="assets/movements/lateral-raise.svg" alt="" width="36" height="36" loading="lazy"><div><b>Elevação lateral</b><span class="meta">3 × 12 · 12 kg</span></div></div>
+                    <div class="drag"><span class="grip"></span><img src="assets/movements/push-up.svg" alt="" width="36" height="36" loading="lazy"><div><b>Flexão de braço</b><span class="meta">3 × 15</span></div></div>
                   </div>
+                  <div class="add-row"><svg><use href="#i-plus"/></svg>Adicionar exercício</div>
                 </div>
-                <div class="tabbar">
-                  <svg><use href="#i-home"/></svg>
-                  <svg class="on"><use href="#i-calendar"/></svg>
-                  <svg><use href="#i-chart"/></svg>
-                  <svg><use href="#i-user"/></svg>
-                </div>
+                <div class="finish">Salvar para os alunos</div>
               </div>
             </div>
           </div>
@@ -475,7 +473,7 @@
           <h2 class="h2" id="impl-title">Da conversa à loja de aplicativos.</h2>
           <ol class="steps">
             <li><span class="num">1</span><div><h3>Você diz como quer o app</h3><p>Nome, logo, cores e tema. A gente monta a identidade do jeito que a academia quiser.</p></div></li>
-            <li><span class="num">2</span><div><h3>O instrutor monta os treinos</h3><p>Divisão, exercícios, séries e carga do jeito que ele já orienta os alunos. A gente coloca no app e atualiza sempre que vocês pedirem.</p></div></li>
+            <li><span class="num">2</span><div><h3>O instrutor monta os treinos</h3><p>Na aba admin, ele arrasta os exercícios e monta cada treino do jeito que já orienta os alunos. E muda quando quiser.</p></div></li>
             <li><span class="num">3</span><div><h3>A gente publica o app da academia</h3><p>Um app próprio, com o nome da academia, na App Store e no Google Play.</p></div></li>
             <li><span class="num">4</span><div><h3>Seus alunos baixam e treinam</h3><p>Registram as séries, acompanham a evolução e se encontram no ranking da academia.</p></div></li>
           </ol>
@@ -551,11 +549,11 @@
         <h2 class="h2" id="faq-title">Dúvidas de quem tem academia</h2>
         <div class="faq__list">
           <details><summary>Quanto custa?</summary><p>Chame a equipe no WhatsApp para conhecer as condições para a sua academia.</p></details>
-          <details><summary>Posso montar os treinos do meu jeito?</summary><p>Pode. Você e o seu instrutor decidem a divisão, os exercícios, as séries, as repetições e a carga sugerida. A gente coloca no app do jeito que vocês quiserem e atualiza sempre que vocês pedirem.</p></details>
-          <details><summary>Preciso de alguém técnico na academia?</summary><p>Não. A equipe do Voluma publica e mantém o app. A academia manda nome, logo e cor, e combina os treinos sugeridos com o instrutor.</p></details>
+          <details><summary>Posso montar os treinos do meu jeito?</summary><p>Pode. Na aba admin do app, você e o seu instrutor montam os treinos arrastando os exercícios: divisão, ordem, séries, repetições e carga. E mudam quando quiserem, sem depender da gente.</p></details>
+          <details><summary>Preciso de alguém técnico na academia?</summary><p>Não. A equipe do Voluma publica e mantém o app. A academia manda nome, logo e cor, e o instrutor monta os treinos na aba admin, sem precisar de conhecimento técnico.</p></details>
           <details><summary>Alunos de outras academias veem os meus?</summary><p>Não. Cada academia é um app separado: amigos e ranking ficam só entre os alunos dela.</p></details>
           <details><summary>O aluno precisa criar conta?</summary><p>Não. O app funciona sem conta. O login com Google só é usado para amigos e backup na nuvem.</p></details>
-          <details><summary>A academia tem um painel para acompanhar os alunos?</summary><p>Ainda não. Hoje o app é focado no treino do aluno e na comunidade da academia.</p></details>
+          <details><summary>Como funciona a aba admin?</summary><p>É a área do app só para o dono e o instrutor. Lá vocês montam e mudam os treinos arrastando os exercícios, e os alunos encontram os treinos novos no app.</p></details>
           <details><summary>Os alunos veem os números uns dos outros?</summary><p>Só entre amigos que aceitaram o pedido, e só se cada um ligar o compartilhamento. O ranking compara dias treinados, não a carga.</p></details>
         </div>
       </div>
@@ -595,6 +593,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=21" defer></script>
+  <script src="main.js?v=22" defer></script>
 </body>
 </html>

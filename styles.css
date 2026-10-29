@@ -738,6 +738,24 @@ main { overflow-x: clip; }
 .train__visual::before { content: ""; position: absolute; inset: 6% -35%; background: radial-gradient(closest-side, var(--grey-2), transparent); z-index: -1; }
 .train__visual .phone-wrap { rotate: 4deg; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.28)); }
 .train .tag { margin-top: 8px; background: rgba(255, 92, 0, 0.14); color: #FF8A3D; }
+/* Aba admin: lista de exercicios para arrastar, com um item levantado */
+.train .app-head .tag { margin: 0 0 10px; }
+.card--drag { padding: 10px; display: grid; gap: 8px; }
+.drag { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: var(--s2); }
+.drag img { width: 36px; height: 36px; opacity: 0.85; flex: none; }
+.drag b { display: block; font-weight: 500; }
+.drag .meta { font-size: 12px; }
+.grip { width: 10px; height: 16px; flex: none; background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1.3px, transparent 1.7px) 0 0 / 5px 5.33px; }
+.drag-wrap { position: relative; }
+.drag-slot { height: 56px; border-radius: 14px; border: 1.5px dashed rgba(255, 92, 0, 0.65); background: rgba(255, 92, 0, 0.06); }
+.drag.is-lifted { position: absolute; top: -16px; left: 16px; right: -16px; z-index: 2; background: #2A2A2A; rotate: -2.5deg; box-shadow: 0 18px 30px -10px rgba(0, 0, 0, 0.85), 0 0 0 1.5px var(--accent); }
+.add-row { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-radius: 16px; border: 1px dashed var(--border-strong); color: var(--text-2); font-size: 14px; }
+.add-row svg { width: 16px; height: 16px; fill: currentColor; }
+.train .finish { background: var(--accent); color: #000; box-shadow: 0 0 24px -2px rgba(255, 92, 0, 0.55); }
+@media (prefers-reduced-motion: no-preference) {
+  .drag.is-lifted { animation: drag-lift 1.8s var(--ease-in-out) infinite alternate; }
+  @keyframes drag-lift { to { translate: 0 -5px; rotate: -1deg; } }
+}
 @media (max-width: 899px) {
   .train__grid { grid-template-columns: 1fr; }
   .train__visual { --s: 0.56; }
